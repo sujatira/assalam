@@ -1,0 +1,86 @@
+/* Navbar */
+.navbar {
+	position: relative;
+	z-index: 1;
+}
+
+.navbar-brand {
+	font-family: 'Viga', sans-serif;
+	font-size: 30px;
+}
+
+.navnavan {
+	font-family: 'Spark', sans-serif !important;
+	margin-top: 3px;
+	font-size: 30px;
+	color: gray;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 10);
+}
+
+/* Utility */
+.tbl {
+	text-transform: lowercase;
+	color: blue;
+
+}
+
+/* Font Footer */
+.puter {
+	font-family: 'Prompt', sans-serif;
+	font-size: 30px;
+	color: salmon;
+}
+
+.alert-andi {
+	border-radius: 40px;
+}
+
+
+/* Hanya di Desktop */
+@media (min-width: 992px) {
+
+	.nav-link {
+		text-transform: uppercase;
+		margin-right: 25px;
+		color: white;
+	}
+
+	.navbar-brand,
+	.nav-link,
+	.navnavan {
+		color: white !important;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 10);
+	}
+
+	.carousel {
+		margin-top: -75px;
+		height: 640px;
+		background-size: cover;
+		font-family: 'Viga', sans-serif;
+		color: white !important;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+	}
+
+
+	.bg-ala {
+		color: black !important;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+
+	.bg-drop {
+		background-color: rgba(255, 255, 255, 0.562);
+	}
+
+	.drop-font {
+		font-family: 'Viga', sans-serif;
+		color: white !important;
+	}
+
+	/* Jumbotron */
+	.jumbotron {
+		background-image: url(assets/images/img3.jpg);
+		background-size: cover;
+		height: 640px;
+		padding-inline: 10px;
+	}
+}
