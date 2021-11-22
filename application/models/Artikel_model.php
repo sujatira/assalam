@@ -7,6 +7,10 @@ class Artikel_model extends CI_Model
 		return $this->db->get('tbl_artikel')->result_array();
 	}
 
+	public function getSawareh()
+	{
+	}
+
 	public function set_approve()
 	{
 

@@ -51,8 +51,9 @@
                     <a href="<?= base_url('menu/detail/' . $a['id_artikel']); ?>" class="badge badge-success">details</a>
                     <a href="#" class="badge badge-danger">hapus</a>
                   <?php } else { ?>
-                    <a href="#" class="badge badge-success text-white">details</a>
+                    <a href="<?= base_url('menu/detail/' . $a['id_artikel']); ?>" class="badge badge-success text-white">details</a>
                     <a href="#" class="badge badge-danger">hapus</a>
+
 
                   <?php } ?>
 
