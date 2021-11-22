@@ -30,11 +30,11 @@
 				<input type="hidden" value="<?= $aa->id_artikel ?>" name="id_artikel">
 				<div class="col-lg-2">
 					<select name="status" class="form-group form-control">
-						<option value="">Select</option>
-						<option value="1">YES</option>
-						<option value="0">NO</option>
+						<option value="">Pilih</option>
+						<option value="1">SETUJUI</option>
+						<option value="2">TIDAK</option>
 					</select>
-					<button class="btn btn-primary" type="submit">GASSS</button>
+					<button class="btn btn-primary" type="submit">Submit</button>
 				</div>
 			</div>
 		</div>

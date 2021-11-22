@@ -36,6 +36,8 @@
                 <td><?= $a['judul']; ?></th>
                 <td> <?php if ($a['status'] == 1) { ?>
                     <span class="badge badge-success">Di Izinkan</span>
+                  <?php } else if ($a['status'] == 2) { ?>
+                    <span class="badge badge-danger">Di Tolak</span>
                   <?php } else { ?>
                     <span class="badge badge-warning text-dark"> Pending </span>
                   <?php } ?>
