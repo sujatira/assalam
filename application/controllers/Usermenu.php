@@ -18,6 +18,7 @@ class Usermenu extends CI_Controller
         $data['artikel'] = $this->Artikel_model->getAllArtikel();
         $data['user'] = $this->User_model->getAllUser();
 
+
         // var_dump($data);
         // die;
 

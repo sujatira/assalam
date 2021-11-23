@@ -18,7 +18,7 @@
 							<th scope="col">Judul</th>
 							<th scope="col">Status</th>
 							<th scope="col">Tanggal</th>
-							<th scope="col">Aksi</th>
+							<th scope="col">Aksiiii</th>
 						</tr>
 					</thead>
 					<tbody>

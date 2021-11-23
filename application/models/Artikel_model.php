@@ -7,8 +7,13 @@ class Artikel_model extends CI_Model
 		return $this->db->get('tbl_artikel')->result_array();
 	}
 
-	public function getSawareh()
+	public function getSawareh($id)
 	{
+		$this->db->select('*');
+		$this->db->from('tbl_artikel');
+		$this->db->where('id_user', $id);
+
+		return $this->db->get()->row_array();
 	}
 
 	public function set_approve()

@@ -48,14 +48,17 @@
 
                 <td>
                   <?php if ($this->session->userdata('role_id') == 1) { ?>
-                    <a href="<?= base_url('menu/detail/' . $a['id_artikel']); ?>" class="badge badge-success">details</a>
                     <a href="#" class="badge badge-danger">hapus</a>
-                  <?php } else { ?>
-                    <a href="<?= base_url('menu/detail/' . $a['id_artikel']); ?>" class="badge badge-success text-white">details</a>
-                    <a href="#" class="badge badge-danger">hapus</a>
-
+                    <a href="#" class="badge badge-warning text-dark">edit</a>
+                  <?php } else if ($this->Artikel_model->getSawareh($a['id_user'])) { ?>
+                    <a href="#" class="badge badge-danger">haapus</a>
 
                   <?php } ?>
+                  <a href="<?= base_url('menu/detail/' . $a['id_artikel']); ?>" class="badge badge-success text-white">details</a>
+
+
+
+
 
                 </td>
               </tr>

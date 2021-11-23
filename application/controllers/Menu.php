@@ -6,19 +6,18 @@ class Menu extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        // cek_login();
         $this->load->model('Artikel_model');
         $this->load->model('User_model');
     }
     public function index()
     {
+        cek_login();
         $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
         $this->session->userdata('email')])->row_array();
-        //$data['menu'] = $this->db->get('tbl_user')->result_array();
         $data['artikel'] = $this->Artikel_model->getAllArtikel();
         $data['user'] = $this->User_model->getAllUser();
 
-        // var_dump($data);
+        // var_dump($id);
         // die;
 
         $data['judul'] = 'Artikel';
@@ -141,6 +140,9 @@ class Menu extends CI_Controller
         $this->session->userdata('email')])->row_array();
         $data['artikel'] = $this->Artikel_model->getAllArtikel();
         $data['ar'] = $this->Artikel_model->get_artikel($id);
+
+        // var_dump($id);
+        // die;
 
 
         $data['judul'] = 'Detail Artikel';
