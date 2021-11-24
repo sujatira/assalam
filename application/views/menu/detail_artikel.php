@@ -1,6 +1,6 @@
 <div class="section">
 	<div class="section-header">
-		<h2 class="text-center">Detail Artikel Dan Upproval Artikel</h2>
+		<h2 class="text-center">Detail Artikel Dan Aproval Artikel</h2>
 	</div>
 </div>
 <form method="POST" action="<?= base_url('Menu/approve'); ?>">
