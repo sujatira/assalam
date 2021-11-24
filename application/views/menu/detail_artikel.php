@@ -1,6 +1,10 @@
 <div class="section">
 	<div class="section-header">
+<<<<<<< HEAD
 		<h2 class="text-center">Detail Artikel dan Aproval Artikel.</h2>
+=======
+		<h2 class="text-center">Detail Artikel dan Aproval Artikel</h2>
+>>>>>>> 4fd72328413d7c0222397da4c140df5f8e1f5a68
 	</div>
 </div>
 <form method="POST" action="<?= base_url('Menu/approve'); ?>">
