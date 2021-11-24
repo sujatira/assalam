@@ -9,11 +9,7 @@ class Artikel_model extends CI_Model
 
 	public function getSawareh($id)
 	{
-		$this->db->select('*');
-		$this->db->from('tbl_artikel');
-		$this->db->where('id_user', $id);
-
-		return $this->db->get()->row_array();
+		return $this->db->get_where('tbl_artikel', ['id_user' => $id])->result();
 	}
 
 	public function set_approve()

@@ -43,9 +43,7 @@
                   <?php } ?>
                 </td>
                 <td><?= $a['tanggal']; ?></td>
-
                 <td><?= $this->User_model->getUserId($a['id_user'])->nama; ?></td>
-
                 <td>
                   <?php if ($this->session->userdata('role_id') == 1) { ?>
                     <a href="#" class="badge badge-danger">hapus</a>

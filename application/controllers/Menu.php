@@ -11,11 +11,12 @@ class Menu extends CI_Controller
     }
     public function index()
     {
-        cek_login();
+        // cek_login();
         $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
         $this->session->userdata('email')])->row_array();
         $data['artikel'] = $this->Artikel_model->getAllArtikel();
         $data['user'] = $this->User_model->getAllUser();
+
 
         // var_dump($id);
         // die;
@@ -154,7 +155,6 @@ class Menu extends CI_Controller
     }
     public function detail_user($id)
     {
-        $this->load->model('User_model');
         $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
         $this->session->userdata('email')])->row_array();
         $data['userid'] = $this->User_model->getUserId($id);
