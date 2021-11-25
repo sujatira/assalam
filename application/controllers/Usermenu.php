@@ -9,16 +9,13 @@ class Usermenu extends CI_Controller
         $this->load->model('Artikel_model');
         $this->load->model('User_model');
     }
-    public function index($id)
+    public function index()
     {
         $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
         $this->session->userdata('email')])->row_array();
         $data['artikel'] = $this->Artikel_model->getAllArtikel();
         $data['user'] = $this->User_model->getAllUser();
-        $data['sawareh'] = $this->Artikel_model->getSawareh($id);
-
-
-
+        // $data['sawareh'] = $this->Artikel_model->getSawareh($id);
 
         // var_dump($id);
         // die;
@@ -27,7 +24,7 @@ class Usermenu extends CI_Controller
         $this->load->view('templates/header_user', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('usermenu/index', $data);
+        $this->load->view('menu/index', $data);
         $this->load->view('templates/footer_user');
     }
 

@@ -18,7 +18,7 @@ class Menu extends CI_Controller
         $data['user'] = $this->User_model->getAllUser();
 
 
-        // var_dump($id);
+        // var_dump($data);
         // die;
 
         $data['judul'] = 'Artikel';

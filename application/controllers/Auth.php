@@ -52,6 +52,9 @@ class Auth extends CI_Controller
 				//seleksi masuk admin, bendahara, atau member
 				$this->session->set_userdata($data);
 
+				// var_dump($data);
+				// die;
+
 				if ($tbl_user['role_id'] == 1) {
 					redirect('admin');
 				} elseif ($tbl_user['role_id'] == 2) {

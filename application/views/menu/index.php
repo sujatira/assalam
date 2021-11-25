@@ -5,26 +5,17 @@
     <div class="row">
       <div class="card-body card-shadow">
         <h1 class="h3 mb-3 text-gray-800"><?= $judul; ?></h1>
-
         <?= $this->session->flashdata('pesan');  ?>
-
         <a href="<?= base_url('menu/tambah') ?>" class="btn btn-primary mb-3"><i class="fas fa-file-medical mr-1"></i>Tambah Artikel</a>
         <table class="table table-bordered table-hover table-striped" id="dataTable" width="100%">
           <thead>
             <tr>
-
               <th scope="col">No</th>
               <th scope="col">Judul</th>
               <th scope="col">Status</th>
               <th scope="col">Tanggal</th>
               <th scope="col">Oleh</th>
-              <!-- <?php if ($this->session->userdata('role_id' == 1)) { ?>
-                <th scope="col">#</th>
-              <?php } else { ?> -->
               <th scope="col">Aksi</th>
-              <!-- <?php } ?> -->
-
-
             </tr>
           </thead>
           <tbody>
@@ -33,43 +24,36 @@
             foreach ($artikel as $a) : ?>
               <tr>
                 <td><?= $i++ ?></td>
-                <td><?= $a['judul']; ?></th>
+                <td class="col-4 text-text-truncate"><?= $a['judul']; ?>
                 <td> <?php if ($a['status'] == 1) { ?>
-                    <span class="badge badge-success">Di Izinkan</span>
+                    <span class="badge badge-primary">Di Izinkan</span>
                   <?php } else if ($a['status'] == 2) { ?>
                     <span class="badge badge-danger">Di Tolak</span>
                   <?php } else { ?>
-                    <span class="badge badge-warning text-dark"> Pending </span>
+                    <span class="badge badge-warning text-dark">Menunggu</span>
                   <?php } ?>
                 </td>
                 <td><?= $a['tanggal']; ?></td>
                 <td><?= $this->User_model->getUserId($a['id_user'])->nama; ?></td>
                 <td>
-                  <?php if ($this->session->userdata('role_id') == 1) { ?>
-                    <a href="#" class="badge badge-danger">hapus</a>
-                    <a href="#" class="badge badge-warning text-dark">edit</a>
-                  <?php } else if ($this->Artikel_model->getSawareh($a['id_user'])) { ?>
-                    <a href="#" class="badge badge-danger">haapus</a>
-
+                  <?php if ($this->session->$_POST('email')) { ?>
+                    <a href="#" class="text-danger"><i class="fas fa-trash-alt"></i></a>
+                    <a href="#" class="text-success"><i class="fas fa-edit"></i></a>
+                  <?php } else { ?>
+                    <i class="disabled fas fa-trash-alt"></i>
+                    <i class="disabled fas fa-edit"></i>
                   <?php } ?>
-                  <a href="<?= base_url('menu/detail/' . $a['id_artikel']); ?>" class="badge badge-success text-white">details</a>
-
-
-
-
-
+                  <a href="<?= base_url('menu/detail/' . $a['id_artikel']); ?>" class="text-info"><i class="fas fa-eye"></i></a>
                 </td>
               </tr>
             <?php endforeach; ?>
           </tbody>
-
         </table>
       </div>
     </div>
   </div>
 </div>
 <!-- End of Main Content -->
-
 <!-- Modal -->
 <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
   <div class="modal-dialog">
