@@ -28,7 +28,7 @@ class Bendahara extends CI_Controller
         $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
         $this->session->userdata('email')])->row_array();
         $data['infaq'] = $this->Infaq_model->getAllInfaq();
-        $data['judul'] = 'Kelola data infak';
+        $data['judul'] = 'Kelola Data Infak';
         $this->load->view('templates/header_user', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);

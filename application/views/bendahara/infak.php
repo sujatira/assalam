@@ -1,7 +1,16 @@
 <div class="container">
     <div>
         <h1>Kelola data infak</h1>
-        <a class="btn btn-primary">Tambah data infak</a>
+        <div class="">
+            <a class="btn btn-primary mb-3"><i class="fas fa-plus-square"></i> Pemasukan</a>
+            <a class="btn btn-primary mb-3"><i class="fas fa-minus-square"></i> Pengeluaran</a>
+            <a class="btn btn-primary mb-3"><i class="fas fa-hand-holding-usd"></i> Pengajuan</a>
+            <a class="btn btn-info mb-3"><i class="fas fa-print"></i> Cetak</a>
+
+            <div class="mr-lg-auto">
+            </div>
+        </div>
+
         <table class="table table-bordered table-hover table-striped" id="dataTable" width="100%">
             <caption class="bi bi-list-check caption-top"> Daftar donatur Infaq Masjid Jami Assalam</caption>
             <thead>
