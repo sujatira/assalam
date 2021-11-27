@@ -4,10 +4,12 @@
   <div class="col-md-12">
     <div class="row">
       <div class="card-body card-shadow">
-        <h1 class="h3 mb-3 text-gray-800"><?= $judul; ?></h1>
+
+        <h1 class="h3 mb-3 text-gray-800 text-center"><?= $judul; ?></h1>
+
         <?= $this->session->flashdata('pesan');  ?>
         <a href="<?= base_url('menu/tambah') ?>" class="btn btn-primary mb-3"><i class="fas fa-file-medical mr-1"></i>Tambah Artikel</a>
-        <table class="table table-bordered table-hover table-striped" id="dataTable" width="100%">
+        <table class="table table-bordered table-striped" id="dataTable" width="100%">
           <thead class="text-center">
             <tr>
               <th scope="col">No</th>
