@@ -8,7 +8,7 @@
         <?= $this->session->flashdata('pesan');  ?>
         <a href="<?= base_url('menu/tambah') ?>" class="btn btn-primary mb-3"><i class="fas fa-file-medical mr-1"></i>Tambah Artikel</a>
         <table class="table table-bordered table-hover table-striped" id="dataTable" width="100%">
-          <thead>
+          <thead class="text-center">
             <tr>
               <th scope="col">No</th>
               <th scope="col">Judul</th>
@@ -23,9 +23,9 @@
             $i = 1;
             foreach ($artikel as $a) : ?>
               <tr>
-                <td><?= $i++ ?></td>
+                <td class="text-center"><?= $i++ ?></td>
                 <td class="col-4 text-text-truncate"><?= $a['judul']; ?>
-                <td> <?php if ($a['status'] == 1) { ?>
+                <td class="text-center"> <?php if ($a['status'] == 1) { ?>
                     <span class="badge badge-primary">Di Izinkan</span>
                   <?php } else if ($a['status'] == 2) { ?>
                     <span class="badge badge-danger">Di Tolak</span>
@@ -33,15 +33,14 @@
                     <span class="badge badge-warning text-dark">Menunggu</span>
                   <?php } ?>
                 </td>
-                <td><?= $a['tanggal']; ?></td>
+                <td class="text-center"><?= $a['tanggal']; ?></td>
                 <td><?= $this->User_model->getUserId($a['id_user'])->nama; ?></td>
-                <td>
-                  <?php if ($this->session->$_POST('email')) { ?>
+                <td class="text-center">
+                  <?php if ($tbl_user['role_id'] == 1) { ?>
                     <a href="#" class="text-danger"><i class="fas fa-trash-alt"></i></a>
                     <a href="#" class="text-success"><i class="fas fa-edit"></i></a>
-                  <?php } else { ?>
-                    <i class="disabled fas fa-trash-alt"></i>
-                    <i class="disabled fas fa-edit"></i>
+                  <?php } else if ($this->User_model->getUserId($a['id_user'])->id_user) { ?>
+                    <a href="#" class="text-danger"><i class="fas fa-trash-alt"></i></a>
                   <?php } ?>
                   <a href="<?= base_url('menu/detail/' . $a['id_artikel']); ?>" class="text-info"><i class="fas fa-eye"></i></a>
                 </td>

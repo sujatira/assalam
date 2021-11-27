@@ -8,7 +8,7 @@
 				<?= $this->session->flashdata('pesan');  ?>
 				<a href="<?= base_url('menu/tambah') ?>" class="btn btn-primary mb-3"><i class="fas fa-file-medical mr-1"></i>Tambah Artikel</a>
 				<table class="table table-bordered table-hover table-striped" id="dataTable" width="100%">
-					<thead>
+					<thead class="text-center">
 						<tr>
 							<th scope="col">No</th>
 							<th scope="col">Judul</th>
@@ -21,27 +21,28 @@
 					<tbody>
 						<?php
 						$i = 1;
-						foreach ($artikel as $a) :  ?>
+						foreach ($artikel as $a) : ?>
 							<tr>
-								<td><?= $i++ ?></td>
-								<td><?= $a['judul'] ?></th>
-								<td> <?php if ($a['status'] == 1) { ?>
-										<span class="badge badge-success">Di Izinkan</span>
+								<td class="text-center"><?= $i++ ?></td>
+								<td class="col-4 text-text-truncate"><?= $a['judul']; ?>
+								<td class="text-center"> <?php if ($a['status'] == 1) { ?>
+										<span class="badge badge-primary">Di Izinkan</span>
 									<?php } else if ($a['status'] == 2) { ?>
 										<span class="badge badge-danger">Di Tolak</span>
 									<?php } else { ?>
-										<span class="badge badge-warning text-dark"> Pending </span>
+										<span class="badge badge-warning text-dark">Menunggu</span>
 									<?php } ?>
 								</td>
-								<td><?= $a['tanggal']; ?></td>
+								<td class="text-center"><?= $a['tanggal']; ?></td>
 								<td><?= $this->User_model->getUserId($a['id_user'])->nama; ?></td>
-								<td>
-									<a href="<?= base_url('menu/detail/' . $a['id_artikel']); ?>" class="badge badge-success text-white">details</a>
+								<td class="text-center">
+									<a href="#" class="text-success"><i class="fas fa-edit"></i></a>
+									<a href="<?= base_url('menu/detail/' . $a['id_artikel']); ?>" class="text-info"><i class="fas fa-eye"></i></a>
+									<a href="#" class="text-danger"><i class="fas fa-trash-alt"></i></a>
 								</td>
 							</tr>
 						<?php endforeach; ?>
 					</tbody>
-
 				</table>
 			</div>
 		</div>
