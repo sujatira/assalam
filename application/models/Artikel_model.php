@@ -56,4 +56,10 @@ class Artikel_model extends CI_Model
 
 		return $this->db->get()->result();
 	}
+
+	public function numartikel()
+	{
+		$query = $this->db->get('tbl_artikel');
+		return $query->num_rows();
+	}
 }

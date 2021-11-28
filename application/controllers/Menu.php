@@ -16,6 +16,7 @@ class Menu extends CI_Controller
         $this->session->userdata('email')])->row_array();
         $data['artikel'] = $this->Artikel_model->getAllArtikel();
         $data['user'] = $this->User_model->getAllUser();
+        // $data['jumlahuser'] = $this->User_model->numuser();
 
 
         // var_dump($data);

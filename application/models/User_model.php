@@ -36,4 +36,10 @@ class User_model extends CI_Model
     {
         return $this->db->get_where('tbl_user', ['id_user' => $id])->row();
     }
+
+    public function numuser()
+    {
+        $query = $this->db->get('tbl_user');
+        return $query->num_rows();
+    }
 }
