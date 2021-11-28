@@ -28,7 +28,7 @@ $("#btnpost").click(() => {
 	})
 		.then((responseJson) => responseJson.json())
 		.then((resultJson) => {
-			if ((resultJson.success = true)) {
+			if ((resultJson.success == true)) {
 
 				window.location = BASE_URL + "Menu";
 

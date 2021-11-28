@@ -16,11 +16,6 @@ class Artikel extends CI_Controller
 
         $data['judul'] = 'Artikel';
         $data['approved'] = $this->Artikel_model->get_artikel_approved();
-        // $data['approved'] = $this->Artikel_model->get_artikel_approved();
-
-        // var_dump($data);
-        // die;
-
 
         $this->load->view('templates/header', $data);
         $this->load->view('artikel/index', $data);

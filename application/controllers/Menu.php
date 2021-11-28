@@ -16,11 +16,6 @@ class Menu extends CI_Controller
         $this->session->userdata('email')])->row_array();
         $data['artikel'] = $this->Artikel_model->getAllArtikel();
         $data['user'] = $this->User_model->getAllUser();
-        // $data['jumlahuser'] = $this->User_model->numuser();
-
-
-        // var_dump($data);
-        // die;
 
         $data['judul'] = 'Artikel';
         $this->load->view('templates/header_user', $data);
@@ -89,22 +84,26 @@ class Menu extends CI_Controller
         extract($_POST);
         extract($_FILES);
         // $tmb = $thumbnails;
-        // var_dump($tmb);
+
+
+        $file_name2         = $_FILES['gambar_judul']['name'];
+        move_uploaded_file($_FILES['gambar_judul']['tmp_name'], 'assets/images/thumbnails/' . $file_name2);
+
+
+        // var_dump($file_name2);
         // die;
-
-
 
         $date = date("Y-m-d");
         // $data['user'] = $this->User_model->getOleh($id);
         $id_user = $this->session->userdata('id_user');
-        $this->db->query("INSERT INTO `tbl_artikel`(`id_user`,`judul`,`isi`,`status`,`tanggal`) VALUES ('$id_user','$judul', '$isi','0', '$date')");
+        $this->db->query("INSERT INTO `tbl_artikel`(`id_user`,`judul`,`isi`,`status`,`tanggal`,`tmb`) VALUES ('$id_user','$judul', '$isi','0', '$date','$file_name2')");
         $id_artikel = $this->db->insert_id();
+
 
         // var_dump($id_user);
         // die();
 
 
-        // move_uploaded_file($_FILES['thumbnails']['tmp_name'], 'assets/images/thumbnails' . $tmb);
 
 
         foreach ($_FILES['gambar']['name'] as $idx2 => $row2) {
