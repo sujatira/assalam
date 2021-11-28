@@ -11,10 +11,12 @@ class Usermenu extends CI_Controller
     }
     public function index()
     {
+        $id = $this->session->userdata('id_user');
         $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
         $this->session->userdata('email')])->row_array();
-        $data['artikel'] = $this->Artikel_model->getAllArtikel();
+        $data['artikel'] = $this->Artikel_model->getSawareh($id);
         $data['user'] = $this->User_model->getAllUser();
+
 
         // var_dump($id);
         // die;

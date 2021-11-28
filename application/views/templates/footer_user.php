@@ -27,6 +27,7 @@
         </div>
     </div>
 </div>
+</div>
 <script>
     $('.custom-file-input').on('change', function() {
         let fileName = $(this).val().split('\\').pop();

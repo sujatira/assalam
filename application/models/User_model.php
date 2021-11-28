@@ -23,6 +23,15 @@ class User_model extends CI_Model
         return $this->db->get_where('tbl_user', ['id_user' => $id])->row();
     }
 
+    public function getUser($id)
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_user');
+        $this->db->where('id_user', $id);
+
+        return $this->db->get()->row();
+    }
+
     public function getOleh($id)
     {
         return $this->db->get_where('tbl_user', ['id_user' => $id])->row();
