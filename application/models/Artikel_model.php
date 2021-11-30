@@ -42,7 +42,7 @@ class Artikel_model extends CI_Model
 		$this->db->from('tbl_gambar');
 		$this->db->where('id_artikel', $id);
 
-		return $this->db->get()->row();
+		return $this->db->get()->result();
 	}
 
 	public function get_artikel_approved()
@@ -67,6 +67,14 @@ class Artikel_model extends CI_Model
 		$this->db->select('*');
 		$this->db->from('tbl_gambar');
 		$this->db->where('id_gambar', $id_gambar);
+
+		return $this->db->get()->row();
+	}
+	public function getDetailArtikel($id)
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_artikel');
+		$this->db->where('id_artikel', $id);
 
 		return $this->db->get()->row();
 	}

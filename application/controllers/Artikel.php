@@ -21,4 +21,14 @@ class Artikel extends CI_Controller
         $this->load->view('artikel/index', $data);
         $this->load->view('templates/footer');
     }
+
+    public function artikel_detail($id)
+    {
+        $data['judul'] = 'Detail Artikel';
+        $data['userartikel'] = $this->Artikel_model->getDetailArtikel($id);
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('artikel/artikel_detail', $data);
+        $this->load->view('templates/footer');
+    }
 }

@@ -23,11 +23,9 @@
             <p class="card-text">Sebagai <?= $tbl_user['sebagai']; ?></p>
           </div>
         </div>
-
       </div>
     </div>
-    <a class="btn btn-primary " href="<?= base_url('user/edit') ?>">Edit profie</a>
-
+    <a href="<?= base_url('user/edit') ?>" class="btn btn-primary fas fa-edit"> Edit profile</a>
   </div>
 
 </div>

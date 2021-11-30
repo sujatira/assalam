@@ -16,6 +16,6 @@ function cek_login() //cek akses login untuk admin
 	}
 
 	if ($userAccess->num_rows() < 1) {
-		redirect('auth/error');
+		redirect('usermenu');
 	}
 }
