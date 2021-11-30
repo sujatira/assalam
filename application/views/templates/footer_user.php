@@ -22,22 +22,21 @@
             <div class="modal-body">Pilih "Keluar" jika anda ingin Logout.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-                <a class="btn btn-primary" href="<?= base_url('Auth/logout'); ?>">Keluar</a>
+                <a class="btn btn-primary" href="<?= base_url('auth/logout'); ?>">Keluar</a>
             </div>
         </div>
     </div>
 </div>
 </div>
-<script>
+<!-- <script>
     $('.custom-file-input').on('change', function() {
         let fileName = $(this).val().split('\\').pop();
         $(this).next('.custom-file-label').addClass("selected").html(fileName);
     });
-</script>
+</script> -->
 <script>
     const BASE_URL = "<?= base_url() ?>"
 </script>
-<!-- Bootstrap core JavaScript-->
 <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
 <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="<?= base_url('assets/'); ?>js/artikel.js"></script>
@@ -46,7 +45,7 @@
 <script src="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
 <script src="<?= base_url('assets/'); ?>js/demo/datatables-demo.js"></script>
 <script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
-<script src="<?= base_url('https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js'); ?>"></script>
+<script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
 </body>
 
 </html>

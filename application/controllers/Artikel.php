@@ -9,6 +9,7 @@ class Artikel extends CI_Controller
         parent::__construct();
         $this->load->model('Artikel_model');
         $this->load->model('User_model');
+        $this->load->model('Infaq_model');
     }
 
     public function index()
@@ -26,9 +27,12 @@ class Artikel extends CI_Controller
     {
         $data['judul'] = 'Detail Artikel';
         $data['userartikel'] = $this->Artikel_model->getDetailArtikel($id);
+        $data['infaq'] = $this->Infaq_model->getAllInfaq();
+        $data['tmbl'] = $this->Artikel_model->get_tmb($id);
 
         $this->load->view('templates/header', $data);
         $this->load->view('artikel/artikel_detail', $data);
+        $this->load->view('templates/isi_artikel');
         $this->load->view('templates/footer');
     }
 }

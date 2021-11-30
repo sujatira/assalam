@@ -1,3 +1,4 @@
+</div>
 <div class="row bg-secondary">
   <div class="col-6">
     <footer class="footer-section text-white">

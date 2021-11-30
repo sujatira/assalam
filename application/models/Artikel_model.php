@@ -44,13 +44,21 @@ class Artikel_model extends CI_Model
 
 		return $this->db->get()->result();
 	}
+	public function get_tmb($id)
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_artikel');
+		$this->db->where('id_artikel', $id);
+
+		return $this->db->get()->row();
+	}
+
 
 	public function get_artikel_approved()
 	{
 
 		$this->db->select('*');
 		$this->db->from('tbl_artikel');
-		// $this->db->join('tbl_gambar', 'tbl_artikel.id_artikel=tbl_gambar.id_artikel');
 		$this->db->where('status', 1);
 
 		return $this->db->get()->result();

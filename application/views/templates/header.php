@@ -6,18 +6,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
 
     <!-- Ini google style font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;400&display=swap" rel="stylesheet">
 
     <!-- Ini CSS-ku -->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="<?= base_url('style.css') ?>">
 
     <!-- font-awesome -->
     <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -42,8 +41,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                    <a class="nav-link" href="<?= base_url('Artikel') ?>">Artikel</a>
-                    <a class="nav-link" href="<?= base_url('Kajian') ?>">Kajian</a>
+                    <a class="nav-link" href="<?= base_url('artikel') ?>">Artikel</a>
+                    <a class="nav-link" href="<?= base_url('kajian') ?>">Kajian</a>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                             About
@@ -62,7 +61,7 @@
                             <li><a class="dropdown-item" href="<?= base_url('Auth') ?>"><i class="fas fa-sign-in-alt"></i> Login</a></li>
                         </ul>
                     </li>
-                    <!-- <a href="<?= base_url('Auth') ?>" class="btn btn-user btn-success"><i class="fas fa-sign-in-alt"></i> LOGIN</a> -->
+                    <!-- <a href="<?= base_url('auth') ?>" class="btn btn-user btn-success"><i class="fas fa-sign-in-alt"></i> LOGIN</a> -->
                 </div>
             </div>
         </div>

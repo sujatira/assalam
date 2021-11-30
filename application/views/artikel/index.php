@@ -9,6 +9,6 @@
                     <a class="text-dark text-lg-center" href="<?= base_url('artikel/artikel_detail/' . $ap->id_artikel) ?>"><?= $ap->judul; ?></a>
                 </div>
             </div>
-        <?php endforeach; ?>
+        <?php endforeach ?>
     </div>
 </div>
