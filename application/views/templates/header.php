@@ -21,7 +21,6 @@
     <!-- font-awesome -->
     <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-
     <!-- fontku -->
     <style type="text/css">
         @font-face {
@@ -32,10 +31,10 @@
     <title><?= $judul ?></title>
 </head>
 
-<body>
+<body class="">
     <nav class="navbar navbar-expand-lg navbar-light bg-ala">
         <div class="container">
-            <a class="navnavan" href="<?= base_url('Home') ?>">Jami Assalam</a>
+            <a class="navnavan" href="<?= base_url('home') ?>">Jami Assalam</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -61,7 +60,6 @@
                             <li><a class="dropdown-item" href="<?= base_url('Auth') ?>"><i class="fas fa-sign-in-alt"></i> Login</a></li>
                         </ul>
                     </li>
-                    <!-- <a href="<?= base_url('auth') ?>" class="btn btn-user btn-success"><i class="fas fa-sign-in-alt"></i> LOGIN</a> -->
                 </div>
             </div>
         </div>

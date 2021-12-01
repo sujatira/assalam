@@ -1,8 +1,13 @@
 <!-- Carousel Slides -->
-<div id="carouselExampleSlidesOnly" class="carousel slide mb-3" data-bs-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="<?= base_url('assets/images/img1.jpg') ?>" class="d-block w-100" alt="...">
+      <img src="<?= base_url('assets/images/img1.jpg') ?>" class="d-block w-100 " alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h3>Sholat Berjamaah</h3>
         <p>Gerakan Sholat berjamaah lima waktu di Masjid</p>
@@ -16,16 +21,16 @@
     </div>
   </div>
 </div>
+<!-- akhir karusel -->
 
 
-<!-- ini isi blog masjid -->
-
-<div class="container">
-  <div class="row mb-2">
+<!-- ada dua card -->
+<!-- <div class="container">
+  <div class="row mt-3">
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary">World</strong>
+          <strong class="d-inline-block mb-2 text-primary">Program Tanah Wakaf</strong>
           <h3 class="mb-0">Featured post</h3>
           <div class="mb-1 text-muted">Nov 12</div>
           <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
@@ -36,7 +41,6 @@
             <title>Placeholder</title>
             <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
           </svg>
-
         </div>
       </div>
     </div>
@@ -58,3 +62,72 @@
       </div>
     </div>
   </div>
+</div> -->
+<!-- akhir dua card -->
+
+<!-- isi  halaman home -->
+<div class="container">
+  <div class="row mb-3 mt-3">
+    <div class="col-lg-2 mb-3">
+      <div class="card border-light mb-3" style="max-width: 18rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+          <h5 class="card-title">Light card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 mb-3">
+      <h2>COL-LG-10</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et atque eaque nulla, quisquam doloremque aut optio tenetur dicta voluptatum aliquam odit velit, provident, ex labore sequi. Tempora ducimus excepturi error?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et atque eaque nulla, quisquam doloremque aut optio tenetur dicta voluptatum aliquam odit velit, provident, ex labore sequi. Tempora ducimus excepturi error?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et atque eaque nulla, quisquam doloremque aut optio tenetur dicta voluptatum aliquam odit velit, provident, ex labore sequi. Tempora ducimus excepturi error?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et atque eaque nulla, quisquam doloremque aut optio tenetur dicta voluptatum aliquam odit velit, provident, ex labore sequi. Tempora ducimus excepturi error?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et atque eaque nulla, quisquam doloremque aut optio tenetur dicta voluptatum aliquam odit velit, provident, ex labore sequi. Tempora ducimus excepturi error?</p>
+
+    </div>
+    <div class="col-lg-2 mb-3">
+      <div class="card border-light mb-3" style="max-width: 18rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+          <h5 class="card-title">Light card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- akhir isi halaman home -->
+  <div class="row mb-3">
+    <div class="col-8">
+      <h6>Tabel Infak</h1>
+        <table class="table table-bordered table-striped table-responsive">
+          <thead class="text-center">
+            <?php $i = 1;
+            foreach ($infaq as $if) : ?>
+              <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Nominal</th>
+                <th>Tanggal</th>
+              </tr>
+          </thead>
+          <tbody>
+            <td class="text-center"><?= $i++; ?></td>
+            <td><?= ($if['nama']) ?></td>
+            <td class="text-center">Rp. <?= number_format($if['nominal']) ?></td>
+            <td class="text-center"><?= $if['tanggal'] ?></td>
+          </tbody>
+        <?php endforeach ?>
+        </table>
+    </div>
+    <div class="col-4">
+      <div class="card border-dark mb-3" style="max-width: 100%;">
+        <div class="card-header">Info infak Masjid Jami Assalam</div>
+        <div class="card-body text-dark">
+          <h5 class="card-title">Total kas Masjid</h5>
+          <h2>Rp. 350.000.000</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
