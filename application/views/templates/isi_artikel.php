@@ -13,7 +13,7 @@
             <?php endforeach ?>
             <h3>Tabel infak</h3>
             <div>
-                <table class="table table-info table-striped">
+                <table class="table table-info table-striped" id="dataTable">
                     <caption class="bi bi-list-check caption-top"> Daftar donatur Infak Masjid Jami Assalam</caption>
                     <thead>
                         <tr>

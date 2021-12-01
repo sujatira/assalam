@@ -4,10 +4,16 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="<?= base_url('assets/css/sb-admin-2.min.css') ?>" rel="stylesheet">
 
     <!-- Ini google style font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,14 +37,14 @@
     <title><?= $judul ?></title>
 </head>
 
-<body class="">
+<body style="background-color: ;">
     <nav class="navbar navbar-expand-lg navbar-light bg-ala">
         <div class="container">
-            <a class="navnavan" href="<?= base_url('home') ?>">Jami Assalam</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand navnavan" href="<?= base_url('home') ?>">Jami Assalam</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="collapse navbar-collapse nav justify-content-end" id="navbarSupportedContent">
                 <div class="navbar-nav ms-auto">
                     <a class="nav-link" href="<?= base_url('artikel') ?>">Artikel</a>
                     <a class="nav-link" href="<?= base_url('kajian') ?>">Kajian</a>
@@ -64,3 +70,32 @@
             </div>
         </div>
     </nav>
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-ala">
+        <div class="container">
+            <a class="navnavan" href="<?= base_url('home') ?>">Jami Assalam</a>
+            <div class="collapse navbar-collapse">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="<?= base_url('artikel') ?>">Artikel</a>
+                    <a class="nav-link" href="<?= base_url('kajian') ?>">Kajian</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            About
+                        </a>
+                        <ul class="dropdown-menu bg-drop drop-font" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-star-and-crescent"></i> Masjid Jami Assalam</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-code"></i> Developer</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Menu
+                        </a>
+                        <ul class="dropdown-menu bg-drop drop-font" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="<?= base_url('User') ?>"><i class="fas fa-user"></i> Akun</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('Auth') ?>"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav> -->

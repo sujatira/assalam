@@ -1,10 +1,10 @@
 <!-- Carousel Slides -->
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="<?= base_url('assets/images/img1.jpg') ?>" class="d-block w-100 " alt="...">
@@ -20,6 +20,7 @@
       <img src="<?= base_url('assets/images/img3.jpg') ?>" class="d-block w-100" alt="...">
     </div>
   </div>
+
 </div>
 <!-- akhir karusel -->
 
@@ -97,35 +98,48 @@
     </div>
   </div>
   <!-- akhir isi halaman home -->
-  <div class="row mb-3">
-    <div class="col-8">
-      <h6>Tabel Infak</h1>
-        <table class="table table-bordered table-striped table-responsive">
-          <thead class="text-center">
-            <?php $i = 1;
-            foreach ($infaq as $if) : ?>
-              <tr>
-                <th>No</th>
-                <th>Nama</th>
-                <th>Nominal</th>
-                <th>Tanggal</th>
-              </tr>
-          </thead>
-          <tbody>
-            <td class="text-center"><?= $i++; ?></td>
-            <td><?= ($if['nama']) ?></td>
-            <td class="text-center">Rp. <?= number_format($if['nominal']) ?></td>
-            <td class="text-center"><?= $if['tanggal'] ?></td>
-          </tbody>
-        <?php endforeach ?>
-        </table>
+  <div class="row mb-3 g-5">
+    <div class="col-md-8">
+      <div class="card m-2">
+        <h6 class="card-header">Tabel Infak</h1>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped table-sm" id="dataTable">
+                <thead class="text-center">
+                  <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Nominal</th>
+                    <th>Tanggal</th>
+                  </tr>
+                </thead>
+                <?php $i = 1;
+                foreach ($infaq as $if) : ?>
+                  <tbody>
+                    <td class="text-center"><?= $i++; ?></td>
+                    <td><?= ($if['nama']) ?></td>
+                    <td class="text-center">Rp. <?= number_format($if['nominal']) ?></td>
+                    <td class="text-center"><?= $if['tanggal'] ?></td>
+                  </tbody>
+                <?php endforeach ?>
+              </table>
+            </div>
+          </div>
+      </div>
     </div>
-    <div class="col-4">
-      <div class="card border-dark mb-3" style="max-width: 100%;">
+    <div class="col-md-4">
+      <div class="card border-light mb-3" style="max-width: 100%;">
         <div class="card-header">Info infak Masjid Jami Assalam</div>
         <div class="card-body text-dark">
           <h5 class="card-title">Total kas Masjid</h5>
           <h2>Rp. 350.000.000</h2>
+        </div>
+      </div>
+      <div class="card border-light mb-3" style="max-width: 100%;">
+        <div class="card-header">Info Rekening Masjid Jami Assalam</div>
+        <div class="card-body text-dark">
+          <h5 class="card-title">AN. Yayasan Masjid Jami Assalam</h5>
+          <h2>23242424-2424-2-24</h2>
         </div>
       </div>
     </div>

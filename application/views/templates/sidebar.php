@@ -1,5 +1,5 @@
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: seagreen;">
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('home'); ?>">
         <div class="sidebar-brand-icon">
@@ -41,7 +41,7 @@
         ?>
         <?php foreach ($subMenu as $sm) : ?>
           <?php if ($judul == $sm['title']) : ?>
-            <li class="nav-item active bg-gradient-success">
+            <li class="nav-item active">
             <?php else : ?>
             <li class="nav-item">
             <?php endif; ?>
