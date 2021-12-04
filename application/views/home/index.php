@@ -85,7 +85,6 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et atque eaque nulla, quisquam doloremque aut optio tenetur dicta voluptatum aliquam odit velit, provident, ex labore sequi. Tempora ducimus excepturi error?</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et atque eaque nulla, quisquam doloremque aut optio tenetur dicta voluptatum aliquam odit velit, provident, ex labore sequi. Tempora ducimus excepturi error?</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et atque eaque nulla, quisquam doloremque aut optio tenetur dicta voluptatum aliquam odit velit, provident, ex labore sequi. Tempora ducimus excepturi error?</p>
-
     </div>
     <div class="col-lg-2 mb-3">
       <div class="card border-light mb-3" style="max-width: 18rem;">
