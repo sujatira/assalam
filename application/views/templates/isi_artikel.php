@@ -1,11 +1,12 @@
 <div class="row mb-3">
 	<div class="col-md-8">
-		<h3 class="pb-4 mb-4 fst-italic border-bottom">
-			Dari Masjid Jami Assalam untuk jemaah
+		<h3 class="mb-3 pb-3 border-bottom">
+			Dari Masjid Jami Assalam untuk jamaah
 		</h3>
 		<article class="blog-post">
 			<h2 class="blog-post-title"> <?= $userartikel->judul; ?></h2>
-			<caption class="blog-post-meta caption-top"> Di post pada tanggal <?= $userartikel->tanggal ?></caption>
+			<?php foreach ($artikel as $ar) : ?>
+			<p class="blog-post-meta caption-top"><?= date('d F Y', $userartikel->tanggal) ?> Oleh <a href=""> <?= $this->User_model->getUser($ar->id_user)->nama ?></a></p>
 			<p><?= $userartikel->isi ?></p>
 			<?php foreach ($this->Artikel_model->get_gambar($userartikel->id_artikel) as $aa) : ?>
 				<img src="<?= base_url('assets/images/' . $aa->gambar) ?>" alt="" width="330px" height="200px" class="mb-1">
@@ -14,29 +15,30 @@
 				<h6 class="card-header">Tabel Infak</h1>
 					<div class="card-body">
 						<div class="table-responsive">
-							<div>
-								<table class="table table-striped table-sm" id="dataTable">
-									<thead class="text-center">
+							<table class="table table-striped table-sm" id="dataTable">
+								<thead class="text-center">
+									<tr>
+										<th>No</th>
+										<th>Nama</th>
+										<th>Nominal</th>
+										<th>Tanggal</th>
+									</tr>
+								<tbody>
+									<?php $i = 1;
+									foreach ($infaq as $ifq) : ?>
 										<tr>
-											<th>No</th>
-											<th>Nama</th>
-											<th>Nominal</th>
-											<th>Tanggal</th>
+											<td class="text-center"><?= $i++; ?></td>
+											<td><?= $ifq['nama']; ?></td>
+											<td class="text-center">Rp. <?= number_format($ifq['nominal']); ?></td>
+											<td class="text-center"><?= $ifq['tanggal']; ?></td>
 										</tr>
-									<tbody>
-										<?php $i = 1;
-										foreach ($infaq as $ifq) : ?>
-											<tr>
-												<td class="text-center"><?= $i++; ?></td>
-												<td><?= $ifq['nama']; ?></td>
-												<td class="text-center">Rp. <?= number_format($ifq['nominal']); ?></td>
-												<td class="text-center"><?= $ifq['tanggal']; ?></td>
-											</tr>
-										<?php endforeach; ?>
-									</tbody>
-									</thead>
-								</table>
-							</div>
+									<?php endforeach; ?>
+								</tbody>
+								</thead>
+							</table>
+						</div>
+					</div>
+			</div>
 		</article>
 	</div>
 	<div class="col-md-4">

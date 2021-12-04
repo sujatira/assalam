@@ -1,12 +1,6 @@
-<div class="section">
-	<div class="section-header">
-		<h2 class="text-center">Detail Artikel dan Aproval Artikel.</h2>
-	</div>
-</div>
 <form method="POST" action="<?= base_url('Menu/approve'); ?>">
 	<div class="row">
 		<div class="col-md-12">
-
 			<div class="card m-2 p-2">
 				<div class="card-body">
 					<div class="row mt-4">
@@ -40,6 +34,5 @@
 				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 </form>

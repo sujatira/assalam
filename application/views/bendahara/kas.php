@@ -1,17 +1,17 @@
 <div class="container">
 	<div class="row mx-1">
 		<div class="mr-auto">
-			<h1>Kelola data infak</h1>
+			<h1>Kelola data kas</h1>
 		</div>
 		<div class="mt-3">
 			<a class="btn btn-primary btn-sm mb-3"><i class="fas fa-plus-square"></i> Pemasukan</a>
-			<a class="btn btn-primary btn-sm mb-3" href="<?= base_url('bendahara/pengajuan_pengeluaran') ?>"><i class="fas fa-minus-square"></i> Pengeluaran</a>
-			<a class="btn btn-primary btn-sm mb-3"><i class="fas fa-hand-holding-usd"></i> Pengajuan</a>
+			<a class="btn btn-primary btn-sm mb-3" href="<?= base_url('bendahara/pengeluaran_kas') ?>"><i class="fas fa-minus-square"></i> Pengeluaran</a>
+			<!-- <a class="btn btn-primary btn-sm mb-3"><i class="fas fa-hand-holding-usd"></i> Pengajuan</a> -->
 			<a class="btn btn-info mb-3 btn-sm"><i class="fas fa-print"></i> Cetak</a>
 		</div>
 	</div>
 	<div class="card">
-		<h5 class="card-header bg-primary text-white">Tabel data infak Masjid Jami Assalam</h5>
+		<h5 class="card-header bg-primary text-white">Tabel data kas Masjid Jami Assalam</h5>
 		<div class="card-body">
 			<div class="table-responsive">
 				<table class="table table-striped table-bordered table-sm first" id="dataTable" style="width: 100%;">

@@ -1,6 +1,6 @@
 	<!-- Begin Page Content -->
 	<div class="card-body card-shadow">
-		<h1 class="h3 mb-3 text-gray-800 text-center"><?= $judul; ?></h1>
+		<h1 class="h3 mb-3 text-gray-800"><?= $judul; ?></h1>
 		<div class="card">
 			<h5 class="card-header bg-primary text-white">Tabel artikel Masjid Jami Assalam</h5>
 			<div class="card-body">

@@ -1,4 +1,3 @@
-<div id="wrapper">
 	<!-- Begin Page Content -->
 	<!-- Page Heading -->
 	<div class="col-md-12">
@@ -8,9 +7,7 @@
 
 				<?= $this->session->flashdata('pesan');  ?>
 
-				<a href="<?= base_url('usermenu/tambah') ?>" class="btn btn-primary"><i class="fas fa-file-medical mr-1"></i>
-					Tambah
-					Artikel</a>
+				<a href="<?= base_url('usermenu/tambah') ?>" class="btn btn-primary"><i class="fas fa-file-medical mr-1"></i>Tambah Artikel</a>
 				<table class="table table-bordered table-hover table-striped" id="dataTable" width="100%">
 					<thead>
 						<tr>
@@ -47,5 +44,5 @@
 			</div>
 		</div>
 	</div>
-</div>
-<!-- End of Main Content -->
+
+	<!-- End of Main Content -->

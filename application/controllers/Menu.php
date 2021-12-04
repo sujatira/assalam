@@ -48,7 +48,7 @@ class Menu extends CI_Controller
         $file_name2         = $_FILES['gambar_judul']['name'];
         move_uploaded_file($_FILES['gambar_judul']['tmp_name'], 'assets/images/thumbnails/' . $file_name2);
 
-        $date = date("Y-m-d");
+        $date = time();
         // $data['user'] = $this->User_model->getOleh($id);
         $id_user = $this->session->userdata('id_user');
         $this->db->query("INSERT INTO `tbl_artikel`(`id_user`,`judul`,`isi`,`status`,`tanggal`,`tmb`) VALUES ('$id_user','$judul', '$isi','0', '$date','$file_name2')");

@@ -1,15 +1,22 @@
 <div class="card-body card-shadow">
-  <h2 class="h3 mb-3 text-gray-800"><?= $judul; ?></h2>
+  <div class="row mx-1">
+    <div class="mr-auto">
+      <h1>Pengeluaran data kas</h1>
+    </div>
+    <div class="mt-3">
+      <a class="btn btn-primary btn-sm mb-3" href="<?= base_url('bendahara/pengajuan_pengeluaran_kas') ?>"><i class="fas fa-plus-square"></i> Ajukan pengeluaran</a>
+      <a class="btn btn-info mb-3 btn-sm"><i class="fas fa-print"></i> Cetak</a>
+    </div>
+  </div>
   <div class="card">
-    <h5 class="card-header bg-primary text-white">Tabel pengajuan pengeluaran Masjid Jami Assalam</h5>
+    <h5 class="card-header bg-primary text-white">Tabel pengajuan pengeluaran kas Masjid Jami Assalam</h5>
     <div class="card-body">
       <div class="table-responsive">
         <table class="table table-bordered table-striped table-sm" id="dataTable">
-
-          <thead>
+          <thead class="text-center">
             <tr>
               <th>No</th>
-              <th>Nama pengajuans</th>
+              <th>Nama pengajuan</th>
               <th>Jumlah</th>
               <th>Tanggal</th>
               <th>Status</th>
@@ -21,11 +28,11 @@
             foreach ($infak as $ifk) :
             ?>
               <tr>
-                <td><?= $i++; ?></td>
+                <td class="text-center"><?= $i++; ?></td>
                 <td><?= $ifk['nama_pengajuan'] ?></td>
-                <td><?= $ifk['jumlah_pengajuan'] ?></td>
-                <td><?= $ifk['tanggal_pengajuan'] ?></td>
-                <td> <?php if ($ifk['status_pengajuan'] == 0) { ?>
+                <td class="text-center">Rp. <?= number_format($ifk['jumlah_pengajuan']) ?>,-</td>
+                <td class="text-center"><?= $ifk['tanggal_pengajuan'] ?></td>
+                <td class="text-center"> <?php if ($ifk['status_pengajuan'] == 0) { ?>
                     <span class="badge badge-warning text-dark">Menunggu</span>
                   <?php } else if ($ifk['status_pengajuan'] == 1) { ?>
                     <span class="badge badge-primary">Diterima</span>

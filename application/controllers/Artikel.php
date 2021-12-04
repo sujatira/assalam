@@ -27,6 +27,7 @@ class Artikel extends CI_Controller
     {
         $data['judul'] = 'Detail Artikel';
         $data['userartikel'] = $this->Artikel_model->getDetailArtikel($id);
+        $data['artikel'] = $this->Artikel_model->getAllArtikel();
         $data['infaq'] = $this->Infaq_model->getAllInfaq();
         $data['tmbl'] = $this->Artikel_model->get_tmb($id);
 

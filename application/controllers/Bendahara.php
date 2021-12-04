@@ -23,20 +23,20 @@ class Bendahara extends CI_Controller
         $this->load->view('templates/footer_user');
     }
 
-    public function infak()
+    public function kas()
     {
         $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
         $this->session->userdata('email')])->row_array();
         $data['infaq'] = $this->Infaq_model->getAllInfaq();
-        $data['judul'] = 'Kelola Data Infak';
+        $data['judul'] = 'Kelola Data Kas';
         $this->load->view('templates/header_user', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('bendahara/infak', $data);
+        $this->load->view('bendahara/kas', $data);
         $this->load->view('templates/footer_user');
     }
 
-    public function pengajuan_pengeluaran()
+    public function pengeluaran_kas()
     {
         $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
         $this->session->userdata('email')])->row_array();
@@ -45,7 +45,19 @@ class Bendahara extends CI_Controller
         $this->load->view('templates/header_user', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('bendahara/pengajuan_pengeluaran', $data);
+        $this->load->view('bendahara/pengeluaran_kas', $data);
+        $this->load->view('templates/footer_user');
+    }
+    public function pengajuan_pengeluaran_kas()
+    {
+        $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
+        $this->session->userdata('email')])->row_array();
+
+        $data['judul'] = 'Pengajuan pengeluaran kas';
+        $this->load->view('templates/header_user', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('bendahara/pengajuan_pengeluaran_kas', $data);
         $this->load->view('templates/footer_user');
     }
 }
