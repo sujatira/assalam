@@ -5,7 +5,7 @@
 		</div>
 		<div class="mt-3">
 			<a class="btn btn-primary btn-sm mb-3"><i class="fas fa-plus-square"></i> Pemasukan</a>
-			<a class="btn btn-primary btn-sm mb-3"><i class="fas fa-minus-square"></i> Pengeluaran</a>
+			<a class="btn btn-primary btn-sm mb-3" href="<?= base_url('bendahara/pengajuan_pengeluaran') ?>"><i class="fas fa-minus-square"></i> Pengeluaran</a>
 			<a class="btn btn-primary btn-sm mb-3"><i class="fas fa-hand-holding-usd"></i> Pengajuan</a>
 			<a class="btn btn-info mb-3 btn-sm"><i class="fas fa-print"></i> Cetak</a>
 		</div>

@@ -115,4 +115,17 @@ class Menu extends CI_Controller
         $this->load->view('menu/user', $data);
         $this->load->view('templates/footer_user');
     }
+    public function approval_pengeluaran()
+    {
+        $data['judul'] = 'Approval Keuangan';
+        $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
+        $this->session->userdata('email')])->row_array();
+
+        $data['user'] = $this->User_model->getAllUser();
+        $this->load->view('templates/header_user', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('menu/approval_pengeluaran', $data);
+        $this->load->view('templates/footer_user');
+    }
 }
