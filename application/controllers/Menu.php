@@ -51,7 +51,8 @@ class Menu extends CI_Controller
         $date = time();
         // $data['user'] = $this->User_model->getOleh($id);
         $id_user = $this->session->userdata('id_user');
-        $this->db->query("INSERT INTO `tbl_artikel`(`id_user`,`judul`,`isi`,`status`,`tanggal`,`tmb`) VALUES ('$id_user','$judul', '$isi','0', '$date','$file_name2')");
+        $nama = $this->session->userdata('nama');
+        $this->db->query("INSERT INTO `tbl_artikel`(`id_user`,`judul`,`isi`,`status`,`tanggal`,`tmb`,`oleh`) VALUES ('$id_user','$judul', '$isi','0', '$date','$file_name2','$nama')");
         $id_artikel = $this->db->insert_id();
 
         foreach ($_FILES['gambar']['name'] as $idx2 => $row2) {
@@ -81,6 +82,7 @@ class Menu extends CI_Controller
     }
     public function detail_user($id)
     {
+        cek_login();
         $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
         $this->session->userdata('email')])->row_array();
         $data['userid'] = $this->User_model->getUserId($id);
@@ -117,6 +119,7 @@ class Menu extends CI_Controller
     }
     public function approval_pengeluaran()
     {
+        cek_login();
         $data['judul'] = 'Approval Keuangan';
         $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
         $this->session->userdata('email')])->row_array();

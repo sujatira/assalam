@@ -47,7 +47,8 @@ class Auth extends CI_Controller
 				$data = [
 					'id_user' => $tbl_user['id_user'],
 					'email' => $tbl_user['email'],
-					'role_id' => $tbl_user['role_id']
+					'role_id' => $tbl_user['role_id'],
+					'nama' => $tbl_user['nama']
 				];
 				//seleksi masuk admin, bendahara, atau member
 				$this->session->set_userdata($data);

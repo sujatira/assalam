@@ -33,7 +33,20 @@ class Artikel extends CI_Controller
 
         $this->load->view('templates/header', $data);
         $this->load->view('artikel/artikel_detail', $data);
-        $this->load->view('templates/isi_artikel');
+        $this->load->view('templates/isi_artikel', $data);
         $this->load->view('templates/footer');
+    }
+    public function detail_user($id)
+    {
+        $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
+        $this->session->userdata('email')])->row_array();
+        $data['userid'] = $this->User_model->getUserId($id);
+
+        $data['judul'] = 'Detail User';
+        $this->load->view('templates/header_user', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('menu/detail_user', $data);
+        $this->load->view('templates/footer_user');
     }
 }

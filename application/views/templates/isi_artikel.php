@@ -4,9 +4,12 @@
 			Dari Masjid Jami Assalam untuk jamaah
 		</h3>
 		<article class="blog-post">
-			<h2 class="blog-post-title"> <?= $userartikel->judul; ?></h2>
-			<?php foreach ($artikel as $ar) : ?>
-			<p class="blog-post-meta caption-top"><?= date('d F Y', $userartikel->tanggal) ?> Oleh <a href=""> <?= $this->User_model->getUser($ar->id_user)->nama ?></a></p>
+			<h2 class="blog-post-title"><?= $userartikel->judul; ?></h2>
+
+			<p class="blog-post-meta caption-top"><?= date('d F Y', $userartikel->tanggal) ?> Oleh
+				<a href="<?= base_url('artikel/detail_user/' . $userartikel->id_user) ?>"> <?= $userartikel->oleh ?>
+				</a>
+			</p>
 			<p><?= $userartikel->isi ?></p>
 			<?php foreach ($this->Artikel_model->get_gambar($userartikel->id_artikel) as $aa) : ?>
 				<img src="<?= base_url('assets/images/' . $aa->gambar) ?>" alt="" width="330px" height="200px" class="mb-1">
@@ -48,7 +51,7 @@
 				<p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
 			</div>
 
-			<div class="p-4">
+			<!-- <div class="p-4">
 				<h4 class="fst-italic">Archives</h4>
 				<ol class="list-unstyled mb-0">
 					<li><a href="#">March 2021</a></li>
@@ -73,7 +76,7 @@
 					<li><a href="#">Twitter</a></li>
 					<li><a href="#">Facebook</a></li>
 				</ol>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </div>
