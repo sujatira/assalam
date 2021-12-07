@@ -7,7 +7,7 @@
 						<?php
 						foreach ($ar as $aa) : ?>
 							<div class="col-lg">
-								<img src="<?= base_url('assets/images/' . $aa->gambar) ?>" height="200px" width="300px" alt="">
+								<img src="<?= base_url('assets/images/artikel/' . $aa->gambar) ?>" height="200px" width="300px" alt="">
 							</div>
 						<?php endforeach ?>
 						<br>

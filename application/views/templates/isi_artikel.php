@@ -12,7 +12,7 @@
 			</p>
 			<p><?= $userartikel->isi ?></p>
 			<?php foreach ($this->Artikel_model->get_gambar($userartikel->id_artikel) as $aa) : ?>
-				<img src="<?= base_url('assets/images/' . $aa->gambar) ?>" alt="" width="330px" height="200px" class="mb-1">
+				<img src="<?= base_url('assets/images/artikel/' . $aa->gambar) ?>" alt="" width="330px" height="200px" class="mb-1">
 			<?php endforeach ?>
 			<div class="card">
 				<h6 class="card-header">Tabel Infak</h1>
