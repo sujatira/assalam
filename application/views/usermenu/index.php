@@ -1,6 +1,5 @@
 	<!-- Begin Page Content -->
 	<div class="card-body card-shadow">
-		<h1 class="h3 mb-3 text-gray-800"><?= $judul; ?></h1>
 		<div class="card">
 			<h5 class="card-header bg-primary text-white">Tabel artikel Masjid Jami Assalam</h5>
 			<div class="card-body">
@@ -33,8 +32,8 @@
 											<span class="badge badge-warning text-dark">Menunggu</span>
 										<?php } ?>
 									</td>
-									<td class="text-center"><?= $a->tanggal ?></td>
-									<td><?= $this->User_model->getUser($a->id_user)->nama ?></td>
+									<td class="text-center"><?= date('d F Y', $a->tanggal) ?></td>
+									<td class="text-center"><?= $this->User_model->getUser($a->id_user)->nama ?></td>
 									<td class="text-center">
 										<a href="#" class="text-success"><i class="fas fa-edit"></i></a>
 										<a href="<?= base_url('menu/detail/' . $a->id_artikel); ?>" class="text-info"><i class="fas fa-eye"></i></a>

@@ -7,7 +7,7 @@
 			<h2 class="blog-post-title"><?= $userartikel->judul; ?></h2>
 
 			<p class="blog-post-meta caption-top"><?= date('d F Y', $userartikel->tanggal) ?> Oleh
-				<a href="<?= base_url('artikel/detail_user/' . $userartikel->id_user) ?>"> <?= $userartikel->oleh ?>
+				<a href="<?= base_url('artikel/oleh/' . $userartikel->id_user) ?>"> <?= $userartikel->oleh ?>
 				</a>
 			</p>
 			<p><?= $userartikel->isi ?></p>

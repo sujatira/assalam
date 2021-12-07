@@ -20,7 +20,6 @@
       <img src="<?= base_url('assets/images/img3.jpg') ?>" class="d-block w-100" alt="...">
     </div>
   </div>
-
 </div>
 <!-- akhir karusel -->
 

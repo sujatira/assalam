@@ -49,4 +49,17 @@ class Artikel extends CI_Controller
         $this->load->view('menu/detail_user', $data);
         $this->load->view('templates/footer_user');
     }
+
+    public function oleh($id)
+    {
+        $data['userid'] = $this->User_model->getUserId($id);
+        $data['judul'] = 'Detail User';
+
+        // var_dump($data);
+        // die;
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('artikel/oleh', $data);
+        $this->load->view('templates/footer');
+    }
 }
