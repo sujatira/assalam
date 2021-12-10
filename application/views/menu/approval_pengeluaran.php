@@ -1,17 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<body>
-
-  <h1>Halaman Approval Keuangan</h1>
-
-</body>
-
-</html>
+  <!-- Begin Page Content -->
+  <!-- Page Heading -->
+  <div class="card-body card-shadow">
+    <div class="card">
+      <h5 class="card-header bg-primary text-white">Tabel approval pengeluaran kas Masjid Jami Assalam</h5>
+      <div class="card-body">
+        <div class="table-responsive">
+          <?= $this->session->flashdata('pesan');  ?>
+          <table class="table table-bordered table-striped table-sm" id="dataTable" width="100%">
+            <thead class="text-center">
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Jumlah</th>
+                <th scope="col">Tanggal</th>
+                <th scope="col">Status</th>
+                <th scope="col">Keterangan</th>
+                <th scope="col">Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              $i = 1;
+              foreach ($infak as $a) : ?>
+                <tr>
+                  <td class="text-center"><?= $i++ ?></td>
+                  <td class="col-4 text-text-truncate"><?= $a['nama_pengajuan']; ?>
+                  <td class="">Rp. <?= number_format($a['jumlah_pengajuan']) ?></td>
+                  <td class="text-center"><?= date('d F Y', $a['tanggal_pengajuan']); ?></td>
+                  <td class="text-center"> <?php if ($a['status_pengajuan'] == 1) { ?>
+                      <span class="badge badge-primary">Di Izinkan</span>
+                    <?php } else if ($a['status_pengajuan'] == 2) { ?>
+                      <span class="badge badge-danger">Di Tolak</span>
+                    <?php } else { ?>
+                      <span class="badge badge-warning text-dark">Menunggu</span>
+                    <?php } ?>
+                  </td>
+                  <td class="text-center"> <?= $a['keterangan'] ?></td>
+                  <td>
+                    <a href="">Hapus</a>
+                    <a href="">Detail</a>
+                  </td>
+                </tr>
+              <?php endforeach; ?>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of Main Content -->
