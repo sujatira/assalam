@@ -35,10 +35,10 @@
                       <span class="badge badge-warning text-dark">Menunggu</span>
                     <?php } ?>
                   </td>
-                  <td class="text-center"> <?= $a['keterangan'] ?></td>
-                  <td>
-                    <a href="">Hapus</a>
-                    <a href="">Detail</a>
+                  <td class=""> <?= $a['keterangan'] ?></td>
+                  <td class="text-center">
+                    <a href="" class="text-danger"><i class="fas fa-trash-alt"></i></a>
+                    <a href="<?= base_url('menu/detail_approval_pengeluaran') ?>" class="text-info"><i class="fas fa-eye"></i></a>
                   </td>
                 </tr>
               <?php endforeach; ?>

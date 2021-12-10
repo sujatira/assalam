@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="card">
+  <div class="card" style="max-width: 700px;">
     <div class="card-header bg-primary text-white">
       <?= $judul; ?>
     </div>
