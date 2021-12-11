@@ -8,6 +8,7 @@ class Menu extends CI_Controller
 		parent::__construct();
 		$this->load->model('Artikel_model');
 		$this->load->model('User_model');
+		$this->load->model('Infaq_model');
 	}
 	public function index()
 	{
@@ -135,16 +136,34 @@ class Menu extends CI_Controller
 		$this->load->view('menu/approval_pengeluaran', $data);
 		$this->load->view('templates/footer_user');
 	}
-	public function detail_approval_pengeluaran()
+	public function detail_approval_pengeluaran($id)
 	{
 		$data['judul'] = 'Detail Approval Keuangan';
 		$data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
 		$this->session->userdata('email')])->row_array();
+		$data['pengajuan'] = $this->Infaq_model->getAllPengajuan();
+		$data['details'] = $this->Infaq_model->getDetailsPengajuan($id);
+
+		// var_dump($data);
+		// die;
 
 		$this->load->view('templates/header_user', $data);
 		$this->load->view('templates/sidebar', $data);
 		$this->load->view('templates/topbar', $data);
 		$this->load->view('menu/detail_approval_pengeluaran', $data);
 		$this->load->view('templates/footer_user');
+	}
+
+	public function approve_pengajuan()
+
+	{
+		$id_pengajuan = $this->input->post('id_pengajuan');
+		$status_pengajuan = $this->input->post('status_pengajuan');
+
+		// var_dump($id_pengajuan);
+		// die;
+
+		$this->db->query("UPDATE `tbl_pengajuan` SET `status_pengajuan`='$status_pengajuan'  WHERE `id_pengajuan`='$id_pengajuan' ");
+		return redirect('menu/approval_pengeluaran');
 	}
 }

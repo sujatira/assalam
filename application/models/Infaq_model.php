@@ -10,4 +10,12 @@ class Infaq_model extends CI_Model
     {
         return $this->db->get('tbl_pengajuan')->result_array();
     }
+    public function getDetailsPengajuan($id)
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_pengajuan');
+        $this->db->where('id_pengajuan', $id);
+
+        return $this->db->get()->row();
+    }
 }
