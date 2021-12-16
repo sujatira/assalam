@@ -21,6 +21,7 @@
               <th>Tanggal</th>
               <th>Status</th>
               <th>Keterangan</th>
+              <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
@@ -31,7 +32,7 @@
                 <td class="text-center"><?= $i++; ?></td>
                 <td><?= $ifk['nama_pengajuan'] ?></td>
                 <td class="text-center">Rp. <?= number_format($ifk['jumlah_pengajuan']) ?>,-</td>
-                <td class="text-center"><?= $ifk['tanggal_pengajuan'] ?></td>
+                <td class="text-center"><?= date('d F Y', $ifk['tanggal_pengajuan']) ?></td>
                 <td class="text-center"> <?php if ($ifk['status_pengajuan'] == 0) { ?>
                     <span class="badge badge-warning text-dark">Menunggu</span>
                   <?php } else if ($ifk['status_pengajuan'] == 1) { ?>
@@ -39,14 +40,17 @@
                   <?php } else { ?>
                     <span class="badge badge-danger">Ditolak</span>
                   <?php } ?>
-
                 <td><?= $ifk['keterangan'] ?></td>
+                <td class="text-center">
+                  <a href="" class="text-danger"><i class="fas fa-trash-alt"></i></a>
+                  <?php if ($ifk['status_pengajuan'] == 1) { ?>
+                    <a href=""><i class="fas fa-print"></i></a>
+                  <?php } ?>
+                </td>
               </tr>
           </tbody>
         <?php endforeach; ?>
-
         </table>
-
       </div>
     </div>
   </div>

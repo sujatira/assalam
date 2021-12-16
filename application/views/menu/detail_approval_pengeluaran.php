@@ -29,7 +29,7 @@
         <div class="form-group row">
           <label class="col-sm-2 col-form-label">Tanggal</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="tanggal_pengajuan" value="<?= date('d F Y') ?>" readonly>
+            <input type="text" class="form-control" name="tanggal_pengajuan" value="<?= date('d F Y', $details->tanggal_pengajuan) ?>" readonly>
           </div>
         </div>
         <select name="status_pengajuan" class="form-group form-control">
