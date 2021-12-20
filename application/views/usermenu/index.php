@@ -35,9 +35,9 @@
 									<td class="text-center"><?= date('d F Y', $a->tanggal) ?></td>
 									<td class="text-center"><?= $this->User_model->getUser($a->id_user)->nama ?></td>
 									<td class="text-center">
-										<a href="#" class="text-success"><i class="fas fa-edit"></i></a>
-										<a href="<?= base_url('menu/detail/' . $a->id_artikel); ?>" class="text-info"><i class="fas fa-eye"></i></a>
-										<a href="#" class="text-danger"><i class="fas fa-trash-alt"></i></a>
+										<a href="#" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
+										<a href="<?= base_url('menu/detail/' . $a->id_artikel); ?>" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+										<a href="#" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
 									</td>
 								</tr>
 							<?php endforeach; ?>

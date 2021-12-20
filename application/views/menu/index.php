@@ -1,7 +1,6 @@
   <!-- Begin Page Content -->
-  <!-- Page Heading -->
   <div class="card-body card-shadow">
-    <h2 class="h3 mb-3 text-gray-800"><?= $judul; ?></h2>
+    <!-- <h2 class="h3 mb-3 text-gray-800"><?= $judul; ?></h2> -->
     <div class="card">
       <h5 class="card-header bg-primary text-white">Tabel artikel Masjid Jami Assalam</h5>
       <div class="card-body">
@@ -26,7 +25,11 @@
               foreach ($artikel as $a) : ?>
                 <tr>
                   <td class="text-center"><?= $i++ ?></td>
-                  <td class="col-4 text-truncate"><?= $a['judul']; ?>
+                  <td>
+                    <span class="d-inline-block text-truncate" style="max-width: 170px;">
+                      <?= $a['judul']; ?>
+                    </span>
+                  </td>
                   <td class="text-center"> <?php if ($a['status'] == 1) { ?>
                       <span class="badge badge-primary">Di Izinkan</span>
                     <?php } else if ($a['status'] == 2) { ?>

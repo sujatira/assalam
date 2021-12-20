@@ -15,7 +15,7 @@
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-sm-2 col-form-label">Jumlah</label>
+          <label class="col-sm-2 col-form-label">Harga (Rp)</label>
           <div class="col-sm-10">
             <input type="text" name="jumlah_pengajuan" class="form-control" value="Rp. <?= number_format($details->jumlah_pengajuan)  ?>" readonly>
           </div>
@@ -23,7 +23,7 @@
         <div class="form-group row">
           <label class="col-sm-2 col-form-label">Keterangan</label>
           <div class="col-sm-10">
-            <textarea type="text" name="keterangan" class="form-control" value="<?= $details->keterangan ?>" readonly></textarea>
+            <textarea type="text" name="keterangan" class="form-control" readonly><?= $details->keterangan ?></textarea>
           </div>
         </div>
         <div class="form-group row">
@@ -32,12 +32,14 @@
             <input type="text" class="form-control" name="tanggal_pengajuan" value="<?= date('d F Y', $details->tanggal_pengajuan) ?>" readonly>
           </div>
         </div>
-        <select name="status_pengajuan" class="form-group form-control">
-          <option value="">Pilih</option>
-          <option value="1">SETUJUI</option>
-          <option value="2">TIDAK</option>
-        </select>
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <?php if ($this->session->userdata('role_id') == 1) { ?>
+          <select name="status_pengajuan" class="form-group form-control">
+            <option value="">Pilih</option>
+            <option value="1">SETUJUI</option>
+            <option value="2">TIDAK</option>
+          </select>
+          <button class="btn btn-primary" type="submit">Submit</button>
+        <?php } ?>
       </form>
     </div>
   </div>

@@ -102,7 +102,7 @@
         <h6 class="card-header">Tabel Infak</h1>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered table-striped table-sm" id="dataTable">
+              <table class="table table-striped table-sm" id="dataTable">
                 <thead class="text-center">
                   <tr>
                     <th>No</th>
@@ -110,16 +110,18 @@
                     <th>Nominal</th>
                     <th>Tanggal</th>
                   </tr>
+                <tbody>
+                  <?php $i = 1;
+                  foreach ($infaq as $ifq) : ?>
+                    <tr>
+                      <td class="text-center"><?= $i++; ?></td>
+                      <td><?= $ifq['nama']; ?></td>
+                      <td class="text-center">Rp. <?= number_format($ifq['nominal']); ?></td>
+                      <td class="text-center"><?= $ifq['tanggal']; ?></td>
+                    </tr>
+                  <?php endforeach; ?>
+                </tbody>
                 </thead>
-                <?php $i = 1;
-                foreach ($infaq as $if) : ?>
-                  <tbody>
-                    <td class="text-center"><?= $i++; ?></td>
-                    <td><?= ($if['nama']) ?></td>
-                    <td class="text-center">Rp. <?= number_format($if['nominal']) ?></td>
-                    <td class="text-center"><?= $if['tanggal'] ?></td>
-                  </tbody>
-                <?php endforeach ?>
               </table>
             </div>
           </div>
