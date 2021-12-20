@@ -42,4 +42,9 @@ class User_model extends CI_Model
         $query = $this->db->get('tbl_user');
         return $query->num_rows();
     }
+    public function hapus_user($where, $table)
+    {
+        $this->db->where($where);
+        $this->db->delete($table);
+    }
 }

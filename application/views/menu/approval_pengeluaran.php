@@ -37,8 +37,8 @@
                   </td>
                   <td class=""> <?= $a['keterangan'] ?></td>
                   <td class="text-center">
-                    <a href="" class="text-danger"><i class="fas fa-trash-alt"></i></a>
-                    <a href="<?= base_url('menu/detail_approval_pengeluaran/' . $a['id_pengajuan']) ?>" class="text-info"><i class="fas fa-eye"></i></a>
+                    <a href="<?= base_url('') ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                    <a href="<?= base_url('menu/detail_approval_pengeluaran/' . $a['id_pengajuan']) ?>" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
                   </td>
                 </tr>
               <?php endforeach; ?>

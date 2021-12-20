@@ -40,11 +40,14 @@
                   <?php } else { ?>
                     <span class="badge badge-danger">Ditolak</span>
                   <?php } ?>
-                <td><?= $ifk['keterangan'] ?></td>
+                <td class="col-2 text-truncate"><?= $ifk['keterangan'] ?></td>
                 <td class="text-center">
-                  <a href="" class="text-danger"><i class="fas fa-trash-alt"></i></a>
+
+                  <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                  <a href="" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+
                   <?php if ($ifk['status_pengajuan'] == 1) { ?>
-                    <a href=""><i class="fas fa-print"></i></a>
+                    <a href="" class="btn btn-primary btn-sm"><i class="fas fa-print"></i></a>
                   <?php } ?>
                 </td>
               </tr>
