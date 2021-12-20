@@ -2,32 +2,37 @@
     <div class="card">
       <h5 class="card-header bg-primary text-white">Form pengajuan pengeluaran kas Masjid Jami Assalam</h5>
       <div class="card-body">
-        <form action="" method="post">
-          <div class="input-group input-group-sm mb-3">
+        <form action="<?= base_url('bendahara/pengajuan_pengeluaran_kas') ?>" method="POST" class="user">
+          <div class="input-group input-group-sm mb-3 form-group">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="nama_pengajuan">Keperluan </span>
+              <span class="input-group-text">Keperluan </span>
             </div>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <input id="keperluan" name="keperluan" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
           </div>
-          <div class="input-group input-group-sm mb-3">
+          <small class="text-left text-danger"><?= form_error('keperluan') ?></small>
+          <div class="input-group input-group-sm mb-3 form-group">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="jumlah_pengajuan">Jumlah (Rp)</span>
+              <span class="input-group-text">Jumlah (Rp)</span>
             </div>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <input id="jumlah" name="jumlah" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
           </div>
-          <div class="input-group input-group-sm mb-3">
+          <small class="text-left text-danger"><?= form_error('jumlah') ?></small>
+
+          <div class="input-group input-group-sm mb-3  form-group">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="keterangan">Keterangan</span>
+              <span class="input-group-text">Keterangan</span>
             </div>
-            <textarea class="form-control" aria-label="With textarea"></textarea>
+            <textarea id="keterangan" name="keterangan" class="form-control" aria-label="With textarea"></textarea>
           </div>
-          <div class="input-group input-group-sm mb-3">
+          <small class="text-left text-danger"><?= form_error('keterangan') ?></small>
+
+          <div class="input-group input-group-sm mb-3 form-group">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="tanggal_pengajuan">Tanggal</span>
+              <span class="input-group-text">Tanggal</span>
             </div>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" readonly value="<?= date('d F Y') ?>">
+            <input id="tanggal" name="tanggal" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" readonly value="<?= date('d F Y') ?>">
           </div>
-          <a href="" class="btn btn-primary btn-sm" type="post"> <i class="fas fa-check-square"></i> Ajukan</a>
+          <button href="<?= base_url('Bendahara') ?>" class="btn btn-primary btn-sm" type="submit"> <i class="fas fa-check-square"></i> Ajukan</button>
         </form>
       </div>
     </div>
