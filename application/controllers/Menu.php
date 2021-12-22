@@ -166,6 +166,7 @@ class Menu extends CI_Controller
 		$this->db->query("UPDATE `tbl_pengajuan` SET `status_pengajuan`='$status_pengajuan'  WHERE `id_pengajuan`='$id_pengajuan' ");
 		return redirect('menu/approval_pengeluaran');
 	}
+
 	public function hapus_artikel($id)
 	{
 		$where = array('id_artikel' => $id);
@@ -173,11 +174,20 @@ class Menu extends CI_Controller
 		$this->session->set_flashdata('hapus', '<div class="alert alert-success fade show" role="alert"><i class="fas fa-check"></i> Artikel berhasil dihapus</div>');
 		redirect('menu');
 	}
+
 	public function hapus_user($id)
 	{
 		$where = array('id_user' => $id);
 		$this->User_model->hapus_user($where, 'tbl_user');
 		$this->session->set_flashdata('hapus', '<div class="alert alert-success fade show" role="alert"><i class="fas fa-check"></i> User berhasil dihapus</div>');
 		redirect('menu/user');
+	}
+
+	public function hapus_pengeluaran($id)
+	{
+		$where = array('id_pengajuan' => $id);
+		$this->Infaq_model->hapus_pengajuan($where, 'tbl_pengajuan');
+		$this->session->set_flashdata('hapus',  '<div class="alert alert-success fade show" role="alert"><i class="fas fa-check"></i> Data pengajuan berhasil dihapus</div>');
+		redirect('menu/approval_pengeluaran');
 	}
 }

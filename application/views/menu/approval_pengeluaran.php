@@ -4,7 +4,7 @@
       <h5 class="card-header bg-primary text-white">Tabel approval pengeluaran kas Masjid Jami Assalam</h5>
       <div class="card-body">
         <div class="table-responsive">
-          <?= $this->session->flashdata('pesan');  ?>
+          <?= $this->session->flashdata('hapus');  ?>
           <table class="table table-bordered table-striped table-sm" id="dataTable" width="100%">
             <thead class="text-center">
               <tr>

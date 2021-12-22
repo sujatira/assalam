@@ -100,4 +100,22 @@ class Bendahara extends CI_Controller
         $this->db->insert('tbl_pengajuan', $data);
         return redirect('bendahara/pengeluaran_kas');
     }
+    public function hapus_pengeluaran($id)
+    {
+        $where = array('id_pengajuan' => $id);
+        $this->Infaq_model->hapus_pengajuan($where, 'tbl_pengajuan');
+        $this->session->set_flashdata('hapus',  '<div class="alert alert-success fade show" role="alert"><i class="fas fa-check"></i> Data pengajuan berhasil dihapus</div>');
+        redirect('bendahara/pengeluaran_kas');
+    }
+    public function pemasukan_kas()
+    {
+        $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
+        $this->session->userdata('email')])->row_array();
+        $data['judul'] = 'Pemasukan Kas';
+        $this->load->view('templates/header_user', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('bendahara/pemasukan_kas', $data);
+        $this->load->view('templates/footer_user');
+    }
 }

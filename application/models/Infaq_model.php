@@ -18,4 +18,9 @@ class Infaq_model extends CI_Model
 
         return $this->db->get()->row();
     }
+    public function hapus_pengajuan($where, $table)
+    {
+        $this->db->where($where);
+        $this->db->delete($table);
+    }
 }
