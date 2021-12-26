@@ -35,3 +35,20 @@ $("#btnpost").click(() => {
 			}
 		});
 });
+
+$("#btnpost-user").click(() => {
+	var ddd = new FormData(frmtambah);
+	console.log(ddd);
+	fetch(URL, {
+		method: "POST",
+		body: new FormData(frmtambah),
+	})
+		.then((responseJson) => responseJson.json())
+		.then((resultJson) => {
+			if ((resultJson.success == true)) {
+
+				window.location = BASE_URL + "Usermenu";
+
+			}
+		});
+});

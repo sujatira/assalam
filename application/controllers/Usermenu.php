@@ -42,4 +42,12 @@ class Usermenu extends CI_Controller
         $this->load->view('usermenu/tambah', $data);
         $this->load->view('templates/footer_user');
     }
+
+    public function hapus_artikel($id)
+    {
+        $where = array('id_artikel' => $id);
+        $this->Artikel_model->hapus_artikel($where, 'tbl_artikel');
+        $this->session->set_flashdata('pesan', 'artikel berhasil dihapus');
+        redirect('usermenu');
+    }
 }

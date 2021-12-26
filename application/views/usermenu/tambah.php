@@ -33,7 +33,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<button id="btnpost" type="button" class="btn btn-primary">Post</button>
+							<button id="btnpost-user" type="button" class="btn btn-primary">Post</button>
 						</form>
 					</div>
 				</div>

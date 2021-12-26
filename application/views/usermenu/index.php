@@ -41,7 +41,7 @@
 									<td class="text-center">
 										<a href="#" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
 										<a href="<?= base_url('menu/detail/' . $a->id_artikel); ?>" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
-										<a href="#" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
+										<a href="<?= base_url('usermenu/hapus_artikel/' . $a->id_artikel); ?>" id="btn-hapus" class="btn btn-danger btn-sm btn-hapus"><i class="fas fa-trash tombol-hapus"></i></a>
 									</td>
 								</tr>
 							<?php endforeach; ?>
