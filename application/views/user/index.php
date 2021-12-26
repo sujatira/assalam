@@ -27,7 +27,7 @@
               </div>
             </div>
           </div>
-          <a href="<?= base_url('user/edit') ?>" class="btn btn-primary"> Edit profile</a>
+          <a href="<?= base_url('user/edit') ?>" class="btn btn-primary"> <i class="fas fa-edit"></i> Edit Profil</a>
         </div>
       </div>
     </div>

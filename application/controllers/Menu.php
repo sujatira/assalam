@@ -17,6 +17,7 @@ class Menu extends CI_Controller
 		$this->session->userdata('email')])->row_array();
 		$data['artikel'] = $this->Artikel_model->getAllArtikel();
 		$data['user'] = $this->User_model->getAllUser();
+		// $data['alasan'] = $this->Artikel_model->getArtikelAlasan($id);
 
 		$data['judul'] = 'Artikel';
 		$this->load->view('templates/header_user', $data);
@@ -100,8 +101,10 @@ class Menu extends CI_Controller
 	{
 		$id_artikel = $this->input->post('id_artikel');
 		$status = $this->input->post('status');
+		$alasan_penolakan =	$this->input->post('alasan_penolakan');
 
 		$this->db->query("UPDATE `tbl_artikel` SET `status`='$status' WHERE `id_artikel`='$id_artikel'");
+		$this->db->query("UPDATE `tbl_artikel` SET `alasan_penolakan`='$alasan_penolakan' WHERE `id_artikel`='$id_artikel'");
 		return redirect('menu/index');
 	}
 
@@ -143,6 +146,8 @@ class Menu extends CI_Controller
 		$this->session->userdata('email')])->row_array();
 		$data['pengajuan'] = $this->Infaq_model->getAllPengajuan();
 		$data['details'] = $this->Infaq_model->getDetailsPengajuan($id);
+		$data['kasid'] = $this->Infaq_model->getKasId($id);
+
 
 		// var_dump($data);
 		// die;

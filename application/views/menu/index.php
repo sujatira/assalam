@@ -38,7 +38,7 @@
                       <span class="badge badge-warning text-dark">Menunggu</span>
                     <?php } ?>
                   </td>
-                  <td class="text-center"><?= date('d F Y', $a['tanggal']); ?></td>
+                  <td class="text-center"><?= date('d M Y', $a['tanggal']); ?></td>
                   <td><?= $this->User_model->getUserId($a['id_user'])->nama; ?></td>
                   <td class="text-center">
                     <?php if ($tbl_user['role_id'] == 1) { ?>

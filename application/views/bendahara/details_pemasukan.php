@@ -6,7 +6,7 @@
         <div class="card-body">
           <div class="form-group row">
             <div class="col-sm-10">
-              <input type="hidden" name="id_infaq" class="form-control" value="<?= $details->id_infaq ?>">
+              <input type="hidden" name="id_infaq" class="form-control" value="">
             </div>
           </div>
           <div class="form-group row">
@@ -39,6 +39,7 @@
               <img class="img-thumbnail" src="" alt="">
             </div>
           </div>
+          <a class="btn btn-primary" href="<?= base_url('bendahara/edit_pemasukan') ?>"><i class="fas fa-edit"></i> Edit</a>
         </div>
       </div>
     </div>

@@ -91,4 +91,12 @@ class Artikel_model extends CI_Model
 		$this->db->where($where);
 		$this->db->delete($table);
 	}
+	public function getArtikelAlasan($id)
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_artikel');
+		$this->db->where('alasan_penolakan', $id);
+
+		$this->db->get()->row();
+	}
 }

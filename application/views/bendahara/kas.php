@@ -38,7 +38,7 @@
 								<td class="text-center"><?= $ifq['bukti']; ?></td>
 								<td class="text-center">
 									<a href="#" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
-									<a href="#" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
+									<a href="<?= base_url('bendahara/edit_pemasukan/' . $ifq['id_infaq']) ?>" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
 									<a href="<?= base_url('bendahara/details_pemasukan/' . $ifq['id_infaq']) ?>" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></a>
 								</td>
 							</tr>

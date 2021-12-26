@@ -55,7 +55,7 @@
                       </div>
                     </div>
                   </div>
-                  <button type="submit" class="btn btn-primary mt-2">Simpan</button>
+                  <button type="submit" class="btn btn-primary mt-2"><i class="fas fa-check"></i> Simpan</button>
                 </div>
               </div>
           </div>

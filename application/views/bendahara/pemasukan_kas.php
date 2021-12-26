@@ -5,17 +5,17 @@
         <div class="card card-body">
           <!-- <h5 class="card-header bg-primary text-white">Form pengajuan pengeluaran kas Masjid Jami Assalam</h5> -->
           <div class="card-body">
-            <form action="<?= base_url('bendahara/pengajuan_pengeluaran_kas') ?>" method="POST" class="user">
+            <form action="<?= base_url('bendahara/pemasukan_kas') ?>" method="POST" class="user" enctype="multipart/form-data">
               <div class="input-group input-group-sm mb-3 form-group">
                 <div class="input-group-prepend">
-                  <span class="input-group-text">Keperluan </span>
+                  <span class="input-group-text">Nama </span>
                 </div>
-                <input id="keperluan" name="keperluan" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                <input id="nama" name="nama" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
               </div>
               <small class="text-left text-danger"><?= form_error('keperluan') ?></small>
               <div class="input-group input-group-sm mb-3 form-group">
                 <div class="input-group-prepend">
-                  <span class="input-group-text">Jumlah (Rp)</span>
+                  <span class="input-group-text">Nominal (Rp)</span>
                 </div>
                 <input id="jumlah" name="jumlah" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
               </div>
@@ -28,6 +28,15 @@
                 <textarea id="keterangan" name="keterangan" class="form-control" aria-label="With textarea"></textarea>
               </div>
               <small class="text-left text-danger"><?= form_error('keterangan') ?></small>
+              <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupFileAddon01">Bukti</span>
+                </div>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                  <label class="custom-file-label" for="inputGroupFile01">Pilih file</label>
+                </div>
+              </div>
 
               <div class="input-group input-group-sm mb-3 form-group">
                 <div class="input-group-prepend">
@@ -35,7 +44,7 @@
                 </div>
                 <input id="tanggal" name="tanggal" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" readonly value="<?= date('d F Y') ?>">
               </div>
-              <button href="<?= base_url('Bendahara') ?>" class="btn btn-primary btn-sm" type="submit"> <i class="fas fa-check-square"></i> Ajukan</button>
+              <button href="<?= base_url('Bendahara') ?>" class="btn btn-primary btn-sm" type="submit"> <i class="fas fa-check"></i> Simpan</button>
             </form>
           </div>
         </div>

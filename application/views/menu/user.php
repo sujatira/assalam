@@ -34,6 +34,8 @@
     								<th class="text-center">
     									<a href="<?= base_url('menu/hapus_user/' . $u['id_user']); ?>" class="btn btn-danger btn-sm" data-target="#modalHapus" data-toggle="modal" type="button"><i class="fas fa-trash"></i></a>
     									<a href="<?= base_url('menu/detail_user/' . $u['id_user']); ?>" class="btn btn-success btn-sm"><i class="fas fa-eye"></i></a>
+    									<a href="<?= base_url('menu/detail_user/' . $u['id_user']); ?>" class="btn btn-primary btn-sm"><i class="fas fa-comments"></i></a>
+
     								</th>
     								<th class="text-center "> <img src="<?= base_url('assets/images/profile/') . $u['image'] ?> " width="75px" height="75px"> </th>
     							</tr>
