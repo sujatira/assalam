@@ -64,7 +64,7 @@ class Menu extends CI_Controller
 			move_uploaded_file($_FILES['gambar']['tmp_name'][$idx2], 'assets/images/artikel/' . $file_name1);
 		}
 
-		$this->session->set_flashdata('pesan', '<div class="alert alert-success fade show" role="alert"><i class="fas fa-check"></i> Artikel berhasil ditambahkan</div>');
+		$this->session->set_flashdata('pesan', 'artikel berhasil di tambahkan');
 		echo json_encode(["success" => true, "message" => "Berhasil di simpan"]);
 	}
 
@@ -176,7 +176,7 @@ class Menu extends CI_Controller
 	{
 		$where = array('id_artikel' => $id);
 		$this->Artikel_model->hapus_artikel($where, 'tbl_artikel');
-		$this->session->set_flashdata('hapus', '<div class="alert alert-success fade show" role="alert"><i class="fas fa-check"></i> Artikel berhasil dihapus</div>');
+		$this->session->set_flashdata('pesan', 'artikel berhasil dihapus');
 		redirect('menu');
 	}
 

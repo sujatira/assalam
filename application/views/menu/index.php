@@ -1,12 +1,10 @@
   <!-- Begin Page Content -->
   <div class="card-body card-shadow">
-    <!-- <h2 class="h3 mb-3 text-gray-800"><?= $judul; ?></h2> -->
     <div class="card">
       <h5 class="card-header bg-primary text-white">Tabel artikel Masjid Jami Assalam</h5>
       <div class="card-body">
         <div class="table-responsive">
-          <?= $this->session->flashdata('hapus');  ?>
-          <?= $this->session->flashdata('pesan');  ?>
+          <div class="flash-data" data-flashdata="<?= $this->session->flashdata('pesan'); ?>"></div>
           <a href="<?= base_url('menu/tambah') ?>" class="btn btn-primary mb-3 btn-sm"><i class="fas fa-file-medical mr-1"></i>Tambah artikel baru</a>
           <table class="table table-bordered table-striped table-sm" id="dataTable" width="100%">
             <thead class="text-center">
@@ -39,15 +37,11 @@
                     <?php } ?>
                   </td>
                   <td class="text-center"><?= date('d M Y', $a['tanggal']); ?></td>
-                  <td><?= $this->User_model->getUserId($a['id_user'])->nama; ?></td>
+                  <td class="text-center"><?= $this->User_model->getUserId($a['id_user'])->nama; ?></td>
                   <td class="text-center">
-                    <?php if ($tbl_user['role_id'] == 1) { ?>
-                      <a data-target="#modalHapus" data-toggle="modal" type="button" href="<?= base_url('menu/hapus_artikel/' . $a['id_artikel']) ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
-                      <a href="#" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
-                    <?php } else if ($this->User_model->getUserId($a['id_user'])->id_user) { ?>
-                      <a href="#" class="text-danger"><i class="fas fa-trash-alt"></i></a>
-                    <?php } ?>
+                    <a href="#" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
                     <a href="<?= base_url('menu/detail/' . $a['id_artikel']); ?>" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+                    <a href="<?= base_url('menu/hapus_artikel/' . $a['id_artikel']); ?>" id="btn-hapus" class="btn btn-danger btn-sm btn-hapus"><i class="fas fa-trash tombol-hapus"></i></a>
                   </td>
                 </tr>
               <?php endforeach; ?>
@@ -73,7 +67,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-          <a type="button" class="btn btn-danger" href="<?= base_url('menu/hapus_artikel/' . $a['id_artikel']) ?>">Ya hapus</a>
+          <button type="button" class="btn btn-danger"><a href="<?= base_url('menu/hapus_artikel/' . $a['id_artikel']); ?>">Hapus</a></button>
         </div>
       </div>
     </div>

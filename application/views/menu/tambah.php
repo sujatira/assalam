@@ -6,7 +6,6 @@
 				<div class="row">
 					<div class="col-md-6">
 						<form id="frmtambah" action="<?= base_url('menu/index'); ?>" method="POST" enctype="multipart/form-data">
-							<!-- <div><?= $this->session->flashdata('pesan'); ?></div> -->
 							<div class="form-group">
 								<label>Gambar Judul</label>
 								<input type="file" name="gambar_judul" class="form-control">

@@ -9,7 +9,7 @@
           <!-- Page Heading -->
           <div class="row">
             <div class="col-lg-6">
-              <?= $this->session->flashdata('pesan'); ?>
+              <div class="flash-data" data-flashdata="<?= $this->session->flashdata('pesan'); ?>"></div>
             </div>
           </div>
           <div class="card mb-3 mr-auto" style="max-width: 540px;">

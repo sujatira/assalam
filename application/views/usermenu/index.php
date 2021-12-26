@@ -4,8 +4,8 @@
 			<h5 class="card-header bg-primary text-white">Tabel artikel Masjid Jami Assalam</h5>
 			<div class="card-body">
 				<div class="table-responsive">
-					<?= $this->session->flashdata('pesan');  ?>
-					<a href="<?= base_url('menu/tambah') ?>" class="btn btn-primary mb-3 btn-sm"><i class="fas fa-file-medical mr-1"></i>Tambah artikel baru</a>
+					<div class="flash-data" data-flashdata="<?= $this->session->flashdata('pesan'); ?>"></div>
+					<a href="<?= base_url('usermenu/tambah') ?>" class="btn btn-primary mb-3 btn-sm"><i class="fas fa-file-medical mr-1"></i>Tambah artikel baru</a>
 					<table class="table table-bordered table-striped table-sm" id="dataTable" style="width: 100%;">
 						<thead class="text-center">
 							<tr>
@@ -23,7 +23,11 @@
 							foreach ($artikel as $a) : ?>
 								<tr>
 									<td class="text-center"><?= $i++ ?></td>
-									<td class="col-4 text-text-truncate"><?= $a->judul; ?>
+									<td>
+										<span class="d-inline-block text-truncate" style="max-width: 150px;">
+											<?= $a->judul ?>
+										</span>
+									</td>
 									<td class="text-center"> <?php if ($a->status == 1) { ?>
 											<span class="badge badge-primary">Di Izinkan</span>
 										<?php } else if ($a->status == 2) { ?>
@@ -32,7 +36,7 @@
 											<span class="badge badge-warning text-dark">Menunggu</span>
 										<?php } ?>
 									</td>
-									<td class="text-center"><?= date('d F Y', $a->tanggal) ?></td>
+									<td class="text-center"><?= date('d M Y', $a->tanggal) ?></td>
 									<td class="text-center"><?= $this->User_model->getUser($a->id_user)->nama ?></td>
 									<td class="text-center">
 										<a href="#" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>

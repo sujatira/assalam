@@ -15,7 +15,7 @@
 					</div>
 					<div class="form-group row m-3">
 						<label class="col-sm-2 col-form-label">Status artikel</label>
-						<div class="col-sm-10">
+						<div class="col">
 							<?php if ($aa->status == 1) { ?>
 								<button class="btn btn-success" disabled>Artikel di setujui <i class="fas fa-check"></i></button>
 							<?php } else if ($aa->status == 2) { ?>
@@ -27,7 +27,12 @@
 									Artikel sedang dalam peninjauan . . .
 								</button>
 							<?php } ?>
+
 						</div>
+						<a href="" class="btn btn-primary mr-3"><i class="fas fa-edit"></i>
+							Edit artikel
+						</a>
+
 					</div>
 					<div class="form-group row m-3">
 						<label class="col-sm-2 col-form-label">Judul artikel</label>
