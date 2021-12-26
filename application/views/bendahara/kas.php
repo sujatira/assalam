@@ -34,12 +34,12 @@
 								<td><?= $ifq['nama']; ?></td>
 								<td>Rp. <?= number_format($ifq['nominal']); ?></td>
 								<td><?= $ifq['keterangan']; ?></td>
-								<td class="text-center"><?= $ifq['tanggal']; ?></td>
+								<td class="text-center"><?= date($ifq['tanggal']); ?></td>
 								<td class="text-center"><?= $ifq['bukti']; ?></td>
 								<td class="text-center">
-									<a href="#" class="text-danger"><i class="fas fa-trash-alt"></i></a>
-									<a href="#" class="text-success"><i class="fas fa-edit"></i></a>
-									<a href="#" class="text-primary"><i class="fas fa-eye"></i></a>
+									<a href="#" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
+									<a href="#" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
+									<a href="<?= base_url('bendahara/details_pemasukan/' . $ifq['id_infaq']) ?>" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></a>
 								</td>
 							</tr>
 						<?php endforeach; ?>
