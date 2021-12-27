@@ -46,6 +46,7 @@
 <script src="<?= base_url('assets/'); ?>js/new.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.esm.js"></script>
+<!-- popopers -->
 </body>
 
 </html>

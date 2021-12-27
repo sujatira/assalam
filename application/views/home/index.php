@@ -66,10 +66,10 @@
 <!-- akhir dua card -->
 
 <!-- isi  halaman home -->
-<div class="container">
+<div class="container shadow">
   <div class="row mb-3 mt-3">
     <div class="col-lg-2 mb-3">
-      <div class="card border-light mb-3" style="max-width: 18rem;">
+      <div class="card border-light mb-3 mt-3" style="max-width: 18rem;">
         <div class="card-header">Header</div>
         <div class="card-body">
           <h5 class="card-title">Light card title</h5>
@@ -77,7 +77,7 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-8 mb-3">
+    <div class="col-lg-8 mb-3 mt-3">
       <h2>COL-LG-10</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et atque eaque nulla, quisquam doloremque aut optio tenetur dicta voluptatum aliquam odit velit, provident, ex labore sequi. Tempora ducimus excepturi error?</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et atque eaque nulla, quisquam doloremque aut optio tenetur dicta voluptatum aliquam odit velit, provident, ex labore sequi. Tempora ducimus excepturi error?</p>
@@ -85,7 +85,7 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et atque eaque nulla, quisquam doloremque aut optio tenetur dicta voluptatum aliquam odit velit, provident, ex labore sequi. Tempora ducimus excepturi error?</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et atque eaque nulla, quisquam doloremque aut optio tenetur dicta voluptatum aliquam odit velit, provident, ex labore sequi. Tempora ducimus excepturi error?</p>
     </div>
-    <div class="col-lg-2 mb-3">
+    <div class="col-lg-2 mb-3 mt-3">
       <div class="card border-light mb-3" style="max-width: 18rem;">
         <div class="card-header">Header</div>
         <div class="card-body">

@@ -8,8 +8,19 @@ if (flashData) {
         text: "Data " + flashData,
         showConfirmButton: true,
         toast: true,
-    });
-}
+    } );
+} 
+// else if (flashDada) {
+//     Swal.fire({
+//         title: "Perhatian",
+//         icon: "warning",
+//         iconColor: "red",
+//         text: "Data " + flashData,
+//         showConfirmButton: true,
+//         toast: true,
+
+//     });
+// }
 
 $(".btn-hapus").on("click", function(e) {
   e.preventDefault();
@@ -32,3 +43,7 @@ $(".btn-hapus").on("click", function(e) {
       }
   });
 });
+
+$(function(){
+    $('[data-toggle="popover"]').popover()
+})

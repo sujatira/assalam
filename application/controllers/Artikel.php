@@ -17,7 +17,9 @@ class Artikel extends CI_Controller
 
         $data['judul'] = 'Artikel';
         $data['approved'] = $this->Artikel_model->get_artikel_approved();
-
+        $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
+        $this->session->userdata('email')])->row_array();
+        $this->load->view('templates/navbar', $data);
         $this->load->view('templates/header', $data);
         $this->load->view('artikel/index', $data);
         $this->load->view('templates/footer');
@@ -30,7 +32,6 @@ class Artikel extends CI_Controller
         $data['artikel'] = $this->Artikel_model->getAllArtikel();
         $data['infaq'] = $this->Infaq_model->getAllInfaq();
         $data['tmbl'] = $this->Artikel_model->get_tmb($id);
-
         $this->load->view('templates/header', $data);
         $this->load->view('artikel/artikel_detail', $data);
         $this->load->view('templates/isi_artikel', $data);
@@ -41,7 +42,6 @@ class Artikel extends CI_Controller
         $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
         $this->session->userdata('email')])->row_array();
         $data['userid'] = $this->User_model->getUserId($id);
-
         $data['judul'] = 'Detail User';
         $this->load->view('templates/header_user', $data);
         $this->load->view('templates/sidebar', $data);

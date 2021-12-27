@@ -103,8 +103,27 @@ class Menu extends CI_Controller
 		$status = $this->input->post('status');
 		$alasan_penolakan =	$this->input->post('alasan_penolakan');
 
+
 		$this->db->query("UPDATE `tbl_artikel` SET `status`='$status' WHERE `id_artikel`='$id_artikel'");
 		$this->db->query("UPDATE `tbl_artikel` SET `alasan_penolakan`='$alasan_penolakan' WHERE `id_artikel`='$id_artikel'");
+
+		if ($status == 1) {
+			$this->session->set_flashdata('pesan', 'artikel di izinkan !');
+		} else if ($status == 2) {
+			$this->session->set_flashdata('pesan', 'artikel TIDAK di izinkan !');
+		} else {
+			$this->session->set_flashdata('pesan', 'artikel diabaikan !');
+		}
+		return redirect('menu/index');
+	}
+
+	public function tolak_artikel()
+	{
+		$id_artikel = $this->input->post('id_artikel');
+		$status = $this->input->post('status');
+
+		$this->db->query("UPDATE `tbl_artikel` SET `status`='$status' WHERE `id_artikel`='$id_artikel'");
+		$this->session->set_flashdata('pesan', 'artikel TIDAK diizinakan');
 		return redirect('menu/index');
 	}
 

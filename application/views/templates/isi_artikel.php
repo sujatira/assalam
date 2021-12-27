@@ -1,11 +1,11 @@
-<div class="row mb-3">
-	<div class="col-md-8">
-		<h3 class="mb-3 pb-3 border-bottom">
+<div class="row">
+
+	<div class="col-sm-8">
+		<h3 class="border-bottom">
 			Dari Masjid Jami Assalam untuk jamaah
 		</h3>
 		<article class="blog-post">
 			<h2 class="blog-post-title"><?= $userartikel->judul; ?></h2>
-
 			<p class="blog-post-meta caption-top"><?= date('d F Y', $userartikel->tanggal) ?> Oleh
 				<a href="<?= base_url('artikel/oleh/' . $userartikel->id_user) ?>"> <?= $userartikel->oleh ?>
 				</a>
@@ -13,11 +13,11 @@
 			<p><?= $userartikel->isi ?></p>
 			<?php foreach ($this->Artikel_model->get_gambar($userartikel->id_artikel) as $aa) : ?>
 				<a href="">
-					<img src="<?= base_url('assets/images/artikel/' . $aa->gambar) ?>" data-fancybox="galerry" alt="ini gambar artikel" width="330px" height="200px" class="mb-1" title="Ini gambar artikel">
+					<img src="<?= base_url('assets/images/artikel/' . $aa->gambar) ?>" data-fancybox="galerry" alt="ini gambar artikel" class="mb-1 img-thumbnail" style="width: 30%; height: 150px;" title="Ini gambar artikel">
 				</a>
 			<?php endforeach ?>
 			<div class="card">
-				<h6 class="card-header">Tabel Infak</h1>
+				<h6 class="card-header text-white" style="background-color: darkslategrey;">Tabel Infak</h1>
 					<div class="card-body">
 						<div class="table-responsive">
 							<table class="table table-striped table-sm" id="dataTable">
@@ -52,33 +52,7 @@
 				<h4 class="fst-italic">About</h4>
 				<p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
 			</div>
-
-			<!-- <div class="p-4">
-				<h4 class="fst-italic">Archives</h4>
-				<ol class="list-unstyled mb-0">
-					<li><a href="#">March 2021</a></li>
-					<li><a href="#">February 2021</a></li>
-					<li><a href="#">January 2021</a></li>
-					<li><a href="#">December 2020</a></li>
-					<li><a href="#">November 2020</a></li>
-					<li><a href="#">October 2020</a></li>
-					<li><a href="#">September 2020</a></li>
-					<li><a href="#">August 2020</a></li>
-					<li><a href="#">July 2020</a></li>
-					<li><a href="#">June 2020</a></li>
-					<li><a href="#">May 2020</a></li>
-					<li><a href="#">April 2020</a></li>
-				</ol>
-			</div>
-
-			<div class="p-4">
-				<h4 class="fst-italic">Elsewhere</h4>
-				<ol class="list-unstyled">
-					<li><a href="#">GitHub</a></li>
-					<li><a href="#">Twitter</a></li>
-					<li><a href="#">Facebook</a></li>
-				</ol>
-			</div> -->
 		</div>
 	</div>
+</div>
 </div>

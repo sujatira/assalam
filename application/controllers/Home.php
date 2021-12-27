@@ -10,8 +10,11 @@ class Home extends CI_Controller
     }
     public function index()
     {
+        $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
+        $this->session->userdata('email')])->row_array();
         $data['judul'] = 'Masjid Jami Assalam';
         $data['infaq'] = $this->Infaq_model->getAllInfaq();
+        $this->load->view('templates/navbar', $data);
         $this->load->view('templates/header', $data);
         $this->load->view('home/index', $data);
         $this->load->view('templates/footer');
