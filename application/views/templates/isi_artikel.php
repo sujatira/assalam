@@ -12,7 +12,9 @@
 			</p>
 			<p><?= $userartikel->isi ?></p>
 			<?php foreach ($this->Artikel_model->get_gambar($userartikel->id_artikel) as $aa) : ?>
-				<img src="<?= base_url('assets/images/artikel/' . $aa->gambar) ?>" alt="" width="330px" height="200px" class="mb-1">
+				<a href="">
+					<img src="<?= base_url('assets/images/artikel/' . $aa->gambar) ?>" data-fancybox="galerry" alt="ini gambar artikel" width="330px" height="200px" class="mb-1" title="Ini gambar artikel">
+				</a>
 			<?php endforeach ?>
 			<div class="card">
 				<h6 class="card-header">Tabel Infak</h1>

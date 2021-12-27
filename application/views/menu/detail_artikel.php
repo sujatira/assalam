@@ -8,7 +8,9 @@
 						<?php
 						foreach ($ar as $aa) : ?>
 							<div class="col-lg text-center">
-								<img src="<?= base_url('assets/images/artikel/' . $aa->gambar) ?>" height="200px" width="300px" alt="">
+								<a href="<?= base_url('assets/images/artikel/' . $aa->gambar) ?>" data-fancybox="galerry">
+									<img src="<?= base_url('assets/images/artikel/' . $aa->gambar) ?>" height="200px" width="300px" title="Ini gambar artikel" alt="ini gambar artikel">
+								</a>
 							</div>
 						<?php endforeach ?>
 						<input type="hidden" value="<?= $aa->id_artikel ?>" name="id_artikel">
@@ -32,7 +34,6 @@
 						<a href="" class="btn btn-primary mr-3"><i class="fas fa-edit"></i>
 							Edit artikel
 						</a>
-
 					</div>
 					<div class="form-group row m-3">
 						<label class="col-sm-2 col-form-label">Judul artikel</label>

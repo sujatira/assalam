@@ -27,6 +27,10 @@
     <!-- font-awesome -->
     <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
+    <!-- fancyBox -->
+    <link href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css" rel="stylesheet" ?>
+
+
     <!-- fontku -->
     <style type="text/css">
         @font-face {
