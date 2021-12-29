@@ -1,5 +1,5 @@
 <div class="card-body card-shadow container">
-  <div class="card" style="max-width: 900px ;">
+  <div class="card shadow" style="max-width: 900px ;">
     <h5 class="card-header text-white" style="background-color: darkslategray;">Detail akun penulis artikel</h5>
     <div class="card-body">
       <div class="row">
