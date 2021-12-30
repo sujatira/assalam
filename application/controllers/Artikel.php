@@ -32,8 +32,9 @@ class Artikel extends CI_Controller
         $data['artikel'] = $this->Artikel_model->getAllArtikel();
         $data['infaq'] = $this->Infaq_model->getAllInfaq();
         $data['tmbl'] = $this->Artikel_model->get_tmb($id);
-        $data['approved'] = $this->Artikel_model->get_artikel_approved($id);
         $this->load->view('templates/header', $data);
+        $this->load->view('templates/navbar', $data);
+        $this->load->view('templates/sidebar_artikel', $data);
         $this->load->view('artikel/artikel_detail', $data);
         $this->load->view('templates/isi_artikel', $data);
         $this->load->view('templates/footer');

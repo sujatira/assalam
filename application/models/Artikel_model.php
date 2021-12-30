@@ -86,6 +86,7 @@ class Artikel_model extends CI_Model
 
 		return $this->db->get()->row();
 	}
+
 	public function hapus_artikel($where, $table)
 	{
 		$this->db->where($where);

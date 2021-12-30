@@ -1,5 +1,5 @@
 <!-- Carousel Slides -->
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -20,7 +20,7 @@
             <img src="<?= base_url('assets/images/img3.jpg') ?>" class="d-block w-100" alt="...">
         </div>
     </div>
-</div>
+</div> -->
 <div class="container shadow mt-3">
     <h1 class="text-center">Halaman Utama Artikel</h1>
     <div class="row row-cols-1 row-cols-md-3">

@@ -1,6 +1,3 @@
-<div class="row">
-
-	<div class="col-sm-8">
 		<h3 class="border-bottom">
 			Dari Masjid Jami Assalam untuk jamaah
 		</h3>
@@ -45,24 +42,7 @@
 					</div>
 			</div>
 		</article>
-	</div>
-	<div class="col-md-4">
-		<div class="position-sticky" style="top: 2rem;">
-			<div class="p-4 mb-3 bg-light rounded">
-				<h4 class="fst-italic">Artikel lainnya</h4>
-				<p class="mb-1">Berikut beberapa artikel yang mungkin anda cari.</p>
-				<?php
-				foreach ($artikel as $ar) : ?>
-
-					<div class="border-bottom">
-						<?php if ($ar['status'] == 1) {  ?>
-							<a href="<?= base_url('artikel/artikel_detail/' . $artikel->id_artikel) ?>"><?= $ar['judul'] ?></a>
-						<?php } ?>
-					</div>
-				<?php endforeach; ?>
-
-			</div>
 		</div>
-	</div>
-</div>
-</div>
+		<div class="col-md-4">
+		</div>
+		</div>
