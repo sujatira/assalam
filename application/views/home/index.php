@@ -25,7 +25,7 @@
 
 
 <!-- ada dua card -->
-<!-- <div class="container">
+<div class="container">
   <div class="row mt-3">
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -62,7 +62,7 @@
       </div>
     </div>
   </div>
-</div> -->
+</div>
 <!-- akhir dua card -->
 
 <!-- isi  halaman home -->
@@ -95,53 +95,3 @@
       </div>
     </div>
   </div>
-  <!-- akhir isi halaman home -->
-  <div class="row mb-3 g-5">
-    <div class="col-md-8">
-      <div class="card m-2">
-        <h6 class="card-header">Tabel Infak</h1>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-striped table-sm" id="dataTable">
-                <thead class="text-center">
-                  <tr>
-                    <th>No</th>
-                    <th>Nama</th>
-                    <th>Nominal</th>
-                    <th>Tanggal</th>
-                  </tr>
-                <tbody>
-                  <?php $i = 1;
-                  foreach ($infaq as $ifq) : ?>
-                    <tr>
-                      <td class="text-center"><?= $i++; ?></td>
-                      <td><?= $ifq['nama']; ?></td>
-                      <td class="text-center">Rp. <?= number_format($ifq['nominal']); ?></td>
-                      <td class="text-center"><?= $ifq['tanggal']; ?></td>
-                    </tr>
-                  <?php endforeach; ?>
-                </tbody>
-                </thead>
-              </table>
-            </div>
-          </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card border-light mb-3" style="max-width: 100%;">
-        <div class="card-header">Info infak Masjid Jami Assalam</div>
-        <div class="card-body text-dark">
-          <h5 class="card-title">Total kas Masjid</h5>
-          <h2>Rp. 350.000.000</h2>
-        </div>
-      </div>
-      <div class="card border-light mb-3" style="max-width: 100%;">
-        <div class="card-header">Info Rekening Masjid Jami Assalam</div>
-        <div class="card-body text-dark">
-          <h5 class="card-title">AN. Yayasan Masjid Jami Assalam</h5>
-          <h2>23242424-2424-2-24</h2>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>

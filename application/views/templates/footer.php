@@ -1,4 +1,5 @@
-<div class="row" style="background-color: darkslategray;">
+</div>
+<div class="row mt-3" style="background-color: darkslategray;">
   <div class="col-sm-8">
     <footer class="text-white">
       <div class="container">

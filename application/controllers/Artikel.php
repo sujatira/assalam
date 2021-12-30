@@ -22,6 +22,7 @@ class Artikel extends CI_Controller
         $this->load->view('templates/navbar', $data);
         $this->load->view('templates/header', $data);
         $this->load->view('artikel/index', $data);
+        $this->load->view('templates/info_kas', $data);
         $this->load->view('templates/footer');
     }
 
@@ -37,6 +38,7 @@ class Artikel extends CI_Controller
         $this->load->view('templates/sidebar_artikel', $data);
         $this->load->view('artikel/artikel_detail', $data);
         $this->load->view('templates/isi_artikel', $data);
+        $this->load->view('templates/info_kas', $data);
         $this->load->view('templates/footer');
     }
     public function detail_user($id)
