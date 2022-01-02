@@ -9,7 +9,7 @@ $("#btnTambah").click(() => {
             </div>
         </td>
         <td>
-            <button type="button" class="remove"> <i class="fa fa-minus"></i> </button>
+            <button type="button" class="remove btn btn-secondary mb-3"> <i class="fas fa-minus"></i> </button>
         </td>
     </tr>`;
 	$("#tabelArtikel tbody").append(tr);

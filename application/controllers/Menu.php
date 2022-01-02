@@ -47,14 +47,26 @@ class Menu extends CI_Controller
 		extract($_POST);
 		extract($_FILES);
 
-		$file_name2         = $_FILES['gambar_judul']['name'];
+		$file_name2 = $_FILES['gambar_judul']['name'];
 		move_uploaded_file($_FILES['gambar_judul']['tmp_name'], 'assets/images/thumbnails/' . $file_name2);
+		// $date = time();
+		// $id_user = $this->session->userdata('id_user');
+		// $nama = $this->session->userdata('nama');
 
-		$date = time();
-		// $data['user'] = $this->User_model->getOleh($id);
-		$id_user = $this->session->userdata('id_user');
-		$nama = $this->session->userdata('nama');
-		$this->db->query("INSERT INTO `tbl_artikel`(`id_user`,`judul`,`isi`,`status`,`tanggal`,`tmb`,`oleh`) VALUES ('$id_user','$judul', '$isi','0', '$date','$file_name2','$nama')");
+		$data = [
+			'id_user' => ($this->session->userdata('id_user')),
+			'judul' => ($this->input->post('judul')),
+			'status' => 0,
+			'isi' => ($this->input->post('isi')),
+			'tanggal' => time(),
+			'tmb' => $file_name2,
+			'oleh' => ($this->session->userdata('nama'))
+		];
+
+		$this->db->insert('tbl_artikel', $data);
+
+		// $this->db->query("INSERT INTO `tbl_artikel`(`id_user`,`judul`,`status`,`isi`,`tanggal`,`tmb`,`oleh`) VALUES ('$id_user','$judul','0','$isi','$date','$file_name2','$nama')");
+
 		$id_artikel = $this->db->insert_id();
 
 		foreach ($_FILES['gambar']['name'] as $idx2 => $row2) {
