@@ -1,9 +1,8 @@
     <!-- Begin Page Content -->
     <div class="container-fluid">
     	<!-- Page Heading -->
-    	<h1 class="h3 mb-4 text-gray-800"><?= $judul; ?></h1>
     	<div class="card">
-    		<h5 class="card-header bg-primary text-white">Tabel daftar akun</h5>
+    		<h5 class="card-header bg-primary text-white"><i class="fas fa-fw fa-table"></i> Tabel daftar akun</h5>
     		<div class="card-body bg-white">
     			<div class="table-responsive">
     				<?= $this->session->flashdata('pesan');  ?>
@@ -32,10 +31,19 @@
     								<th><?= date('d F Y', $u['date_create']); ?></th>
     								<th><?= $u['sebagai']; ?></th>
     								<th class="text-center">
-    									<a href="<?= base_url('menu/hapus_user/' . $u['id_user']); ?>" class="btn btn-danger btn-sm btn-hapus" id="btn-hapus"><i class="fas fa-trash"></i></a>
-    									<a href="<?= base_url('menu/detail_user/' . $u['id_user']); ?>" class="btn btn-success btn-sm"><i class="fas fa-eye"></i></a>
-    									<a href="<?= base_url('menu/detail_user/' . $u['id_user']); ?>" class="btn btn-success btn-sm"><i class="fas fa-comments"></i></a>
 
+    									<?php if ($u['role_id'] != 1) { ?>
+
+    										<a href="<?= base_url('menu/hapus_user/' . $u['id_user']); ?>" class="btn btn-danger btn-sm btn-hapus" id="btn-hapus"><i class="fas fa-trash"></i></a>
+    										<a href="<?= base_url('menu/detail_user/' . $u['id_user']); ?>" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+    										<a href="<?= base_url('menu/detail_user/' . $u['id_user']); ?>" class="btn btn-success btn-sm"><i class="fas fa-comments"></i></a>
+
+    									<?php } else { ?>
+
+    										<a href="<?= base_url('menu/detail_user/' . $u['id_user']); ?>" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+    										<a href="<?= base_url('menu/detail_user/' . $u['id_user']); ?>" class="btn btn-success btn-sm"><i class="fas fa-comments"></i></a>
+
+    									<?php } ?>
     								</th>
     								<th class="text-center "> <img src="<?= base_url('assets/images/profile/') . $u['image'] ?> " width="75px" height="75px"> </th>
     							</tr>
@@ -43,27 +51,6 @@
     					</tbody>
     				</table>
     				<!-- End of Main Content -->
-    			</div>
-    		</div>
-    	</div>
-    </div>
-
-    <!-- Modal hapus user -->
-    <div class="modal fade" tabindex="-1" id="modalHapus" data-backdrop="static" data-keyboard="false">
-    	<div class="modal-dialog">
-    		<div class="modal-content">
-    			<div class="modal-header">
-    				<h5 class="modal-title">Hapus User</h5>
-    				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-    					<span aria-hidden="true">&times;</span>
-    				</button>
-    			</div>
-    			<div class="modal-body">
-    				<p>Yakin ingin menghapus user ini?</p>
-    			</div>
-    			<div class="modal-footer">
-    				<button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-    				<a type="button" class="btn btn-danger" href="<?= base_url('menu/hapus_user/' . $u['id_user']) ?>">Ya hapus</a>
     			</div>
     		</div>
     	</div>

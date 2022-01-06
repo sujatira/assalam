@@ -13,7 +13,7 @@ class User extends CI_Controller
 
     public function index()
     {
-        $data['judul'] = 'My Profile';
+        $data['judul'] = 'Profil Saya';
         $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
         $this->session->userdata('email')])->row_array();
 
@@ -54,8 +54,7 @@ class User extends CI_Controller
                     echo $this->upload->display_errors();
                 }
             }
-            var_dump($nama);
-            die;
+
 
             $this->db->set('nama', $nama);
             $this->db->where('email', $email);

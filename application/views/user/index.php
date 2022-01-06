@@ -2,7 +2,7 @@
   <div class="col-md-8">
     <div class="container">
       <div class="card bg-white" style="max-width: 700px;">
-        <div class="card-header bg-primary text-white">
+        <div class="card-header bg-primary text-white"> <i class="fas fa-fw fa-user"></i>
           <?= $judul; ?>
         </div>
         <div class="card-body">
@@ -27,7 +27,7 @@
               </div>
             </div>
           </div>
-          <a href="<?= base_url('user/edit') ?>" class="btn btn-primary"> <i class="fas fa-edit"></i> Edit Profil</a>
+          <a href="<?= base_url('user/edit') ?>" class="btn btn-primary"> <i class="fas fa-fw fa-edit"></i> Edit Profil</a>
         </div>
       </div>
     </div>

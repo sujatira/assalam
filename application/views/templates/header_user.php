@@ -26,6 +26,8 @@
     </script>
     <!-- ckeditor 5 custom -->
     <script src="<?= base_url('assets/ckeditor5/build/ckeditor.js'); ?>"></script>
+    <script src="<?= base_url('assets/dark/dark-mode-switch.min.js');  ?>"></script>
+
 
 
 </head>

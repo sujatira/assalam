@@ -1,7 +1,7 @@
   <!-- Begin Page Content -->
   <div class="card-body card-shadow">
     <div class="card">
-      <h5 class="card-header bg-primary text-white">Tabel approval pengeluaran kas Masjid Jami Assalam</h5>
+      <h5 class="card-header bg-primary text-white"><i class="fas fa-fw fa-table"></i> Tabel approval pengeluaran kas Masjid Jami Assalam</h5>
       <div class="card-body bg-white">
         <div class="table-responsive">
           <div class="flash-data" data-flashdata="<?= $this->session->flashdata('pesan'); ?>"></div>
@@ -40,8 +40,8 @@
                     </span>
                   </td>
                   <td class="text-center">
-                    <a type="button" href="<?= base_url('menu/hapus_pengeluaran/' . $a['id_pengajuan']) ?>" class="btn btn-danger btn-sm btn-hapus-pengeluaran" id="btn-hapus-pengeluaran"><i class="fas fa-trash"></i></a>
-                    <a href="<?= base_url('menu/detail_approval_pengeluaran/' . $a['id_pengajuan']) ?>" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+                    <a type="button" href="<?= base_url('menu/hapus_pengeluaran/' . $a['id_pengajuan']) ?>" class="btn btn-danger btn-sm btn-hapus-pengeluaran" id="btn-hapus-pengeluaran"><i class="fas fa-fw fa-trash"></i></a>
+                    <a href="<?= base_url('menu/detail_approval_pengeluaran/' . $a['id_pengajuan']) ?>" class="btn btn-info btn-sm"><i class="fas fa-fw fa-eye"></i></a>
                   </td>
                 </tr>
               <?php endforeach; ?>

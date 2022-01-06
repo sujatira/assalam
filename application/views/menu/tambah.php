@@ -1,6 +1,6 @@
 <div class="card-body card-shadow">
 	<div class="card">
-		<h5 class="card-header bg-primary text-white">Form tambah artikel</h5>
+		<h5 class="card-header bg-primary text-white"><i class="fas fa-fw fa-file-alt"></i> Form tambah artikel</h5>
 		<div class="card-body bg-light">
 			<div class="row">
 				<div class="col-md">
@@ -35,12 +35,12 @@
 										</div>
 									</td>
 									<td class="justify-content-end">
-										<button type="button" id="btnTambah" class="btn btn-primary mt-3"><i class="fas fa-plus"></i></button>
+										<button type="button" id="btnTambah" class="btn btn-primary mt-3"><i class="fas fa-fw fa-plus"></i></button>
 									</td>
 								</tr>
 							</tbody>
 						</table>
-						<button id="btnpost" type="button" class="btn btn-primary"> <i class="fas fa-plus"></i> Post</button>
+						<button id="btnpost" type="button" class="btn btn-primary"> <i class="fas fa-fw fa-plus"></i> Post</button>
 					</form>
 				</div>
 			</div>

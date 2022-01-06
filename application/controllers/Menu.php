@@ -76,9 +76,6 @@ class Menu extends CI_Controller
 			$file_name1         = $row2;
 			$this->db->query(" INSERT INTO `tbl_gambar`(`id_artikel`, `gambar`) VALUES ('$id_artikel','$file_name1') ");
 			move_uploaded_file($_FILES['gambar']['tmp_name'][$idx2], 'assets/images/artikel/' . $file_name1);
-
-			var_dump($data);
-			die;
 		}
 
 		$this->session->set_flashdata('pesan', 'artikel berhasil di tambahkan');

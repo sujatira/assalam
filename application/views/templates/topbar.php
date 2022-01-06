@@ -12,8 +12,8 @@
 
 			<div class="custom-switch form-check form-switch">
 				<input type="checkbox" class="custom-control-input" id="darkSwitch">
-				<label class="custom-control-label" for="darkSwitch">Mode Gelap</label>
-				<badge class="badge badge-primary">Beta</badge>
+				<label class="custom-control-label" for="darkSwitch">Mode Gelap <i class="fas fa-fw fa-adjust"></i></label>
+				<!-- <badge class="badge badge-primary">Beta</badge> -->
 			</div>
 
 			<!-- Topbar Navbar -->

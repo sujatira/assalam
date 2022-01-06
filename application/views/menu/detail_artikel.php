@@ -2,7 +2,7 @@
 	<div class="row m-2">
 		<div class="col-md-12">
 			<div class="card bg-light">
-				<div class="card-header bg-primary text-white">Detail Artikel</div>
+				<div class="card-header bg-primary text-white"><i class="fas fa-fw fa-info-circle"></i> Detail Artikel</div>
 				<div class="card-body">
 					<div class="row">
 						<?php
@@ -30,7 +30,7 @@
 								</button>
 							<?php } ?>
 						</div>
-						<a href="" class="btn btn-primary mr-3"><i class="fas fa-edit"></i>
+						<a href="<?= base_url('menu/edit_artikel/' . $aa->id_artikel) ?>" class="btn btn-primary mr-3"><i class="fas fa-fw fa-edit"></i>
 							Edit artikel
 						</a>
 					</div>
@@ -91,7 +91,7 @@
 								<input value="<?= $aa->alasan_penolakan ?>" type="text" name="alasan_penolakan" id="alasan_penolakan" class="form-control" placeholder="tulis alasan jika artikel ini ditolak">
 							</div>
 							<div class="col">
-								<button class="btn btn-primary" type="submit"><i class="fas fa-check"></i> Submit</button>
+								<button class="btn btn-primary" type="submit"><i class="fas fa-fw fa-check"></i> Submit</button>
 							</div>
 						</div>
 					<?php } ?>

@@ -1,6 +1,6 @@
 <div class="container">
   <div class="card">
-    <div class="card-header bg-primary text-white">
+    <div class="card-header bg-primary text-white"> <i class="fas fa-fw fa-edit"></i>
       <?= $judul; ?>
     </div>
     <div class="card-body bg-white">
@@ -55,7 +55,7 @@
                       </div>
                     </div>
                   </div>
-                  <button type="submit" class="btn btn-primary mt-2"><i class="fas fa-check"></i> Simpan</button>
+                  <button type="submit" class="btn btn-primary mt-2"><i class="fas fa-fw fa-check"></i> Simpan</button>
                 </div>
               </div>
           </div>
