@@ -2,7 +2,7 @@
     <h2>Pemasukan Kas</h2>
     <div class="row">
       <div class="col-md-8">
-        <div class="card card-body">
+        <div class="card card-body bg-white">
           <!-- <h5 class="card-header bg-primary text-white">Form pengajuan pengeluaran kas Masjid Jami Assalam</h5> -->
           <div class="card-body">
             <form action="<?= base_url('bendahara/pemasukan_kas') ?>" method="POST" class="user" enctype="multipart/form-data">

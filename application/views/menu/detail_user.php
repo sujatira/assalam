@@ -3,10 +3,10 @@
 		<div class="col-md-8">
 			<div class="mt-3">
 				<div class="card">
-					<div class="card-header">
+					<div class="card-header bg-primary">
 						Detail Akun
 					</div>
-					<div class="card-body">
+					<div class="card-body bg-white">
 						<h5 class="card-title">Nama : <?= $userid->nama ?></h5>
 						<p class="card-text">Bergabung sejak : <?= date('d F Y', $userid->date_create); ?></p>
 						<p class="card-text">Email : <?= $userid->email; ?></p>

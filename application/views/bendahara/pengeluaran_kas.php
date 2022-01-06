@@ -8,7 +8,7 @@
       <a class="btn btn-info mb-3 btn-sm" href="<?= base_url('bendahara/print_pengeluaran') ?>"><i class="fas fa-print"></i> Cetak</a>
     </div>
   </div>
-  <div class="card">
+  <div class="card bg-white">
     <h5 class="card-header bg-primary text-white">Tabel pengajuan pengeluaran kas Masjid Jami Assalam</h5>
     <div class="card-body">
       <div class="table-responsive">

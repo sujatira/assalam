@@ -1,7 +1,7 @@
 <form method="POST" action="<?= base_url('Menu/approve'); ?>">
 	<div class="row m-2">
 		<div class="col-md-12">
-			<div class="card">
+			<div class="card bg-light">
 				<div class="card-header bg-primary text-white">Detail Artikel</div>
 				<div class="card-body">
 					<div class="row">
@@ -101,21 +101,3 @@
 	</div>
 </form>
 <!-- modal alasan -->
-<div class="modal fade" id="alasan" tabindex="-1" aria-labelledby="alasan" aria-hidden="true">
-	<div class="modal-dialog modal-sm">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="alasan">Alasan Penolakan</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body bg-gradient-danger text-white font-italic">
-				<?= $aa->alasan_penolakan ?>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Ok</button>
-			</div>
-		</div>
-	</div>
-</div>

@@ -1,5 +1,5 @@
     <!-- Sidebar -->
-    <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color:forestgreen;">
+    <ul class="navbar-nav sidebar sidebar-dark accordion bg-success" id="accordionSidebar" style="background-color:forestgreen;">
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('home'); ?>">
         <div class="sidebar-brand-icon">

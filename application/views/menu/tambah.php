@@ -1,7 +1,7 @@
 <div class="card-body card-shadow">
 	<div class="card">
 		<h5 class="card-header bg-primary text-white">Form tambah artikel</h5>
-		<div class="card-body">
+		<div class="card-body bg-light">
 			<div class="row">
 				<div class="col-md">
 					<form id="frmtambah" action="<?= base_url('menu/index'); ?>" method="POST" enctype="multipart/form-data">

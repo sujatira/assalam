@@ -12,7 +12,7 @@
 	</div>
 	<div class="card">
 		<h5 class="card-header bg-primary text-white">Tabel data kas Masjid Jami Assalam</h5>
-		<div class="card-body">
+		<div class="card-body bg-white">
 			<div class="table-responsive">
 				<table class="table table-striped table-bordered table-sm first" id="dataTable" style="width: 100%;">
 					<thead class="text-center">

@@ -1,8 +1,8 @@
   <!-- Begin Page Content -->
-  <div class="card-bodyz">
+  <div class="card-body bg-light">
     <div class="card">
       <h5 class="card-header bg-primary text-white">Tabel artikel Masjid Jami Assalam</h5>
-      <div class="card-body">
+      <div class="card-body bg-white">
         <div class="table-responsive">
           <div class="flash-data" data-flashdata="<?= $this->session->flashdata('pesan'); ?>"></div>
           <a href="<?= base_url('menu/tambah') ?>" class="btn btn-primary mb-3 btn-sm"><i class="fas fa-file-medical mr-1"></i>Tambah artikel baru</a>
@@ -52,23 +52,3 @@
     </div>
   </div>
   <!-- End of Main Content -->
-  <!-- Modal hapus artikel -->
-  <div class="modal fade" tabindex="-1" id="modalHapus" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Hapus Artikel</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>Yakin ingin menghapus artikel ini?</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-          <button type="button" class="btn btn-danger"><a href="<?= base_url('menu/hapus_artikel/' . $a['id_artikel']); ?>">Hapus</a></button>
-        </div>
-      </div>
-    </div>
-  </div>

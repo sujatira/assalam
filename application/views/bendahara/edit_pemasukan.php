@@ -3,9 +3,9 @@
     <div class="card-body card-shadow">
       <div class="card">
         <h5 class="card-header bg-primary text-white">Details pemasukan kas Masjid Jami Assalam</h5>
-        <div class="card-body">
+        <div class="card-body bg-white">
           <form action="" method="POST">
-            <div class="form-group row">
+            <div class="form-group row bg-white">
               <div class="col-sm-10">
                 <input type="hidden" name="id_infaq" class="form-control" value="">
               </div>

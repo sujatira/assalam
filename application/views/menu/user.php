@@ -4,7 +4,7 @@
     	<h1 class="h3 mb-4 text-gray-800"><?= $judul; ?></h1>
     	<div class="card">
     		<h5 class="card-header bg-primary text-white">Tabel daftar akun</h5>
-    		<div class="card-body">
+    		<div class="card-body bg-white">
     			<div class="table-responsive">
     				<?= $this->session->flashdata('pesan');  ?>
     				<?= $this->session->flashdata('hapus');  ?>

@@ -18,6 +18,12 @@
     <link href="<?= base_url('assets/css/sb-admin-2.min.css') ?>" rel="stylesheet">
     <!-- fancyBox -->
     <link href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css" rel="stylesheet" ?>
+    <!-- darkmode -->
+    <link rel="stylesheet" href="<?= base_url('assets/dark/dark-mode.css') ?>">
+    <!-- IE 11 polyfill for CSS and Custom Properties -->
+    <script nomodule>
+        window.MSInputMethodContext && document.documentMode && document.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-ie11@5/css/bootstrap-ie11.min.css"><script src="https://cdn.jsdelivr.net/npm/ie11-custom-properties@4/ie11CustomProperties.min.js"><\/script>');
+    </script>
     <!-- ckeditor 5 custom -->
     <script src="<?= base_url('assets/ckeditor5/build/ckeditor.js'); ?>"></script>
 

@@ -2,7 +2,7 @@
 	<div class="card-body card-shadow">
 		<div class="card">
 			<h5 class="card-header bg-primary text-white">Tabel artikel Masjid Jami Assalam</h5>
-			<div class="card-body">
+			<div class="card-body bg-white">
 				<div class="table-responsive">
 					<div class="flash-data" data-flashdata="<?= $this->session->flashdata('pesan'); ?>"></div>
 					<a href="<?= base_url('usermenu/tambah') ?>" class="btn btn-primary mb-3 btn-sm"><i class="fas fa-file-medical mr-1"></i>Tambah artikel baru</a>

@@ -3,7 +3,7 @@
     <div class="card-body card-shadow">
       <div class="card">
         <h5 class="card-header bg-primary text-white">Details pengajuan pengeluaran kas Masjid Jami Assalam</h5>
-        <div class="card-body">
+        <div class="card-body bg-white">
           <form action="<?= base_url('Menu/approve_pengajuan'); ?>" method="POST">
 
             <?php if ($details->status_pengajuan == 1) { ?>

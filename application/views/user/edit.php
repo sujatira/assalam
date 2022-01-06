@@ -3,16 +3,16 @@
     <div class="card-header bg-primary text-white">
       <?= $judul; ?>
     </div>
-    <div class="card-body">
+    <div class="card-body bg-white">
       <div class="row">
         <div class="col-md-6">
           <div class="card mb-3 mr-auto" style="max-width: 540px;">
-            <div class="row no-gutters">
+            <div class="row no-gutters bg-light">
               <div class="col-md-4">
                 <img src="<?= base_url('assets/images/profile/') . $tbl_user['image']; ?>" width="200px">
               </div>
-              <div class="col-lg-7 ml-auto">
-                <div class="card-body">
+              <div class="col-lg-7 ml-auto bg-light">
+                <div class="card-body bg-light">
                   <h5 class="card-title"><?= $tbl_user['nama']; ?></h5>
                   <p class="card-text"><?= $tbl_user['email']; ?></p>
                   <p class="card-text" class="text-muted">Bergabung sejak <?= date('d F Y', $tbl_user['date_create']); ?></p>
@@ -37,13 +37,6 @@
                 <div class="col-sm-10">
                   <input type="text" class="form-control" id="nama" name="nama" value="<?= $tbl_user['nama'] ?>">
                   <input type="hidden" class="form-control" id="id" name="id" value="<?= $tbl_user['id_user'] ?>">
-                  <script>
-                    ClassicEditor
-                      .create(document.querySelector('#nama'))
-                      .catch(error => {
-                        console.error(error);
-                      });
-                  </script>
                   <?= form_error('nama', '<small class=text-danger pl-3">', '</small>'); ?>
                 </div>
               </div>

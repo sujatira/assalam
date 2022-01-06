@@ -1,18 +1,19 @@
 <!-- Content Wrapper -->
-<div id="content-wrapper" class="d-flex flex-column">
+<div id="content-wrapper" class="d-flex flex-column bg-light">
 	<!-- Main Content -->
 	<div id="content">
 
 		<!-- Topbar -->
-		<nav class="navbar navbar-expand navbar-light topbar mb-4 static-top bg-white shadow">
+		<nav class="navbar navbar-expand navbar-white topbar mb-4 static-top bg-white shadow">
 			<!-- Sidebar Toggle (Topbar) -->
 			<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
 				<i class="fa fa-bars"></i>
 			</button>
 
-			<div class="custom-control custom-switch">
-				<input type="checkbox" class="custom-control-input" id="customSwitch1">
-				<label class="custom-control-label" for="customSwitch1">Mode Gelap</label>
+			<div class="custom-switch form-check form-switch">
+				<input type="checkbox" class="custom-control-input" id="darkSwitch">
+				<label class="custom-control-label" for="darkSwitch">Mode Gelap</label>
+				<badge class="badge badge-primary">Beta</badge>
 			</div>
 
 			<!-- Topbar Navbar -->

@@ -17,7 +17,6 @@ class Menu extends CI_Controller
 		$this->session->userdata('email')])->row_array();
 		$data['artikel'] = $this->Artikel_model->getAllArtikel();
 		$data['user'] = $this->User_model->getAllUser();
-		// $data['alasan'] = $this->Artikel_model->getArtikelAlasan($id);
 
 		$data['judul'] = 'Artikel';
 		$this->load->view('templates/header_user', $data);
@@ -221,7 +220,7 @@ class Menu extends CI_Controller
 	{
 		$where = array('id_user' => $id);
 		$this->User_model->hapus_user($where, 'tbl_user');
-		$this->session->set_flashdata('hapus', '<div class="alert alert-success fade show" role="alert"><i class="fas fa-check"></i> User berhasil dihapus</div>');
+		$this->session->set_flashdata('pesan', 'user berhasil dihapus');
 		redirect('menu/user');
 	}
 
@@ -229,7 +228,7 @@ class Menu extends CI_Controller
 	{
 		$where = array('id_pengajuan' => $id);
 		$this->Infaq_model->hapus_pengajuan($where, 'tbl_pengajuan');
-		$this->session->set_flashdata('hapus',  '<div class="alert alert-success fade show" role="alert"><i class="fas fa-check"></i> Data pengajuan berhasil dihapus</div>');
+		$this->session->set_flashdata('pesan', 'pengajuan/pengeluaran berhasil dihapus');
 		redirect('menu/approval_pengeluaran');
 	}
 }

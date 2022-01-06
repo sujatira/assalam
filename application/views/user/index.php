@@ -1,7 +1,7 @@
-<div class="row">
+<div class="row bg-light">
   <div class="col-md-8">
     <div class="container">
-      <div class="card" style="max-width: 700px;">
+      <div class="card bg-white" style="max-width: 700px;">
         <div class="card-header bg-primary text-white">
           <?= $judul; ?>
         </div>
@@ -13,12 +13,12 @@
             </div>
           </div>
           <div class="card mb-3 mr-auto" style="max-width: 540px;">
-            <div class="row no-gutters">
+            <div class="row no-gutters bg-light">
               <div class="col-md-4">
-                <img src="<?= base_url('assets/images/profile/') . $tbl_user['image']; ?>" width="200px">
+                <img src="<?= base_url('assets/images/profile/') . $tbl_user['image']; ?>" width="200px" height="200px">
               </div>
-              <div class="col-lg-7 ml-auto">
-                <div class="card-body">
+              <div class="col-lg-7 ml-auto bg-light">
+                <div class="card-body bg-light">
                   <h5 class="card-title"><?= $tbl_user['nama']; ?></h5>
                   <p class="card-text"><?= $tbl_user['email']; ?></p>
                   <p class="card-text" class="text-muted">Bergabung sejak <?= date('d F Y', $tbl_user['date_create']); ?></p>
