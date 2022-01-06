@@ -18,8 +18,8 @@
     <link href="<?= base_url('assets/css/sb-admin-2.min.css') ?>" rel="stylesheet">
     <!-- fancyBox -->
     <link href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css" rel="stylesheet" ?>
-    <script src="<?= base_url('assets/ckeditor4/ckeditor.js'); ?>"></script>
-    <!-- <script src="<?= base_url('assets/ckeditor5/build/ckeditor.js') ?>"></script> -->
+    <!-- ckeditor 5 custom -->
+    <script src="<?= base_url('assets/ckeditor5/build/ckeditor.js'); ?>"></script>
 
 
 </head>

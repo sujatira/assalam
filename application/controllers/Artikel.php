@@ -17,6 +17,7 @@ class Artikel extends CI_Controller
 
         $data['judul'] = 'Artikel';
         $data['approved'] = $this->Artikel_model->get_artikel_approved();
+        $data['infaq'] = $this->Infaq_model->getAllInfaq();
         $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
         $this->session->userdata('email')])->row_array();
         $this->load->view('templates/navbar', $data);

@@ -4,12 +4,16 @@
 	<div id="content">
 
 		<!-- Topbar -->
-		<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
+		<nav class="navbar navbar-expand navbar-light topbar mb-4 static-top bg-white shadow">
 			<!-- Sidebar Toggle (Topbar) -->
 			<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
 				<i class="fa fa-bars"></i>
 			</button>
+
+			<div class="custom-control custom-switch">
+				<input type="checkbox" class="custom-control-input" id="customSwitch1">
+				<label class="custom-control-label" for="customSwitch1">Mode Gelap</label>
+			</div>
 
 			<!-- Topbar Navbar -->
 			<ul class="navbar-nav ml-auto">
@@ -84,12 +88,12 @@
 					<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
 						<a class="dropdown-item" href="<?= base_url('user'); ?>">
 							<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-							My Profile
+							Profil Saya
 						</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="<?= base_url('Auth/logout'); ?>" data-toggle="modal" data-target="#logoutModal">
+						<a class="dropdown-item btn-keluar" href="<?= base_url('Auth/logout'); ?>" id="btn-keluar">
 							<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-							Logout
+							Keluar
 						</a>
 					</div>
 				</li>

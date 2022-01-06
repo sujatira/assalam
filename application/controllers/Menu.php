@@ -53,11 +53,14 @@ class Menu extends CI_Controller
 		// $id_user = $this->session->userdata('id_user');
 		// $nama = $this->session->userdata('nama');
 
+		$isi = $_POST['konten'];
+
+
 		$data = [
 			'id_user' => ($this->session->userdata('id_user')),
 			'judul' => ($this->input->post('judul')),
 			'status' => 0,
-			'isi' => ($this->input->post('isi')),
+			'isi' => $isi,
 			'tanggal' => time(),
 			'tmb' => $file_name2,
 			'oleh' => ($this->session->userdata('nama'))
@@ -74,6 +77,9 @@ class Menu extends CI_Controller
 			$file_name1         = $row2;
 			$this->db->query(" INSERT INTO `tbl_gambar`(`id_artikel`, `gambar`) VALUES ('$id_artikel','$file_name1') ");
 			move_uploaded_file($_FILES['gambar']['tmp_name'][$idx2], 'assets/images/artikel/' . $file_name1);
+
+			var_dump($data);
+			die;
 		}
 
 		$this->session->set_flashdata('pesan', 'artikel berhasil di tambahkan');

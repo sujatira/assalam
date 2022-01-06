@@ -37,6 +37,13 @@
                 <div class="col-sm-10">
                   <input type="text" class="form-control" id="nama" name="nama" value="<?= $tbl_user['nama'] ?>">
                   <input type="hidden" class="form-control" id="id" name="id" value="<?= $tbl_user['id_user'] ?>">
+                  <script>
+                    ClassicEditor
+                      .create(document.querySelector('#nama'))
+                      .catch(error => {
+                        console.error(error);
+                      });
+                  </script>
                   <?= form_error('nama', '<small class=text-danger pl-3">', '</small>'); ?>
                 </div>
               </div>

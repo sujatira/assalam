@@ -15,7 +15,15 @@
 						</div>
 						<label>Konten artikel</label>
 						<div class="form-group">
-							<textarea name="isi" id="isi"></textarea>
+							<textarea name="konten" id="editor"></textarea>
+							<script>
+								ClassicEditor
+									.create(document.querySelector('#editor'))
+									.catch(error => {
+										console.error(error);
+									});
+							</script>
+
 						</div>
 						<table id="tabelArtikel" class="col-lg mt-2 table-sm">
 							<tbody>

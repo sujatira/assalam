@@ -1,6 +1,6 @@
 <!-- Footer -->
 </div>
-<footer class="sticky-footer bg-white">
+<footer class="sticky-footer bg-white shadow">
 	<div class="container my-auto">
 		<div class="copyright text-center my-auto">
 			<span>Copyright &copy; Jami-Assalam <?= date('Y'); ?></span>
@@ -46,9 +46,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.esm.js"></script>
-<script>
-	CKEDITOR.replace('isi');
-</script>
 
 </body>
 

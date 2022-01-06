@@ -1,5 +1,5 @@
     <!-- Sidebar -->
-    <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: darkgreen;">
+    <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color:forestgreen;">
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('home'); ?>">
         <div class="sidebar-brand-icon">
@@ -49,13 +49,9 @@
               <i class="<?= $sm['icon']; ?>"></i>
               <span><?= $sm['title']; ?></span></a>
             </li>
-
           <?php endforeach; ?>
           <hr class="sidebar-divider d-none d-md-block mt-2">
-
         <?php endforeach; ?>
-
-
         <li class="nav-item">
           <a class="nav-link" href="<?= base_url('Auth/logout'); ?>" data-toggle="modal" data-target="#logoutModal">
             <i class="fas fa-fw fa-sign-out-alt"></i>

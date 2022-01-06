@@ -54,6 +54,9 @@ class User extends CI_Controller
                     echo $this->upload->display_errors();
                 }
             }
+            var_dump($nama);
+            die;
+
             $this->db->set('nama', $nama);
             $this->db->where('email', $email);
             $this->db->update('tbl_user');
