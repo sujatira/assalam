@@ -5,9 +5,6 @@
         <h5 class="card-header bg-primary text-white"><i class="fas fa-fw fa-info-circle"></i> Details pengajuan pengeluaran kas Masjid Jami Assalam</h5>
         <div class="card-body bg-white">
           <form action="<?= base_url('Menu/approve_pengajuan'); ?>" method="POST">
-
-
-
             <div class="form-group row">
               <div class="col-sm-10">
                 <input type="hidden" name="id_pengajuan" class="form-control" value="<?= $details->id_pengajuan ?>">
@@ -20,7 +17,7 @@
                   <button class="btn btn-primary btn-sm" disabled><i class="fas fa-fw fa-check"></i> Pengajuan telah disetujui</button> <a href="<?= base_url('bendahara/print_pengajuan/' . $details->id_pengajuan) ?>" class="btn btn-info btn-sm"><i class="fas fa-arrow-circle-down"></i> Unduh berkas</a>
                 <?php } else if ($details->status_pengajuan == 2) { ?>
                   <button class="btn btn-danger btn-sm" type="button" disabled> <i class="fas fa-fw fa-exclamation-triangle"></i> Pengajuan ditolak !</button>
-                  <a class="btn btn-info btn-sm" type="button" disabled data-toggle="popover" title="Alasan penolakan artikel" data-content=""><i class=" fas fa-fw fa-info-circle"></i> Lihat alasan</a>
+                  <a class="btn btn-info btn-sm" type="button" disabled data-toggle="popover" title="Alasan penolakan pengajuan" data-content="<?= $details->alasan_penolakan ?>"><i class=" fas fa-fw fa-info-circle"></i> Lihat alasan</a>
                 <?php } else { ?>
                   <button class="btn btn-warning text-dark btn-sm" type="button" disabled>
                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"> </span>
@@ -44,7 +41,7 @@
             <div class="form-group row">
               <label class="col-sm-2 col-form-label">Keterangan</label>
               <div class="col-sm-10">
-                <textarea type="text" name="keterangan" class="form-control" readonly><?= $details->keterangan ?></textarea>
+                <textarea style="height: 300px;" type="text" name="keterangan" class="form-control" readonly><?= $details->keterangan ?></textarea>
               </div>
             </div>
             <!-- <?php if ($details->status_pengajuan == 2) { ?>
@@ -66,7 +63,7 @@
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Alasan Penolakan</label>
                 <div class="col-sm-10">
-                  <textarea type="text" class="form-control" name="tanggal_pengajuan"></textarea>
+                  <textarea type="text" class="form-control" name="tanggal_pengajuan"><?= $details->alasan_penolakan ?></textarea>
                   <small class="text-danger font-italic"> *Mohon tulis alasan jika pengajuan ini ditolak</small>
                 </div>
               </div>

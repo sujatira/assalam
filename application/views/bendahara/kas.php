@@ -33,8 +33,12 @@
 								<td class="text-center"><?= $i++; ?></td>
 								<td><?= $ifq['nama']; ?></td>
 								<td>Rp. <?= number_format($ifq['nominal']); ?></td>
-								<td><?= $ifq['keterangan']; ?></td>
-								<td class="text-center"><?= date($ifq['tanggal']); ?></td>
+								<td>
+									<span class="d-inline-block text-truncate" style="max-width: 170px;">
+										<?= $ifq['keterangan']; ?>
+									</span>
+								</td>
+								<td class="text-center"><?= date('d F Y', $ifq['tanggal']); ?></td>
 								<td class="text-center"><?= $ifq['bukti']; ?></td>
 								<td class="text-center">
 									<a href="#" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
@@ -53,7 +57,7 @@
 		<div class="card-header bg-primary"><strong><i class="fas fa-fw fa-info"></i> Total Keuangan Masjid Jami Assalam</strong></div>
 		<div class="card-body">
 			<h1 class="card-title">Rp. 50.000.000,- </h1>
-			<p class="card-text">Total keuangan adalah jumlah dari seluruh pemasukan dan pengeluaran, yang dijumlahkan secara realtime leh sistem</p>
+			<p class="card-text">Total keuangan adalah jumlah dari seluruh pemasukan dan pengeluaran, yang dijumlahkan secara realtime oleh sistem</p>
 		</div>
 	</div>
 </div>

@@ -12,25 +12,25 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Nama</label>
             <div class="col-sm-10">
-              <input type="text" name="nama" class="form-control" value="" readonly>
+              <input type="text" name="nama" class="form-control" value="<?= $ifk->nama ?>" readonly>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Nominal (Rp)</label>
             <div class="col-sm-10">
-              <input type="text" name="nominal" class="form-control" value="Rp. " readonly>
+              <input type="text" name="nominal" class="form-control" value="Rp. <?= number_format($ifk->nominal) ?>" readonly>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Keterangan</label>
             <div class="col-sm-10">
-              <textarea type="text" name="keterangan" class="form-control" readonly></textarea>
+              <textarea type="text" name="keterangan" class="form-control" readonly><?= $ifk->keterangan ?></textarea>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Tanggal</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="tanggal" value="" readonly>
+              <input type="text" class="form-control" name="tanggal" value="<?= date('d F Y', $ifk->tanggal) ?> " readonly>
             </div>
           </div>
           <div class="form-group row">

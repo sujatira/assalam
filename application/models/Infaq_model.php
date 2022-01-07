@@ -28,5 +28,7 @@ class Infaq_model extends CI_Model
         $this->db->select('*');
         $this->db->from('tbl_infaq');
         $this->db->where('id_infaq', $id);
+
+        return $this->db->get()->row();
     }
 }
