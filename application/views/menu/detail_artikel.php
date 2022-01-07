@@ -9,17 +9,19 @@
 						foreach ($ar as $aa) : ?>
 							<div class="col-lg text-center">
 								<a href="<?= base_url('assets/images/artikel/' . $aa->gambar) ?>" data-fancybox="galerry">
-									<img src="<?= base_url('assets/images/artikel/' . $aa->gambar) ?>" title="Ini gambar artikel" alt="ini gambar artikel" class="img-thumbnail" style="width: 300px; height: 200px;">
+									<img src="<?= base_url('assets/images/artikel/' . $aa->gambar) ?>" title="Ini gambar artikel" alt="ini gambar artikel" class="img-thumbnail" style="width: 200px; height: 200px;">
 								</a>
 							</div>
 						<?php endforeach ?>
 						<input type="hidden" value="<?= $aa->id_artikel ?>" name="id_artikel">
 					</div>
 					<div class="form-group row m-3">
+
 						<label class="col-sm-2 col-form-label">Status artikel</label>
 						<div class="col">
 							<?php if ($aa->status == 1) { ?>
 								<button class="btn btn-success" disabled>Artikel di setujui <i class="fas fa-check"></i></button>
+								<label class="ml-2"> Disetujui pada tanggal <?= date('d M Y',  $aa->tanggal_acc) ?> Oleh <label href="<?= base_url('user'); ?>" class="badge badge-info"><?= $aa->periksa_oleh ?></label> </label>
 							<?php } else if ($aa->status == 2) { ?>
 								<button class="btn btn-danger" disabled>Tidak di setujui <i class="fas fa-exclamation-triangle"></i></button>
 								<a class="btn btn-info" type="button" data-toggle="popover" title="Alasan penolakan artikel" data-content="<?= $aa->alasan_penolakan ?>"><i class="fas fa-eye"></i> Lihat alasan</a>
@@ -29,10 +31,10 @@
 									Artikel sedang dalam peninjauan . . .
 								</button>
 							<?php } ?>
+							<a href="<?= base_url('menu/edit_artikel/' . $aa->id_artikel) ?>" class="btn btn-primary"><i class="fas fa-fw fa-edit"></i>
+								Edit artikel
+							</a>
 						</div>
-						<a href="<?= base_url('menu/edit_artikel/' . $aa->id_artikel) ?>" class="btn btn-primary mr-3"><i class="fas fa-fw fa-edit"></i>
-							Edit artikel
-						</a>
 					</div>
 					<div class="form-group row m-3">
 						<label class="col-sm-2 col-form-label">Judul artikel</label>

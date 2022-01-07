@@ -116,15 +116,18 @@ class Menu extends CI_Controller
 		$id_artikel = $this->input->post('id_artikel');
 		$status = $this->input->post('status');
 		$alasan_penolakan =	$this->input->post('alasan_penolakan');
-
+		$acc = time();
+		$oleh = $this->session->userdata('nama');
 
 		$this->db->query("UPDATE `tbl_artikel` SET `status`='$status' WHERE `id_artikel`='$id_artikel'");
-		$this->db->query("UPDATE `tbl_artikel` SET `alasan_penolakan`='$alasan_penolakan' WHERE `id_artikel`='$id_artikel'");
 
 		if ($status == 1) {
 			$this->session->set_flashdata('pesan', 'artikel di izinkan !');
+			$this->db->query("UPDATE `tbl_artikel` SET `tanggal_acc`='$acc' WHERE `id_artikel`='$id_artikel'");
+			$this->db->query("UPDATE `tbl_artikel` SET `periksa_oleh`='$oleh' WHERE `id_artikel`='$id_artikel'");
 		} else if ($status == 2) {
 			$this->session->set_flashdata('pesan', 'artikel TIDAK di izinkan !');
+			$this->db->query("UPDATE `tbl_artikel` SET `alasan_penolakan`='$alasan_penolakan' WHERE `id_artikel`='$id_artikel'");
 		} else {
 			$this->session->set_flashdata('pesan', 'artikel diabaikan !');
 		}
@@ -227,5 +230,20 @@ class Menu extends CI_Controller
 		$this->Infaq_model->hapus_pengajuan($where, 'tbl_pengajuan');
 		$this->session->set_flashdata('pesan', 'pengajuan/pengeluaran berhasil dihapus');
 		redirect('menu/approval_pengeluaran');
+	}
+
+	public function edit_artikel($id)
+	{
+		$data['judul'] = 'Edit  Artikel';
+		$data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
+		$this->session->userdata('email')])->row_array();
+		$data['artikel'] = $this->Artikel_model->getAllArtikel();
+		$data['ar'] = $this->Artikel_model->get_artikel($id);
+
+		$this->load->view('templates/header_user', $data);
+		$this->load->view('templates/sidebar', $data);
+		$this->load->view('templates/topbar', $data);
+		$this->load->view('menu/edit_artikel', $data);
+		$this->load->view('templates/footer_user');
 	}
 }
