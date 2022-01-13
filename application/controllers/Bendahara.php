@@ -28,7 +28,7 @@ class Bendahara extends CI_Controller
         $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
         $this->session->userdata('email')])->row_array();
         $data['infaq'] = $this->Infaq_model->getAllInfaq();
-        $data['judul'] = 'Kelola Data Kas';
+        $data['judul'] = 'Data Kas';
         $this->load->view('templates/header_user', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
@@ -111,7 +111,7 @@ class Bendahara extends CI_Controller
     {
         $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
         $this->session->userdata('email')])->row_array();
-        $data['judul'] = 'Pemasukan Kas';
+        $data['judul'] = 'Pemasukan';
         $this->load->view('templates/header_user', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
@@ -143,5 +143,21 @@ class Bendahara extends CI_Controller
         $this->load->view('templates/topbar', $data);
         $this->load->view('bendahara/edit_pemasukan', $data);
         $this->load->view('templates/footer_user');
+    }
+    public function print_pengajuan($id)
+    {
+        $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
+        $this->session->userdata('email')])->row_array();
+        $data['kukuk'] = $this->Infaq_model->getDetailsPengajuan($id);
+        $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4-p', 'tempDir' => __DIR__ . '/custom/temp/dir/path', 'format' => 'A4']);
+        $html = $this->load->view('bendahara/hasil_print_pengajuan', $data, TRUE);
+
+
+        $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4-p']);
+        $mpdf->setAutoTopMargin = 'stretch';
+        $mpdf->SetFooter('
+		<span>Sistem Informasi Masjid Jami Assalam</span>');
+        $mpdf->WriteHTML($html);
+        $mpdf->Output();
     }
 }

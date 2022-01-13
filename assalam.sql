@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Dec 16, 2021 at 03:11 AM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 7.4.22
+-- Host: 127.0.0.1
+-- Generation Time: Jan 08, 2022 at 02:19 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,18 +35,23 @@ CREATE TABLE `tbl_artikel` (
   `tanggal` varchar(128) NOT NULL,
   `status` int(128) NOT NULL,
   `tmb` varchar(255) NOT NULL,
-  `oleh` varchar(255) NOT NULL
+  `oleh` varchar(255) NOT NULL,
+  `alasan_penolakan` text NOT NULL,
+  `tanggal_acc` varchar(128) NOT NULL,
+  `periksa_oleh` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_artikel`
 --
 
-INSERT INTO `tbl_artikel` (`id_artikel`, `id_user`, `judul`, `isi`, `tanggal`, `status`, `tmb`, `oleh`) VALUES
-(283, 4, 'Himbauan pakai masker', 'dfsdfsdfdsgsdgsgsgsgfg. dgsggsdgds. sddssdgdsgdsgd. \r\ngssdgsg', '1638874134', 1, 'msjd1.png', 'Andi Sujati Rahman'),
-(284, 4, 'fff', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores commodi esse nesciunt illo velit ab! Tempore quo nobis veniam, magnam adipisci qui neque corrupti, magni perferendis officia explicabo sed ea!\r\n', '1638874613', 2, 'bg.jpg', 'Andi Sujati Rahman'),
-(285, 4, '', '', '1639150901', 0, '', 'Andi Sujati Rahman'),
-(286, 6, '', '', '1639151283', 0, '', 'Rendi Ranggaa');
+INSERT INTO `tbl_artikel` (`id_artikel`, `id_user`, `judul`, `isi`, `tanggal`, `status`, `tmb`, `oleh`, `alasan_penolakan`, `tanggal_acc`, `periksa_oleh`) VALUES
+(489, 4, 'asasa', '', '1641483887', 2, '', 'Andi Sujati Rahman', 'Tidak ada gambar dan isi konten', '1641521986', 'Admin Jami Assalam'),
+(490, 4, '', '', '1641490764', 1, '', 'Andi Sujati Rahman', '', '1641521242', ''),
+(491, 13, '', '', '1641519500', 0, '', 'Admin Jami Assalam', '', '', ''),
+(494, 13, '', '', '1641520915', 0, '', 'Admin Jami Assalam', '', '1641521032', ''),
+(495, 6, 'asasa', '', '1641522274', 1, '', 'Rendi Ranggaa', '', '1641522328', 'Andi Sujati Rahman'),
+(497, 4, 'Kegiatan Kurban 2021 ', 'Assalamualaikum jamaah Assalam, alhamdulillah tahun ini ditengah tengah pandemic corona kita sebagai warga Muslim jemaah Assalam masih bisa menunaikan ibadah kurban dimana tahun ini hwan kurban meningkat daripada tahun sebelumnya dan susunan kepanitian pun lebih rapi ', '1641561236', 1, 'sapi.jpg', 'Andi Sujati Rahman', '', '1641567884', 'Andi Sujati Rahman');
 
 -- --------------------------------------------------------
 
@@ -77,13 +82,14 @@ CREATE TABLE `tbl_gambar` (
 --
 
 INSERT INTO `tbl_gambar` (`id_gambar`, `id_artikel`, `gambar`) VALUES
-(269, 283, 'Screenshot_2021-03-18_15-52-53.png'),
-(270, 283, 'Screenshot_2021-06-03_10-10-59.png'),
-(271, 283, 'Screenshot_2021-07-01_13-05-04.png'),
-(272, 284, 'msjd4.png'),
-(273, 284, 'Screenshot_2021-05-05_22-29-42.png'),
-(274, 285, ''),
-(275, 286, '');
+(508, 489, ''),
+(509, 490, ''),
+(510, 491, ''),
+(511, 494, ''),
+(512, 495, ''),
+(513, 496, 'wp3796958-genei-ryodan-wallpapers.jpg'),
+(514, 497, 'sapi2.jpg'),
+(515, 497, 'sapi3.jpg');
 
 -- --------------------------------------------------------
 
@@ -92,11 +98,11 @@ INSERT INTO `tbl_gambar` (`id_gambar`, `id_artikel`, `gambar`) VALUES
 --
 
 CREATE TABLE `tbl_infaq` (
-  `id` int(11) NOT NULL,
+  `id_infaq` int(11) NOT NULL,
   `nama` varchar(128) NOT NULL,
   `nominal` int(128) NOT NULL,
   `keterangan` varchar(128) NOT NULL,
-  `tanggal` date NOT NULL,
+  `tanggal` varchar(128) NOT NULL,
   `bukti` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -104,11 +110,9 @@ CREATE TABLE `tbl_infaq` (
 -- Dumping data for table `tbl_infaq`
 --
 
-INSERT INTO `tbl_infaq` (`id`, `nama`, `nominal`, `keterangan`, `tanggal`, `bukti`) VALUES
-(1, 'Dodi Hermansyah', 400000, 'Transfer', '2021-07-02', 'bukti.jpg'),
-(2, 'Agus Purwanto', 120000, 'Sumbangan untuk parfume masjid', '2021-12-01', ''),
-(3, 'Pengurus', 300000, 'Parkir bulanan', '2021-12-01', ''),
-(4, 'Andi', 3000000, 'sumbangan tahunan', '2021-12-02', '');
+INSERT INTO `tbl_infaq` (`id_infaq`, `nama`, `nominal`, `keterangan`, `tanggal`, `bukti`) VALUES
+(5, 'Rudi Tabuti', 500000, 'Infak/sedekah yang diberikan langsung ke marbot yang nantinya akan diteruskan ke Bendahara Masjid Jami Assalam untuk diinput', '1624695438', ''),
+(6, 'Asep Irama', 20000, 'Infak mingguan', '1641521032', '');
 
 -- --------------------------------------------------------
 
@@ -122,15 +126,19 @@ CREATE TABLE `tbl_pengajuan` (
   `jumlah_pengajuan` int(128) NOT NULL,
   `tanggal_pengajuan` varchar(255) NOT NULL,
   `status_pengajuan` int(128) NOT NULL,
-  `keterangan` varchar(128) NOT NULL
+  `keterangan` varchar(128) NOT NULL,
+  `alasan_penolakan` text NOT NULL,
+  `oleh` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_pengajuan`
 --
 
-INSERT INTO `tbl_pengajuan` (`id_pengajuan`, `nama_pengajuan`, `jumlah_pengajuan`, `tanggal_pengajuan`, `status_pengajuan`, `keterangan`) VALUES
-(1, 'Pengajuan untuk beli sejadah', 200000, '1638874134', 1, '');
+INSERT INTO `tbl_pengajuan` (`id_pengajuan`, `nama_pengajuan`, `jumlah_pengajuan`, `tanggal_pengajuan`, `status_pengajuan`, `keterangan`, `alasan_penolakan`, `oleh`) VALUES
+(21, 'Pembelian jam', 50000, '1641487035', 1, 'untuk kelengkapan jam dinding masjid', '', ''),
+(22, 'Beli Bedug', 45000000, '1641566001', 0, 'untuk pembelian bedug', '', ''),
+(23, 'Beli sejadah', 12000000, '1641566110', 2, 'diperlukan sejadah baru karena yang lama sudah mendekati tidak layak pakai', 'masih bagus kok', '');
 
 -- --------------------------------------------------------
 
@@ -157,10 +165,7 @@ INSERT INTO `tbl_user` (`id_user`, `nama`, `email`, `password`, `image`, `date_c
 (4, 'Andi Sujati Rahman', 'andi@gmail.com', '$2y$10$hRpqFXHnpckEtNCrnZdUCufPYIjlQR9Y37QOE35fh0j2ReBIu7DM6', 'asr.jpg', '1620695438', 1, 'Administator'),
 (5, 'Santi Sinta', 'santi@gmail.com', '$2y$10$1rC0JZWGdZh5pfusez1FDeUqBmfWtvq4Geo8puxwXwi0jpbBf.a3G', 'default.jpg', '1624695438', 2, 'Bendahara'),
 (6, 'Rendi Ranggaa', 'rendi@gmail.com', '$2y$10$ROEO/sa3nzn/T94ZCpQzh.nGpTWKtTbNqQjQyWEGFWdeDIA1YEObG', 'heheheheehehe.png', '1625695438', 3, 'Member'),
-(8, 'Aku', 'aku@gmail.com', '$2y$10$llSTpilzPUjUdtx147aJaenWeoL0a5qbKcsHGaT.wFlMfYBpenoWq', 'default.jpg', '1628695438', 3, 'Member'),
-(9, 'Cucun', 'cucun@gmail.com', '$2y$10$5FTXP12kaJjMtVwz0/aECuPJSYJOsApDUeDV3HPZgGPq0VowUmq.e', 'default.jpg', '1631057701', 3, 'Member'),
-(10, 'asasas', 'asa@gmail.com', '$2y$10$ID58NkBZZ010Kc/UXUCNfevm3HM61L6WySSjKLEMnv3gdxT6VzW9q', 'default.jpg', '1632580305', 3, 'Member'),
-(11, 'Ilham Maulana', 'ilhammaulana09@gmail.com', '$2y$10$/TPGVXFfpBGzjUxx81oKPeynKUIjWAkft/MbNgr/hd4zyzAjUZmhK', 'default.jpg', '1633565058', 3, 'Member');
+(13, 'Admin Jami Assalam', 'admin2@gmail.com', '$2y$10$e5z3elt7o8YD8h9D5H4OjO.y6VR5w7epn/0U8LzkxDkHK7aajkl2u', 'default.jpg', '1641486117', 1, 'Administator');
 
 -- --------------------------------------------------------
 
@@ -210,7 +215,8 @@ INSERT INTO `tbl_user_menu` (`id`, `menu`) VALUES
 (3, 'User'),
 (4, 'Menu'),
 (5, 'Menu'),
-(6, 'Menu');
+(6, 'Menu'),
+(7, 'Aksi');
 
 -- --------------------------------------------------------
 
@@ -245,17 +251,18 @@ CREATE TABLE `tbl_user_sub_menu` (
 
 INSERT INTO `tbl_user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active`, `status`) VALUES
 (1, 1, 'Dashboard', 'admin', 'fas fa-fw fa-code-branch', 1, ''),
-(3, 3, 'My Profile', 'user', 'fa-fw fas fa-user', 1, ''),
+(3, 3, 'Profil Saya', 'user', 'fa-fw fas fa-user', 1, ''),
 (4, 3, 'Edit Profile', 'user/edit', 'fas fa-fw fa-user-edit', 0, ''),
 (5, 2, 'Dashboard Bendahara', 'bendahara', '', 1, ''),
 (6, 4, 'Artikel', 'menu', 'fas fa-fw fa-bars', 1, ''),
 (7, 4, 'Approve Artikel', 'menu/approve', 'fas fa-fw fa-clipboard-check', 0, ''),
 (8, 4, 'List Akun', 'menu/user', 'fas fa-fw fa-list-ol', 1, ''),
-(9, 5, 'Kelola Data Infak', 'bendahara/kas', 'fas fa-fw fa-hand-holding-usd', 1, ''),
+(9, 5, 'Kelola Data Kas', 'bendahara/kas', 'fas fa-fw fa-hand-holding-usd', 1, ''),
 (10, 5, 'Pemasukan', 'infak/pemasukan', 'fas fa-fw fa-file-invoice-dollar', 0, ''),
 (11, 5, 'Pengeluaran', 'infak/pengeluaran', 'fas fa-fw fa-money-check-alt', 0, ''),
 (12, 6, 'Artikel Saya', 'usermenu', 'fas fa-fw fa-bars', 1, ''),
-(13, 4, 'Approval Keuangan', 'menu/approval_pengeluaran', 'fas fa-fw fa-file-invoice-dollar', 1, '');
+(13, 4, 'Approval Keuangan', 'menu/approval_pengeluaran', 'fas fa-fw fa-file-invoice-dollar', 1, ''),
+(14, 4, 'Info Kas', 'menu/info_kas', 'fas fa-fw fa-search-dollar', 1, '');
 
 --
 -- Indexes for dumped tables
@@ -283,7 +290,7 @@ ALTER TABLE `tbl_gambar`
 -- Indexes for table `tbl_infaq`
 --
 ALTER TABLE `tbl_infaq`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_infaq`);
 
 --
 -- Indexes for table `tbl_pengajuan`
@@ -329,7 +336,7 @@ ALTER TABLE `tbl_user_sub_menu`
 -- AUTO_INCREMENT for table `tbl_artikel`
 --
 ALTER TABLE `tbl_artikel`
-  MODIFY `id_artikel` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=287;
+  MODIFY `id_artikel` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=498;
 
 --
 -- AUTO_INCREMENT for table `tbl_artikel_user`
@@ -341,37 +348,37 @@ ALTER TABLE `tbl_artikel_user`
 -- AUTO_INCREMENT for table `tbl_gambar`
 --
 ALTER TABLE `tbl_gambar`
-  MODIFY `id_gambar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=276;
+  MODIFY `id_gambar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=516;
 
 --
 -- AUTO_INCREMENT for table `tbl_infaq`
 --
 ALTER TABLE `tbl_infaq`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_infaq` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_pengajuan`
 --
 ALTER TABLE `tbl_pengajuan`
-  MODIFY `id_pengajuan` int(128) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pengajuan` int(128) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tbl_user_access_menu`
 --
 ALTER TABLE `tbl_user_access_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tbl_user_menu`
 --
 ALTER TABLE `tbl_user_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_user_role`
@@ -383,7 +390,7 @@ ALTER TABLE `tbl_user_role`
 -- AUTO_INCREMENT for table `tbl_user_sub_menu`
 --
 ALTER TABLE `tbl_user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

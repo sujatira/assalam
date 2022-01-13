@@ -180,7 +180,6 @@ class Menu extends CI_Controller
 		$data['judul'] = 'Detail Approval Keuangan';
 		$data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
 		$this->session->userdata('email')])->row_array();
-		$data['pengajuan'] = $this->Infaq_model->getAllPengajuan();
 		$data['details'] = $this->Infaq_model->getDetailsPengajuan($id);
 		$data['kasid'] = $this->Infaq_model->getKasId($id);
 

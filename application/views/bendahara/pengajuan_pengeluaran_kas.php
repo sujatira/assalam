@@ -1,10 +1,10 @@
 <div class="row">
   <div class="col-md-8">
     <div class="card-body card-shadow" style="max-width: 700px;">
-      <div class="card">
+      <div class="card bg-white">
         <h5 class="card-header bg-primary text-white">Form pengajuan pengeluaran kas Masjid Jami Assalam</h5>
         <div class="card-body">
-          <form action="<?= base_url('bendahara/pengajuan_pengeluaran_kas') ?>" method="POST" class="user">
+          <form action="<?= base_url('bendahara/pengajuan_pengeluaran_kas') ?>" method="POST" class="user ">
             <div class="input-group input-group-sm mb-3 form-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">Keperluan </span>

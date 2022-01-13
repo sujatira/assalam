@@ -8,7 +8,7 @@
             <form action="<?= base_url('bendahara/pemasukan_kas') ?>" method="POST" class="user" enctype="multipart/form-data">
               <div class="input-group input-group-sm mb-3 form-group">
                 <div class="input-group-prepend">
-                  <span class="input-group-text">Nama </span>
+                  <span class="input-group-text">Nama Donatur</span>
                 </div>
                 <input id="nama" name="nama" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
               </div>

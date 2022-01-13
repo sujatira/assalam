@@ -1,0 +1,1 @@
+<h1><?= $kukuk->nama_pengajuan   ?></h1>
