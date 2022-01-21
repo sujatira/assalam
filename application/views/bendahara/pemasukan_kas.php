@@ -50,7 +50,7 @@
         </div>
       </div>
       <div class="col-md-4">
-        <img src="https://cdn-icons-png.flaticon.com/512/3163/3163238.png" class="img-fluid" width="400px" alt="">
+        <img src="https://cdn-icons-png.flaticon.com/512/2329/2329083.png" class="img-fluid" width="400px" alt="">
       </div>
     </div>
   </div>

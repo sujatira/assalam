@@ -15,7 +15,7 @@
 						</div>
 						<label>Konten artikel</label>
 						<div class="form-group">
-							<textarea name="konten" id="editor"></textarea>
+							<textarea name="konten" class="form-control" style="height: 300px;" id=""></textarea>
 							<script>
 								ClassicEditor
 									.create(document.querySelector('#editor'))

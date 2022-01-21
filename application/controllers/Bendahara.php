@@ -149,11 +149,13 @@ class Bendahara extends CI_Controller
         $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
         $this->session->userdata('email')])->row_array();
         $data['kukuk'] = $this->Infaq_model->getDetailsPengajuan($id);
-        $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4-p', 'tempDir' => __DIR__ . '/custom/temp/dir/path', 'format' => 'A4']);
+        $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4-p']);
         $html = $this->load->view('bendahara/hasil_print_pengajuan', $data, TRUE);
 
 
         $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4-p']);
+        $mpdf->autoScriptToLang = true;
+        $mpdf->autoLangToFont = true;
         $mpdf->setAutoTopMargin = 'stretch';
         $mpdf->SetFooter('
 		<span>Sistem Informasi Masjid Jami Assalam</span>');

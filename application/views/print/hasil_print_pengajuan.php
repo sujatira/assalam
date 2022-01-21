@@ -64,7 +64,8 @@
     </tbody>
   </table> -->
   <p>Solokanjeruk, <?= date('d m Y') ?></p> <br>
-  <p>Assalamu'alaikum Warohmatullahi Wabarokatuh.</p>
+  <p>بِسْمِ اللّهِ الرَّحْمَنِ الرَّحِيْ</p>
+  <p>Assalamu'alaikum Warohmatullahi Wabarokatuh.....</p>
   <p>Atas nama kepengurusan dewan masjid Jami Assalam, menerangkan bahwa. Pengajuan pengeluaran kas yang diajukan pada tanggal :</p>
   <br>
   <span>Tanggal : <?= $kukuk->tanggal ?></span><br><br>

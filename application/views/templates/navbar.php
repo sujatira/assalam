@@ -14,7 +14,7 @@
           </a>
           <ul class="dropdown-menu bg-drop drop-font" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href="#"><i class="fas fa-star-and-crescent"></i> Masjid Jami Assalam</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fas fa-code"></i> Developer</a></li>
+            <li><a class="dropdown-item" href="https://github.com/sujatira"><i class="fas fa-code"></i> Developer</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">

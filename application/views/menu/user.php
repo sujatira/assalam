@@ -36,12 +36,12 @@
 
     										<a href="<?= base_url('menu/hapus_user/' . $u['id_user']); ?>" class="btn btn-danger btn-sm btn-hapus" id="btn-hapus"><i class="fas fa-trash"></i></a>
     										<a href="<?= base_url('menu/detail_user/' . $u['id_user']); ?>" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
-    										<a href="<?= base_url('menu/detail_user/' . $u['id_user']); ?>" class="btn btn-success btn-sm"><i class="fas fa-comments"></i></a>
+    										<!-- <a href="<?= base_url('menu/detail_user/' . $u['id_user']); ?>" class="btn btn-success btn-sm"><i class="fas fa-comments"></i></a> -->
 
     									<?php } else { ?>
 
     										<a href="<?= base_url('menu/detail_user/' . $u['id_user']); ?>" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
-    										<a href="<?= base_url('menu/detail_user/' . $u['id_user']); ?>" class="btn btn-success btn-sm"><i class="fas fa-comments"></i></a>
+    										<!-- <a href="<?= base_url('menu/detail_user/' . $u['id_user']); ?>" class="btn btn-success btn-sm"><i class="fas fa-comments"></i></a> -->
 
     									<?php } ?>
     								</th>

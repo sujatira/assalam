@@ -41,6 +41,6 @@
     </div>
   </div>
   <div class="col-md-4">
-    <img src="https://cdn-icons-png.flaticon.com/512/4599/4599185.png" class="img-fluid" width="400px" alt="">
+    <img src="https://cdn-icons-png.flaticon.com/512/2942/2942361.png" class="img-fluid" width="400px" alt="">
   </div>
 </div>

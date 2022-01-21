@@ -3,9 +3,11 @@
 
 <head>
 
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
   <title>Print Pengajuan</title>
   <style>
     table {
@@ -25,6 +27,10 @@
       border: 1px solid #0000;
       text-align: left;
       padding: 8px;
+    }
+
+    strong {
+      text-align: center;
     }
   </style>
 </head>
@@ -65,7 +71,9 @@
     </tbody>
   </table> -->
   <p>Solokanjeruk, <?= date('d m Y') ?></p> <br>
-  <p>Assalamu'alaikum Warohmatullahi Wabarokatuh.</p>
+  <p dir="rtl"><strong> بِسْــــــــــــــــــمِ اللهِ الرَّحْمَنِ الرَّحِيْمِ</strong></p>
+  <p dir="rtl"><strong>السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</strong></p>
+  <!-- <p>Assalamu'alaikum Warohmatullahi Wabarokatuh.</p> -->
   <p>Atas nama kepengurusan dewan masjid Jami Assalam, menerangkan bahwa. Pengajuan pengeluaran kas yang diajukan pada tanggal :</p>
   <br>
   <span>Tanggal : <?= date('d F Y', $kukuk->tanggal_pengajuan) ?> </span><br><br>
@@ -73,7 +81,8 @@
   <span>Keterangan : <?= $kukuk->keterangan ?></span><br><br>
 
   <p>dengan nominal sebesar <strong>Rp. <?= number_format($kukuk->jumlah_pengajuan)  ?></strong>. Berdasarkan peninjauan dan musyawarah bersama seluruh kepengurusan, bahwa pengajuan pengeluaran diatas tersebut dinyatakan <strong>disetujui</strong>. Besar harapan bersama surat pernyataan ini dapat dilanjutkan sebagai mestinya dan bermanfaat untuk umat. Terimakasih.</p>
-  <p>Wassalamu'alaikum Warohmatullahi Wabarokatuh.</p>
+  <!-- <p>Wassalamu'alaikum Warohmatullahi Wabarokatuh.</p> -->
+  <p dir="rtl"><strong>وَ السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</strong></p>
   <br><br><br>
   <table>
     <tr>

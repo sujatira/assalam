@@ -9,6 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title><?= $judul; ?> </title>
+    <link rel="shorcut icon" href="<?= base_url('assets/images/icon.png') ?>">
     <!-- Custom fonts for this template-->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
