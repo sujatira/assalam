@@ -1,13 +1,6 @@
 <div class="card-body card-shadow">
-  <div class="row mx-1">
-    <div class="mr-auto">
-      <h1>Pengeluaran data kas</h1>
-    </div>
-    <div class="mt-3">
-      <a class="btn btn-primary btn-sm mb-3" href="<?= base_url('bendahara/pengajuan_pengeluaran_kas') ?>"><i class="fas fa-fw fa-plus-square"></i> Ajukan pengeluaran</a>
-      <a class="btn btn-info mb-3 btn-sm" href="<?= base_url('bendahara/print_pengeluaran') ?>"><i class="fas fa-fw fa-print"></i> Cetak</a>
-    </div>
-  </div>
+  <a class="btn btn-primary mb-3" href="<?= base_url('bendahara/pengajuan_pengeluaran_kas') ?>"><i class="fas fa-fw fa-plus-square"></i> Ajukan pengeluaran</a>
+  <a class="btn btn-secondary mb-3 " href="<?= base_url('bendahara/print_pengeluaran') ?>"><i class="fas fa-fw fa-print"></i> Cetak</a>
   <div class="card bg-white">
     <h5 class="card-header bg-primary text-white"><i class="fas fa-fw fa-table"></i> Tabel pengajuan pengeluaran kas Masjid Jami Assalam</h5>
     <div class="card-body">
@@ -62,7 +55,6 @@
     </div>
   </div>
 </div>
-
 <!-- modal hapus -->
 <div class="modal fade" tabindex="-1" id="modalHapus" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog">

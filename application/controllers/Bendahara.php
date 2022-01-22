@@ -1,6 +1,8 @@
 <?php
-defined('BASEPATH') or exit('No direct script access allowed');
 
+use Mpdf\Tag\Tr;
+
+defined('BASEPATH') or exit('No direct script access allowed');
 
 class Bendahara extends CI_Controller
 {
@@ -86,20 +88,6 @@ class Bendahara extends CI_Controller
         }
     }
 
-    public function proses_pengajuan()
-
-    {
-        $data = [
-            'nama_pengajuan' => htmlspecialchars($this->input->post('keperluan', true)),
-            'jumlah_pengajuan' => htmlspecialchars($this->input->post('jumlah', true)),
-            'tanggal_pengajuan' => time(),
-            'status_pengajuan' => 0,
-            'keterangan' => htmlspecialchars($this->input->post('keterangan', true))
-        ];
-
-        $this->db->insert('tbl_pengajuan', $data);
-        return redirect('bendahara/pengeluaran_kas');
-    }
     public function hapus_pengeluaran($id)
     {
         $where = array('id_pengajuan' => $id);
@@ -117,6 +105,47 @@ class Bendahara extends CI_Controller
         $this->load->view('templates/topbar', $data);
         $this->load->view('bendahara/pemasukan_kas', $data);
         $this->load->view('templates/footer_user');
+    }
+
+    public function tambah_pemasukan()
+
+    {
+        $this->form_validation->set_rules('nama', 'Nama', 'required|trim', [
+            'required' => 'Harap isi nama'
+        ]);
+        $this->form_validation->set_rules('nominal', 'Nominal', 'required|trim|integer', [
+            'required' => 'Harap isi jumlah/nominal',
+            'integer' => 'Harus angka'
+        ]);
+        $this->form_validation->set_rules('kategori', 'Kategori', 'required|trim', [
+            'required' => 'Harap pilih kategori'
+        ]);
+        $this->form_validation->set_rules('keterangan', 'Keterangan', 'required|trim', [
+            'required' => 'Harap isi keterangan'
+        ]);
+
+        if ($this->form_validation->run() == false) {
+            $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
+            $this->session->userdata('email')])->row_array();
+            $data['judul'] = 'Pemasukan';
+            $this->load->view('templates/header_user', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('bendahara/pemasukan_kas', $data);
+            $this->load->view('templates/footer_user');
+        } else {
+            $data = [
+                'nama' => htmlspecialchars($this->input->post('nama', true)),
+                'nominal' => htmlspecialchars($this->input->post('nominal', true)),
+                'keterangan' => htmlspecialchars($this->input->post('keterangan', true)),
+                'tanggal' => time(),
+                'kategori' => htmlspecialchars($this->input->post('kategori', true))
+
+            ];
+
+            $this->db->insert('tbl_infaq', $data);
+            return redirect('bendahara/kas');
+        }
     }
 
     public function details_pemasukan($id)

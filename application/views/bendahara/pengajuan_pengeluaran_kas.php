@@ -6,28 +6,26 @@
         <div class="card-body">
           <form action="<?= base_url('bendahara/pengajuan_pengeluaran_kas') ?>" method="POST" class="user ">
             <div class="input-group input-group-sm mb-3 form-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">Keperluan </span>
+              <div class="input-group">
+                <label class="input-group">Keperluan </label>
+                <small class="text-left text-danger"><?= form_error('keperluan') ?></small>
               </div>
               <input id="keperluan" name="keperluan" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             </div>
-            <small class="text-left text-danger"><?= form_error('keperluan') ?></small>
             <div class="input-group input-group-sm mb-3 form-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">Jumlah (Rp)</span>
+              <div class="input-group">
+                <label class="input-group">Jumlah (Rp)</label>
+                <small class="text-left text-danger"><?= form_error('jumlah') ?></small>
               </div>
               <input id="jumlah" name="jumlah" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             </div>
-            <small class="text-left text-danger"><?= form_error('jumlah') ?></small>
-
             <div class="input-group input-group-sm mb-3  form-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">Keterangan</span>
+              <div class="input-group">
+                <label class="input-group">Keterangan</label>
+                <small class="text-left text-danger"><?= form_error('keterangan') ?></small>
               </div>
               <textarea id="keterangan" name="keterangan" class="form-control" aria-label="With textarea"></textarea>
             </div>
-            <small class="text-left text-danger"><?= form_error('keterangan') ?></small>
-
             <div class="input-group input-group-sm mb-3 form-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">Tanggal</span>
