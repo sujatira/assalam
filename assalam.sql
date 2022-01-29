@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2022 at 02:19 AM
+-- Generation Time: Jan 29, 2022 at 08:21 PM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.26
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,12 +46,12 @@ CREATE TABLE `tbl_artikel` (
 --
 
 INSERT INTO `tbl_artikel` (`id_artikel`, `id_user`, `judul`, `isi`, `tanggal`, `status`, `tmb`, `oleh`, `alasan_penolakan`, `tanggal_acc`, `periksa_oleh`) VALUES
-(489, 4, 'asasa', '', '1641483887', 2, '', 'Andi Sujati Rahman', 'Tidak ada gambar dan isi konten', '1641521986', 'Admin Jami Assalam'),
-(490, 4, '', '', '1641490764', 1, '', 'Andi Sujati Rahman', '', '1641521242', ''),
+(489, 4, 'asasa', '', '1641483887', 0, '', 'Andi Sujati Rahman', 'Tidak ada gambar dan isi konten', '1641521986', 'Admin Jami Assalam'),
 (491, 13, '', '', '1641519500', 0, '', 'Admin Jami Assalam', '', '', ''),
 (494, 13, '', '', '1641520915', 0, '', 'Admin Jami Assalam', '', '1641521032', ''),
-(495, 6, 'asasa', '', '1641522274', 1, '', 'Rendi Ranggaa', '', '1641522328', 'Andi Sujati Rahman'),
-(497, 4, 'Kegiatan Kurban 2021 ', 'Assalamualaikum jamaah Assalam, alhamdulillah tahun ini ditengah tengah pandemic corona kita sebagai warga Muslim jemaah Assalam masih bisa menunaikan ibadah kurban dimana tahun ini hwan kurban meningkat daripada tahun sebelumnya dan susunan kepanitian pun lebih rapi ', '1641561236', 1, 'sapi.jpg', 'Andi Sujati Rahman', '', '1641567884', 'Andi Sujati Rahman');
+(497, 4, 'Kegiatan Kurban 2021 ', 'Assalamualaikum jamaah Assalam, alhamdulillah tahun ini ditengah tengah pandemic corona kita sebagai warga Muslim jemaah Assalam masih bisa menunaikan ibadah kurban dimana tahun ini hwan kurban meningkat daripada tahun sebelumnya dan susunan kepanitian pun lebih rapi ', '1641561236', 1, 'sapi.jpg', 'Andi Sujati Rahman', '', '1641567884', 'Andi Sujati Rahman'),
+(498, 4, '', '', '1642608476', 0, '', 'Andi Sujati Rahman', '', '', ''),
+(499, 4, 'Masjid Bagus', 'asasas\r\naasud\r\ndvbdvbdvbhbsdvdh ddbv hdvdvdvhdbvd vdvdvd\r\nvdvdv', '1642608835', 1, 'download (1).jpg', 'Andi Sujati Rahman', '', '1642853536', 'Andi Sujati Rahman');
 
 -- --------------------------------------------------------
 
@@ -89,7 +89,11 @@ INSERT INTO `tbl_gambar` (`id_gambar`, `id_artikel`, `gambar`) VALUES
 (512, 495, ''),
 (513, 496, 'wp3796958-genei-ryodan-wallpapers.jpg'),
 (514, 497, 'sapi2.jpg'),
-(515, 497, 'sapi3.jpg');
+(515, 497, 'sapi3.jpg'),
+(516, 498, ''),
+(517, 499, 'download (1).jpg'),
+(518, 499, 'download (2).jpg'),
+(519, 499, 'download.jpg');
 
 -- --------------------------------------------------------
 
@@ -103,16 +107,34 @@ CREATE TABLE `tbl_infaq` (
   `nominal` int(128) NOT NULL,
   `keterangan` varchar(128) NOT NULL,
   `tanggal` varchar(128) NOT NULL,
-  `bukti` varchar(128) NOT NULL
+  `bukti` varchar(128) NOT NULL,
+  `kategori` varchar(128) NOT NULL,
+  `total` int(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_infaq`
 --
 
-INSERT INTO `tbl_infaq` (`id_infaq`, `nama`, `nominal`, `keterangan`, `tanggal`, `bukti`) VALUES
-(5, 'Rudi Tabuti', 500000, 'Infak/sedekah yang diberikan langsung ke marbot yang nantinya akan diteruskan ke Bendahara Masjid Jami Assalam untuk diinput', '1624695438', ''),
-(6, 'Asep Irama', 20000, 'Infak mingguan', '1641521032', '');
+INSERT INTO `tbl_infaq` (`id_infaq`, `nama`, `nominal`, `keterangan`, `tanggal`, `bukti`, `kategori`, `total`) VALUES
+(5, 'Rudi Tabuti', 500000, 'Infak/sedekah yang diberikan langsung ke marbot yang nantinya akan diteruskan ke Bendahara Masjid Jami Assalam untuk diinput', '1624695438', '', '', 0),
+(6, 'Asep Irama', 20000, 'Infak mingguan', '1641521032', '', '', 0),
+(7, 'Andi SR', 0, 'asas', '1642868173', '', 'sdsd', 0),
+(8, 'dsdsd', 0, 'addsfdffadfa', '1642868205', '', 'sdsd', 0),
+(9, 'Andi SR', 0, 'qwqwqw', '1642868394', '', 'asas', 0),
+(10, 'Andi SR', 1111, 'ddsd', '1642868631', '', 'asas', 0),
+(11, 'Andi SR', 1111, 'sdsdsd', '1642868698', '', 'Dari jemaah', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_kas`
+--
+
+CREATE TABLE `tbl_kas` (
+  `id_kas` int(128) NOT NULL,
+  `total_kas` int(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -137,7 +159,7 @@ CREATE TABLE `tbl_pengajuan` (
 
 INSERT INTO `tbl_pengajuan` (`id_pengajuan`, `nama_pengajuan`, `jumlah_pengajuan`, `tanggal_pengajuan`, `status_pengajuan`, `keterangan`, `alasan_penolakan`, `oleh`) VALUES
 (21, 'Pembelian jam', 50000, '1641487035', 1, 'untuk kelengkapan jam dinding masjid', '', ''),
-(22, 'Beli Bedug', 45000000, '1641566001', 0, 'untuk pembelian bedug', '', ''),
+(22, 'Beli Bedug', 45000000, '1641566001', 1, 'untuk pembelian bedug', '', ''),
 (23, 'Beli sejadah', 12000000, '1641566110', 2, 'diperlukan sejadah baru karena yang lama sudah mendekati tidak layak pakai', 'masih bagus kok', '');
 
 -- --------------------------------------------------------
@@ -162,7 +184,7 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id_user`, `nama`, `email`, `password`, `image`, `date_create`, `role_id`, `sebagai`) VALUES
-(4, 'Andi Sujati Rahman', 'andi@gmail.com', '$2y$10$hRpqFXHnpckEtNCrnZdUCufPYIjlQR9Y37QOE35fh0j2ReBIu7DM6', 'asr.jpg', '1620695438', 1, 'Administator'),
+(4, 'Andi Sujati Rahman', 'andi@gmail.com', '$2y$10$hRpqFXHnpckEtNCrnZdUCufPYIjlQR9Y37QOE35fh0j2ReBIu7DM6', 'download.png', '1620695438', 1, 'Administator'),
 (5, 'Santi Sinta', 'santi@gmail.com', '$2y$10$1rC0JZWGdZh5pfusez1FDeUqBmfWtvq4Geo8puxwXwi0jpbBf.a3G', 'default.jpg', '1624695438', 2, 'Bendahara'),
 (6, 'Rendi Ranggaa', 'rendi@gmail.com', '$2y$10$ROEO/sa3nzn/T94ZCpQzh.nGpTWKtTbNqQjQyWEGFWdeDIA1YEObG', 'heheheheehehe.png', '1625695438', 3, 'Member'),
 (13, 'Admin Jami Assalam', 'admin2@gmail.com', '$2y$10$e5z3elt7o8YD8h9D5H4OjO.y6VR5w7epn/0U8LzkxDkHK7aajkl2u', 'default.jpg', '1641486117', 1, 'Administator');
@@ -257,12 +279,12 @@ INSERT INTO `tbl_user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_ac
 (6, 4, 'Artikel', 'menu', 'fas fa-fw fa-bars', 1, ''),
 (7, 4, 'Approve Artikel', 'menu/approve', 'fas fa-fw fa-clipboard-check', 0, ''),
 (8, 4, 'List Akun', 'menu/user', 'fas fa-fw fa-list-ol', 1, ''),
-(9, 5, 'Kelola Data Kas', 'bendahara/kas', 'fas fa-fw fa-hand-holding-usd', 1, ''),
-(10, 5, 'Pemasukan', 'infak/pemasukan', 'fas fa-fw fa-file-invoice-dollar', 0, ''),
-(11, 5, 'Pengeluaran', 'infak/pengeluaran', 'fas fa-fw fa-money-check-alt', 0, ''),
+(9, 5, 'Data Kas', 'bendahara/kas', 'fas fa-fw fa-hand-holding-usd', 1, ''),
+(10, 5, 'Pemasukan', 'bendahara/pemasukan_kas', 'fas fa-fw fa-plus', 1, ''),
+(11, 5, 'Pengeluaran', 'bendahara/pengeluaran_kas', 'fas fa-fw fa-minus', 1, ''),
 (12, 6, 'Artikel Saya', 'usermenu', 'fas fa-fw fa-bars', 1, ''),
-(13, 4, 'Approval Keuangan', 'menu/approval_pengeluaran', 'fas fa-fw fa-file-invoice-dollar', 1, ''),
-(14, 4, 'Info Kas', 'menu/info_kas', 'fas fa-fw fa-search-dollar', 1, '');
+(13, 4, 'Approval Keuangan', 'menu/approval_pengeluaran', 'fas fa-fw fa-coins', 1, ''),
+(14, 4, 'Info Kas', 'menu/info_kas', 'fas fa-fw fa-money-bill-wave', 1, '');
 
 --
 -- Indexes for dumped tables
@@ -291,6 +313,12 @@ ALTER TABLE `tbl_gambar`
 --
 ALTER TABLE `tbl_infaq`
   ADD PRIMARY KEY (`id_infaq`);
+
+--
+-- Indexes for table `tbl_kas`
+--
+ALTER TABLE `tbl_kas`
+  ADD PRIMARY KEY (`id_kas`);
 
 --
 -- Indexes for table `tbl_pengajuan`
@@ -336,7 +364,7 @@ ALTER TABLE `tbl_user_sub_menu`
 -- AUTO_INCREMENT for table `tbl_artikel`
 --
 ALTER TABLE `tbl_artikel`
-  MODIFY `id_artikel` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=498;
+  MODIFY `id_artikel` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=500;
 
 --
 -- AUTO_INCREMENT for table `tbl_artikel_user`
@@ -348,13 +376,19 @@ ALTER TABLE `tbl_artikel_user`
 -- AUTO_INCREMENT for table `tbl_gambar`
 --
 ALTER TABLE `tbl_gambar`
-  MODIFY `id_gambar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=516;
+  MODIFY `id_gambar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=520;
 
 --
 -- AUTO_INCREMENT for table `tbl_infaq`
 --
 ALTER TABLE `tbl_infaq`
-  MODIFY `id_infaq` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_infaq` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `tbl_kas`
+--
+ALTER TABLE `tbl_kas`
+  MODIFY `id_kas` int(128) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_pengajuan`
