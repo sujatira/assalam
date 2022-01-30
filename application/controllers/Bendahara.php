@@ -80,7 +80,10 @@ class Bendahara extends CI_Controller
                 'jumlah_pengajuan' => htmlspecialchars($this->input->post('jumlah', true)),
                 'tanggal_pengajuan' => time(),
                 'status_pengajuan' => 0,
-                'keterangan' => htmlspecialchars($this->input->post('keterangan', true))
+                'keterangan' => htmlspecialchars($this->input->post('keterangan', true)),
+                'alasan_penolakan' => 'masih dalam peninjauan',
+                'periksa_oleh' => 'belum diperiksa',
+                'tgl_acc' => '666'
             ];
 
             $this->db->insert('tbl_pengajuan', $data);
@@ -140,7 +143,6 @@ class Bendahara extends CI_Controller
                 'keterangan' => htmlspecialchars($this->input->post('keterangan', true)),
                 'tanggal' => time(),
                 'kategori' => htmlspecialchars($this->input->post('kategori', true))
-
             ];
 
             $this->db->insert('tbl_infaq', $data);

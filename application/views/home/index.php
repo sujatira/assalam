@@ -9,8 +9,8 @@
     <div class="carousel-item active">
       <img src="<?= base_url('assets/images/img1.jpg') ?>" class="d-block w-100 " alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h3>Sholat Berjamaah</h3>
-        <p>Gerakan Sholat berjamaah lima waktu di Masjid</p>
+        <h3>Masjid Jami Assalam</h3>
+        <p>Selamat Datang di Sistem Informasi Masjid Jami Assalam</p>
       </div>
     </div>
     <div class="carousel-item">
@@ -22,10 +22,11 @@
   </div>
 </div>
 <!-- akhir karusel -->
-
-
-<!-- ada dua card -->
 <div class="container">
+
+
+  <!-- ada dua card -->
+  <!-- <div class="container">
   <div class="row mt-3">
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -62,11 +63,11 @@
       </div>
     </div>
   </div>
-</div>
-<!-- akhir dua card -->
+</div> -->
+  <!-- akhir dua card -->
 
-<!-- isi  halaman home -->
-<div class="container shadow">
+  <!-- isi  halaman home -->
+  <!-- <div class="container shadow">
   <div class="row mb-3 mt-3">
     <div class="col-lg-2 mb-3">
       <div class="card border-light mb-3 mt-3" style="max-width: 18rem;">
@@ -95,3 +96,4 @@
       </div>
     </div>
   </div>
+</div> -->

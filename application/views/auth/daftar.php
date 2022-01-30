@@ -30,13 +30,13 @@
                   <input type="password" class="form-control form-control-user" id="password2" name="password2" placeholder="Masukan Ulang Password">
                 </div>
               </div>
-              <button href="<?= base_url('auth') ?>" type="submit" class="bi bi-person-plus-fill btn btn-primary btn-user btn-block">
+              <button href="<?= base_url('auth') ?>" type="submit" class="btn btn-primary btn-user btn-block"> <i class="fas fa-fw fa-user-plus"></i>
                 Daftar
               </button>
-              <a href="<?= base_url('home') ?>" class="bi bi-house-door-fill btn btn-info btn-user btn-block mt-3">
+              <a href="<?= base_url('home') ?>" class="btn btn-info btn-user btn-block mt-3"> <i class="fas fa-fw fa-home"></i>
                 Home
               </a>
-              <div class="text-center mt-3"><a class="text-white" href="<?= base_url('Auth') ?>">Sudah punya akun? Silahkan Login</a></div>
+              <div class="text-center mt-3"><a class="text-white" href="<?= base_url('auth') ?>">Sudah punya akun? Silahkan Login</a></div>
             </form>
           </div>
         </div>

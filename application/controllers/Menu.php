@@ -199,11 +199,24 @@ class Menu extends CI_Controller
 	{
 		$id_pengajuan = $this->input->post('id_pengajuan');
 		$status_pengajuan = $this->input->post('status_pengajuan');
+		$alasan = $this->input->post('alasan');
+		$acc = time();
+		$oleh = $this->session->userdata('nama');
 
-		// var_dump($id_pengajuan);
-		// die;
 
 		$this->db->query("UPDATE `tbl_pengajuan` SET `status_pengajuan`='$status_pengajuan'  WHERE `id_pengajuan`='$id_pengajuan' ");
+
+		if ($status_pengajuan == 1) {
+			$this->session->set_flashdata('pesan', 'pengajuan di izinkan !');
+			$this->db->query("UPDATE `tbl_pengajuan` SET `tgl_acc`='$acc' WHERE `id_pengajuan`='$id_pengajuan'");
+			$this->db->query("UPDATE `tbl_pengajuan` SET `periksa_oleh`='$oleh' WHERE `id_pengajuan`='$id_pengajuan'");
+		} elseif ($status_pengajuan == 2) {
+			$this->session->set_flashdata('pesan', 'pengajuan ditolak');
+			$this->db->query("UPDATE `tbl_pengajuan` SET `alasan_penolakan`='$alasan' WHERE `id_pengajuan`='$id_pengajuan'");
+		} else {
+			$this->session->set_flashdata('pesan', 'pengajuan di abaikan');
+		}
+
 		return redirect('menu/approval_pengeluaran');
 	}
 

@@ -63,7 +63,7 @@
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Alasan Penolakan</label>
                 <div class="col-sm-10">
-                  <textarea type="text" class="form-control" name="tanggal_pengajuan"><?= $details->alasan_penolakan ?></textarea>
+                  <textarea type="text" class="form-control" name="alasan"><?= $details->alasan_penolakan ?></textarea>
                   <small class="text-danger font-italic"> *Mohon tulis alasan jika pengajuan ini ditolak</small>
                 </div>
               </div>
