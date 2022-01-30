@@ -81,9 +81,9 @@ class Bendahara extends CI_Controller
                 'tanggal_pengajuan' => time(),
                 'status_pengajuan' => 0,
                 'keterangan' => htmlspecialchars($this->input->post('keterangan', true)),
-                'alasan_penolakan' => 'masih dalam peninjauan',
-                'periksa_oleh' => 'belum diperiksa',
-                'tgl_acc' => '666'
+                'alasan_penolakan' => 'X',
+                'periksa_oleh' => 'X',
+                'tgl_acc' => '0'
             ];
 
             $this->db->insert('tbl_pengajuan', $data);
