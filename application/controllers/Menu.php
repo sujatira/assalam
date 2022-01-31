@@ -103,6 +103,8 @@ class Menu extends CI_Controller
 		$this->session->userdata('email')])->row_array();
 		$data['userid'] = $this->User_model->getUserId($id);
 
+
+
 		$data['judul'] = 'Detail User';
 		$this->load->view('templates/header_user', $data);
 		$this->load->view('templates/sidebar', $data);
@@ -168,6 +170,8 @@ class Menu extends CI_Controller
 		$data['infak'] = $this->Infaq_model->getAllPengajuan();
 
 
+
+
 		$data['user'] = $this->User_model->getAllUser();
 		$this->load->view('templates/header_user', $data);
 		$this->load->view('templates/sidebar', $data);
@@ -202,6 +206,12 @@ class Menu extends CI_Controller
 		$alasan = $this->input->post('alasan');
 		$acc = time();
 		$oleh = $this->session->userdata('nama');
+		$this->db->select('(SELECT SUM(tbl_pengajuan.jumlah_pengajuan) FROM tbl_pengajuan) AS jumlah', FALSE);
+		$total = $this->db->get('tbl_pengajuan');
+
+
+		echo var_dump($total);
+		die;
 
 
 		$this->db->query("UPDATE `tbl_pengajuan` SET `status_pengajuan`='$status_pengajuan'  WHERE `id_pengajuan`='$id_pengajuan' ");
@@ -264,6 +274,8 @@ class Menu extends CI_Controller
 		$data['judul'] = 'Info Kas';
 		$data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
 		$this->session->userdata('email')])->row_array();
+
+		$data['query'] = $this->db->query('SELECT SUM(nominal) AS jumlah FROM tbl_infaq')->row();
 
 		$this->load->view('templates/header_user', $data);
 		$this->load->view('templates/sidebar', $data);

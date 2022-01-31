@@ -61,9 +61,7 @@
     <h5 class="card-header bg-primary text-white"><i class="fas fa-fw fa-book"></i> Total kas </h5>
     <div class="card-body bg-white">
       <div class="table-responsive">
-        <h4>Rp. 232323232323.23.2asasasss.32</h4>
-
-
+        <h4>Rp. <?= number_format($query->jumlah, 0)  ?></h4>
       </div>
     </div>
   </div>
