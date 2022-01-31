@@ -210,10 +210,6 @@ class Menu extends CI_Controller
 		$total = $this->db->get('tbl_pengajuan');
 
 
-		echo var_dump($total);
-		die;
-
-
 		$this->db->query("UPDATE `tbl_pengajuan` SET `status_pengajuan`='$status_pengajuan'  WHERE `id_pengajuan`='$id_pengajuan' ");
 
 		if ($status_pengajuan == 1) {
@@ -271,11 +267,13 @@ class Menu extends CI_Controller
 
 	public function info_kas()
 	{
-		$data['judul'] = 'Info Kas';
+		$data['judul'] = 'Info Detail Kas';
 		$data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
 		$this->session->userdata('email')])->row_array();
+		$data['masuk'] = $this->Infaq_model->getAllInfaq();
+		$data['keluar'] = $this->Infaq_model->getAllPengajuan();
 
-		$data['query'] = $this->db->query('SELECT SUM(nominal) AS jumlah FROM tbl_infaq')->row();
+		// $data['query'] = $this->db->query('SELECT SUM(nominal) AS jumlah FROM tbl_infaq')->row();
 
 		$this->load->view('templates/header_user', $data);
 		$this->load->view('templates/sidebar', $data);
