@@ -39,4 +39,11 @@ class Infaq_model extends CI_Model
 
         return $this->db->get()->result_array();
     }
+    public function chartKas()
+    {
+        $data = $this->getAllInfaq();
+        $query = "SELECT nominal, MONTHNAME(tanggal) as month, COUNT(id_infaq) as total FROM tbl_infaq GROUP BY MONTH(tanggal) ORDER BY MONTH(tanggal)";
+        $result = $this->db->query($query);
+        return $result->result_array();
+    }
 }

@@ -9,6 +9,7 @@ class Admin extends CI_Controller
         cek_login();
         $this->load->model('Artikel_model');
         $this->load->model('User_model');
+        $this->load->model('Infaq_model');
     }
 
     public function index()
@@ -22,9 +23,9 @@ class Admin extends CI_Controller
         $data['masuk'] = $this->db->query('SELECT SUM(nominal) AS jumlah FROM tbl_infaq')->row(); //masuk
 
         $data['keluar'] = $this->db->query('SELECT SUM(jumlah_pengajuan) AS maks FROM tbl_pengajuan WHERE status_pengajuan = 1')->row(); //pengeluaran
-
         $data['sisa'] = $data['masuk']->jumlah - $data['keluar']->maks; //sisa
         $data['chart'] = $this->User_model->chartUser();
+        $data['chart2'] = $this->Infaq_model->chartKas();
 
         $this->load->view('templates/header_user', $data);
         $this->load->view('templates/sidebar', $data);
