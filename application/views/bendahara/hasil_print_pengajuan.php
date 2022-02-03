@@ -79,8 +79,9 @@
   <span>Tanggal : <?= date('d F Y', $kukuk->tanggal_pengajuan) ?> </span><br><br>
   <span>Keperluan : <?= $kukuk->nama_pengajuan ?></span><br><br>
   <span>Keterangan : <?= $kukuk->keterangan ?></span><br><br>
+  <span> dengan nominal sebesar <strong>Rp. <?= number_format($kukuk->jumlah_pengajuan)  ?></strong>.</span><br>
 
-  <p>dengan nominal sebesar <strong>Rp. <?= number_format($kukuk->jumlah_pengajuan)  ?></strong>. Berdasarkan peninjauan dan musyawarah bersama seluruh kepengurusan, bahwa pengajuan pengeluaran diatas tersebut dinyatakan <strong>disetujui</strong>. Besar harapan bersama surat pernyataan ini dapat dilanjutkan sebagai mestinya dan bermanfaat untuk umat. Terimakasih.</p>
+  <p>Berdasarkan peninjauan dan musyawarah bersama seluruh kepengurusan, bahwa pengajuan pengeluaran diatas tersebut dinyatakan <strong>disetujui</strong>. Besar harapan bersama surat pernyataan ini dapat dilanjutkan sebagai mestinya dan bermanfaat untuk umat. Terimakasih.</p>
   <!-- <p>Wassalamu'alaikum Warohmatullahi Wabarokatuh.</p> -->
   <p dir="rtl"><strong>وَ السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</strong></p>
   <br><br><br>

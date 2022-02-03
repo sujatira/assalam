@@ -31,6 +31,13 @@ class Bendahara extends CI_Controller
         $this->session->userdata('email')])->row_array();
         $data['infaq'] = $this->Infaq_model->getAllInfaq();
         $data['judul'] = 'Data Kas';
+
+        $data['masuk'] = $this->db->query('SELECT SUM(nominal) AS jumlah FROM tbl_infaq')->row(); //masuk
+
+        $data['keluar'] = $this->db->query('SELECT SUM(jumlah_pengajuan) AS maks FROM tbl_pengajuan WHERE status_pengajuan = 1')->row(); //pengeluaran
+
+        $data['sisa'] = $data['masuk']->jumlah - $data['keluar']->maks; //sisa
+
         $this->load->view('templates/header_user', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
