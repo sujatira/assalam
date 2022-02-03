@@ -30,16 +30,18 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Tanggal</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="tanggal" value="<?= date('d F Y', $ifk->tanggal) ?> " readonly>
+              <input type="text" class="form-control" name="tanggal" value="<?= $ifk->tanggal ?> " readonly>
             </div>
           </div>
-          <div class="form-group row">
+          <!-- <div class="form-group row">
             <label class="col-sm-2 col-form-label">Bukti</label>
             <div class="col-sm-10">
               <img class="img-thumbnail" src="" alt="">
             </div>
-          </div>
-          <a class="btn btn-primary" href="<?= base_url('bendahara/edit_pemasukan') ?>"><i class="fas fa-edit"></i> Edit</a>
+          </div> -->
+          <?php if ($this->session->userdata('role_id') == 2) { ?>
+            <a class="btn btn-primary" href="<?= base_url('bendahara/edit_pemasukan') ?>"><i class="fas fa-edit"></i> Edit</a>
+          <?php } ?>
         </div>
       </div>
     </div>

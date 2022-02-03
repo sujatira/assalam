@@ -38,7 +38,7 @@
 										<?= $ifq['keterangan']; ?>
 									</span>
 								</td>
-								<td class="text-center"><?= date('d F Y', $ifq['tanggal']); ?></td>
+								<td class="text-center"><?= $ifq['tanggal']; ?></td>
 								<td class="text-center"><?= $ifq['bukti']; ?></td>
 								<td class="text-center">
 									<a href="#" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>

@@ -30,6 +30,8 @@
 <script src="<?= base_url('assets/vendor/chart.js/Chart.min.js') ?>"></script>
 <script src="<?= base_url('assets/vendor/datatables/jquery.dataTables.min.js'); ?>"></script>
 <script src="<?= base_url('assets/vendor/datatables/dataTables.bootstrap4.min.js'); ?>"></script>
+<script src="<?= base_url('assets/js/demo/datatables-demo.js'); ?>"></script>
+
 
 <!-- Sweet Alert -->
 <script src="<?= base_url('assets/js/dist/sweetalert2.all.min.js'); ?>"></script>

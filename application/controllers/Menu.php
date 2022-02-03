@@ -281,4 +281,16 @@ class Menu extends CI_Controller
 		$this->load->view('menu/info_kas', $data);
 		$this->load->view('templates/footer_user');
 	}
+	public function details_pemasukan($id)
+	{
+		$data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
+		$this->session->userdata('email')])->row_array();
+		$data['judul'] = 'Detail Pemasukan Kas';
+		$data['ifk'] = $this->Infaq_model->getKasId($id);
+		$this->load->view('templates/header_user', $data);
+		$this->load->view('templates/sidebar', $data);
+		$this->load->view('templates/topbar', $data);
+		$this->load->view('bendahara/details_pemasukan', $data);
+		$this->load->view('templates/footer_user');
+	}
 }

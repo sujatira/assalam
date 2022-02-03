@@ -39,7 +39,7 @@
               </div>
               <textarea id="keterangan" name="keterangan" class="form-control" aria-label="With textarea"></textarea>
             </div>
-            <div class="input-group input-group-sm mb-3">
+            <!-- <div class="input-group input-group-sm mb-3">
               <div class="input-group">
                 <label class="input-group" id="inputGroupFileAddon01">Bukti</label>
               </div>
@@ -47,7 +47,7 @@
                 <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
                 <label class="custom-file-label" for="inputGroupFile01">Pilih file</label>
               </div>
-            </div>
+            </div> -->
             <div class="input-group mb-3 form-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">Tanggal</span>

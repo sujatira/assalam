@@ -26,10 +26,10 @@
                 <td class="text-center"><?= $i++ ?></td>
                 <td><?= $m['nama']; ?></td>
                 <td>Rp. <?= number_format($m['nominal'], 0);  ?></td>
-                <td><?= date('d F Y', $m['tanggal']); ?></td>
+                <td><?= $m['tanggal']; ?></td>
                 <td><?= $m['kategori']; ?></td>
                 <td><?= $m['keterangan']; ?></td>
-                <td class="text-center"><a href="" class="btn btn-sm btn-info"><i class="fas fa-fw fa-info"></i></a></td>
+                <td class="text-center"><a href="<?= base_url('menu/details_pemasukan/' . $m['id_infaq']) ?>" class="btn btn-sm btn-info"><i class="fas fa-fw fa-eye"></i></a></td>
               </tr>
             <?php endforeach; ?>
           </tbody>
@@ -57,7 +57,7 @@
               <th>Tanggal Pengajuan</th>
               <th>Keterangan</th>
               <th>Status</th>
-              <th>Aksi</th>
+              <th>Detail</th>
             </tr>
           </thead>
           <tbody>
@@ -84,7 +84,9 @@
                     <span class="badge badge-warning text-dark">Belum diperiksa</span>
                   <?php } ?>
                 </td>
-                <td>sas</td>
+                <td class="text-center">
+                  <a href="<?= base_url('menu/detail_approval_pengeluaran/' . $k['id_pengajuan']) ?>" class="btn btn-info btn-sm"><i class="fas fa-fw fa-eye"></i></a>
+                </td>
               </tr>
             <?php endforeach; ?>
           </tbody>

@@ -1,6 +1,6 @@
 <div class="card-body card-shadow">
   <a class="btn btn-primary mb-3" href="<?= base_url('bendahara/pengajuan_pengeluaran_kas') ?>"><i class="fas fa-fw fa-plus-square"></i> Ajukan pengeluaran</a>
-  <a class="btn btn-secondary mb-3 " href="<?= base_url('bendahara/print_pengeluaran') ?>"><i class="fas fa-fw fa-print"></i> Cetak</a>
+  <!-- <a class="btn btn-secondary mb-3 " href="<?= base_url('bendahara/print_pengeluaran') ?>"><i class="fas fa-fw fa-print"></i> Cetak</a> -->
   <div class="card bg-white">
     <h5 class="card-header bg-primary text-white"><i class="fas fa-fw fa-table"></i> Tabel pengajuan pengeluaran kas Masjid Jami Assalam</h5>
     <div class="card-body">

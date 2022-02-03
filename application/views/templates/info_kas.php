@@ -19,7 +19,7 @@
                     <td class="text-center"><?= $i++; ?></td>
                     <td><?= $ifq['nama']; ?></td>
                     <td class="text-center">Rp. <?= number_format($ifq['nominal']); ?></td>
-                    <td class="text-center"><?= date('d M Y', $ifq['tanggal']); ?></td>
+                    <td class="text-center"><?= $ifq['tanggal']; ?></td>
                   </tr>
                 <?php endforeach; ?>
               </tbody>

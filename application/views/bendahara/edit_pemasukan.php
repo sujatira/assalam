@@ -31,15 +31,15 @@
             <div class="form-group row">
               <label class="col-sm-2 col-form-label">Tanggal</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" name="tanggal" value="<?= date('d F Y', $ifk->tanggal) ?>">
+                <input type="text" class="form-control" name="tanggal" value="<?= $ifk->tanggal ?>" disabled>
               </div>
             </div>
-            <div class="form-group row">
+            <!-- <div class="form-group row">
               <label class="col-sm-2 col-form-label">Bukti</label>
               <div class="col-sm-10">
                 <img class="img-thumbnail" src="" alt="">
               </div>
-            </div>
+            </div> -->
             <button type="submit" class="btn btn-primary" href="<?= base_url('bendahara/edit_pemasukan') ?>"> <i class="fas fa-check"></i> Simpan</button>
           </form>
         </div>

@@ -19,7 +19,9 @@
 
     <!-- Custom styles for this template-->
     <link href="<?= base_url('assets/css/sb-admin-2.min.css') ?>" rel="stylesheet">
+    <link rel="stylesheet" href="<?= base_url('assets/vendor/datatables/dataTables.bootstrap4.min.css') ?>">
     <script src="<?= base_url('assets/vendor/chart.js/Chart.min.js') ?>"></script>
+
 
     <!-- fancyBox -->
     <link href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css" rel="stylesheet" ?>

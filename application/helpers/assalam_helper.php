@@ -15,7 +15,7 @@ function cek_login() //cek akses login untuk admin
 		$userAccess = $apa->db->get_where('tbl_user_access_menu', ['role_id' => $role_id, 'menu_id' => $menu_id]);
 	}
 
-	if ($userAccess->num_rows() < 1) {
-		redirect('usermenu');
+	if ($userAccess->num_rows()  != 1) {
+		redirect('auth/error');
 	}
 }
