@@ -47,4 +47,10 @@ class User_model extends CI_Model
         $this->db->where($where);
         $this->db->delete($table);
     }
+    public function chartUser()
+    {
+        $query =  "SELECT sebagai, COUNT(id_user) as jumlah FROM tbl_user GROUP BY sebagai";
+        $result = $this->db->query($query);
+        return $result->result_array();
+    }
 }

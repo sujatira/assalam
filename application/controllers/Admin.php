@@ -24,7 +24,7 @@ class Admin extends CI_Controller
         $data['keluar'] = $this->db->query('SELECT SUM(jumlah_pengajuan) AS maks FROM tbl_pengajuan WHERE status_pengajuan = 1')->row(); //pengeluaran
 
         $data['sisa'] = $data['masuk']->jumlah - $data['keluar']->maks; //sisa
-
+        $data['chart'] = $this->User_model->chartUser();
 
         $this->load->view('templates/header_user', $data);
         $this->load->view('templates/sidebar', $data);
