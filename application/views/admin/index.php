@@ -77,12 +77,53 @@
 					<div class="card-body bg-white">
 						<div class="chart-area">
 							<canvas id="myAreaChart"></canvas>
+							<script>
+								var ctx = document.getElementById('myAreaChart');
+								var myChart = new Chart(ctx, {
+									type: 'bar',
+									data: {
+										labels: <?= 'anday' ?>,
+										datasets: [{
+											label: 'Jumlah Pembangunan ',
+											data: <?= 'asasas' ?>,
+											backgroundColor: [
+												'rgba(255, 99, 132, 0.2)',
+												'rgba(54, 162, 235, 0.2)',
+												'rgba(54, 162, 235, 0.2)',
+												'rgba(75, 192, 192, 0.2)',
+												'rgba(54, 162, 235, 0.2)',
+												'rgba(54, 162, 235, 0.2)'
+
+											],
+											borderColor: [
+												'rgba(255, 99, 132, 1)',
+												'rgba(54, 162, 235, 1)',
+												'rgba(54, 162, 235, 1)',
+												'rgba(75, 192, 192, 1)',
+												'rgba(54, 162, 235, 1)',
+												'rgba(54, 162, 235, 0.1)'
+
+											],
+											borderWidth: 1
+										}]
+									},
+									options: {
+										scales: {
+											yAxes: [{
+												ticks: {
+													beginAtZero: true
+												}
+											}]
+										}
+									}
+								});
+							</script>
 						</div>
 					</div>
 				</div>
 			</div>
 			<!-- Pie Chart -->
-			<div class="col-xl-4 col-lg-5">
+			<div class=" col-xl-4 col-lg-5">
 				<div class="card shadow mb-4">
 					<!-- Card Header - Dropdown -->
 					<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-primary">
