@@ -27,9 +27,9 @@
                   <td class="">Rp. <?= number_format($a['jumlah_pengajuan']) ?></td>
                   <td class="text-center"><?= date('d F Y', $a['tanggal_pengajuan']); ?></td>
                   <td class="text-center"> <?php if ($a['status_pengajuan'] == 1) { ?>
-                      <span class="badge badge-primary">Di Izinkan</span>
+                      <span class="badge badge-primary">Diizinkan</span>
                     <?php } else if ($a['status_pengajuan'] == 2) { ?>
-                      <span class="badge badge-danger">Di Tolak</span>
+                      <span class="badge badge-danger">Ditolak</span>
                     <?php } else { ?>
                       <span class="badge badge-warning text-dark">Menunggu</span>
                     <?php } ?>

@@ -78,8 +78,8 @@ class Menu extends CI_Controller
 			move_uploaded_file($_FILES['gambar']['tmp_name'][$idx2], 'assets/images/artikel/' . $file_name1);
 		}
 
-		$this->session->set_flashdata('pesan', 'artikel berhasil di tambahkan');
-		echo json_encode(["success" => true, "message" => "Berhasil di simpan"]);
+		$this->session->set_flashdata('pesan', 'artikel berhasil ditambahkan');
+		echo json_encode(["success" => true, "message" => "Berhasil disimpan"]);
 	}
 
 	public function detail($id)
@@ -124,14 +124,14 @@ class Menu extends CI_Controller
 		$this->db->query("UPDATE `tbl_artikel` SET `status`='$status' WHERE `id_artikel`='$id_artikel'");
 
 		if ($status == 1) {
-			$this->session->set_flashdata('pesan', 'artikel di izinkan !');
+			$this->session->set_flashdata('pesan', 'artikel diizinkan!');
 			$this->db->query("UPDATE `tbl_artikel` SET `tanggal_acc`='$acc' WHERE `id_artikel`='$id_artikel'");
 			$this->db->query("UPDATE `tbl_artikel` SET `periksa_oleh`='$oleh' WHERE `id_artikel`='$id_artikel'");
 		} else if ($status == 2) {
-			$this->session->set_flashdata('pesan', 'artikel TIDAK di izinkan !');
+			$this->session->set_flashdata('pesan', 'artikel tidak diizinkan!');
 			$this->db->query("UPDATE `tbl_artikel` SET `alasan_penolakan`='$alasan_penolakan' WHERE `id_artikel`='$id_artikel'");
 		} else {
-			$this->session->set_flashdata('pesan', 'artikel diabaikan !');
+			$this->session->set_flashdata('pesan', 'artikel diabaikan!');
 		}
 		return redirect('menu/index');
 	}
@@ -142,7 +142,7 @@ class Menu extends CI_Controller
 		$status = $this->input->post('status');
 
 		$this->db->query("UPDATE `tbl_artikel` SET `status`='$status' WHERE `id_artikel`='$id_artikel'");
-		$this->session->set_flashdata('pesan', 'artikel TIDAK diizinakan');
+		$this->session->set_flashdata('pesan', 'artikel tidak diizinkan');
 		return redirect('menu/index');
 	}
 
@@ -213,14 +213,14 @@ class Menu extends CI_Controller
 		$this->db->query("UPDATE `tbl_pengajuan` SET `status_pengajuan`='$status_pengajuan'  WHERE `id_pengajuan`='$id_pengajuan' ");
 
 		if ($status_pengajuan == 1) {
-			$this->session->set_flashdata('pesan', 'pengajuan di izinkan !');
+			$this->session->set_flashdata('pesan', 'pengajuan diizinkan!');
 			$this->db->query("UPDATE `tbl_pengajuan` SET `tgl_acc`='$acc' WHERE `id_pengajuan`='$id_pengajuan'");
 			$this->db->query("UPDATE `tbl_pengajuan` SET `periksa_oleh`='$oleh' WHERE `id_pengajuan`='$id_pengajuan'");
 		} elseif ($status_pengajuan == 2) {
 			$this->session->set_flashdata('pesan', 'pengajuan ditolak');
 			$this->db->query("UPDATE `tbl_pengajuan` SET `alasan_penolakan`='$alasan' WHERE `id_pengajuan`='$id_pengajuan'");
 		} else {
-			$this->session->set_flashdata('pesan', 'pengajuan di abaikan');
+			$this->session->set_flashdata('pesan', 'pengajuan diabaikan');
 		}
 
 		return redirect('menu/approval_pengeluaran');

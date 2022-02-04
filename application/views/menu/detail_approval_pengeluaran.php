@@ -70,8 +70,8 @@
 
               <select name="status_pengajuan" class="form-group form-control">
                 <option value="">Pilih</option>
-                <option value="1">SETUJUI</option>
-                <option value="2">TIDAK</option>
+                <option value="1">SETUJU</option>
+                <option value="2">TIDAK SETUJU</option>
               </select>
               <button class="btn btn-primary" type="submit"><i class="fas fa-fw fa-check"> </i> Submit</button>
             <?php } ?>

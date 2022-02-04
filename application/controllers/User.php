@@ -59,7 +59,7 @@ class User extends CI_Controller
             $this->db->set('nama', $nama);
             $this->db->where('email', $email);
             $this->db->update('tbl_user');
-            $this->session->set_flashdata('pesan', 'berhasil di update');
+            $this->session->set_flashdata('pesan', 'berhasil diubah');
             return redirect('user');
         }
     }

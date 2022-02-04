@@ -20,10 +20,10 @@
 						<label class="col-sm-2 col-form-label">Status artikel</label>
 						<div class="col">
 							<?php if ($aa->status == 1) { ?>
-								<button class="btn btn-success" disabled>Artikel di setujui <i class="fas fa-check"></i></button>
+								<button class="btn btn-success" disabled>Artikel disetujui <i class="fas fa-check"></i></button>
 								<label class="ml-2"> Disetujui pada tanggal <?= date('d M Y',  $aa->tanggal_acc) ?> Oleh <label href="<?= base_url('user'); ?>" class="badge badge-info"><?= $aa->periksa_oleh ?></label> </label>
 							<?php } else if ($aa->status == 2) { ?>
-								<button class="btn btn-danger" disabled>Tidak di setujui <i class="fas fa-exclamation-triangle"></i></button>
+								<button class="btn btn-danger" disabled>Tidak disetujui <i class="fas fa-exclamation-triangle"></i></button>
 								<a class="btn btn-info" type="button" data-toggle="popover" title="Alasan penolakan artikel" data-content="<?= $aa->alasan_penolakan ?>"><i class="fas fa-eye"></i> Lihat alasan</a>
 							<?php } else { ?>
 								<button class="btn btn-warning text-dark" type="button" disabled>
@@ -67,7 +67,7 @@
 						<div class="form-group row m-3">
 							<label class="col-sm-2 col-form-label font-italic">
 								<strong>Setujui artikel?</strong><br>
-								<small class="text-danger">artikel yang di <strong>setujui</strong> dapat dilihat oleh publik</small>
+								<small class="text-danger">artikel yang di<strong>setujui</strong> dapat dilihat oleh publik</small>
 							</label>
 							<div class="col-sm-2">
 								<div class="form-check" hidden>
@@ -79,7 +79,7 @@
 								<div class="form-check">
 									<input class="form-check-input" type="radio" id="setuju" name="status" value="1">
 									<label class="form-check-label" for="setuju">
-										YA SETUJU
+										SETUJU
 									</label>
 								</div>
 								<div class="form-check">
