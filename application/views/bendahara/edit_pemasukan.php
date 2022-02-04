@@ -4,7 +4,7 @@
       <div class="card">
         <h5 class="card-header bg-primary text-white">Details pemasukan kas Masjid Jami Assalam</h5>
         <div class="card-body bg-white">
-          <form action="<?= base_url('bendahara/edit_pemasukan') ?>" method="POST">
+          <form action="<?= base_url('bendahara/update_pemasukan') ?>" method="POST">
             <div class="form-group row bg-white">
               <div class="col-sm-10">
                 <input type="hidden" name="id_infaq" class="form-control" value="<?= $ifk->id_infaq ?>">
@@ -19,7 +19,7 @@
             <div class="form-group row">
               <label class="col-sm-2 col-form-label">Nominal (Rp)</label>
               <div class="col-sm-10">
-                <input type="text" name="nominal" class="form-control" value="Rp. <?= number_format($ifk->nominal) ?>">
+                <input type="text" name="nominal" class="form-control" value="<?= number_format($ifk->nominal) ?>">
               </div>
             </div>
             <div class="form-group row">
@@ -27,6 +27,18 @@
               <div class="col-sm-10">
                 <textarea type="text" name="keterangan" class="form-control"><?= $ifk->keterangan ?></textarea>
               </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-lbel">Kategori</label>
+              <div class="col-sm-10">
+                <select class="custom-select" name="kategori" id="kategori">
+                  <option value=""><?= $ifk->kategori ?></option>
+                  <option value="Dari kotak amal">Dari kotak amal</option>
+                  <option value="Dari kotak parkit">Dari kotak parkir</option>
+                  <option value="Dari jemaah">Dari jemaah</option>
+                </select>
+              </div>
+
             </div>
             <div class="form-group row">
               <label class="col-sm-2 col-form-label">Tanggal</label>
@@ -40,7 +52,7 @@
                 <img class="img-thumbnail" src="" alt="">
               </div>
             </div> -->
-            <button type="submit" class="btn btn-primary" href="<?= base_url('bendahara/edit_pemasukan') ?>"> <i class="fas fa-check"></i> Simpan</button>
+            <button type="submit" class="btn btn-primary"> <i class="fas fa-check"></i> Simpan</button>
           </form>
         </div>
       </div>

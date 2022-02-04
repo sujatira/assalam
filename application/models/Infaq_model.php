@@ -23,6 +23,11 @@ class Infaq_model extends CI_Model
         $this->db->where($where);
         $this->db->delete($table);
     }
+    public function hapus_pemasukan($where, $table)
+    {
+        $this->db->where($where);
+        $this->db->delete($table);
+    }
     public function getKasId($id)
     {
         $this->db->select('*');
@@ -45,5 +50,11 @@ class Infaq_model extends CI_Model
         $query = "SELECT nominal, MONTHNAME(tanggal) as month, COUNT(id_infaq) as total FROM tbl_infaq GROUP BY MONTH(tanggal) ORDER BY MONTH(tanggal)";
         $result = $this->db->query($query);
         return $result->result_array();
+    }
+    public function getPengajuanBlmAcc()
+    {
+        $query = "SELECT * FROM `tbl_pengajuan` WHERE `status_pengajuan` = 0";
+        $num = $this->db->query($query);
+        return $num->num_rows();
     }
 }

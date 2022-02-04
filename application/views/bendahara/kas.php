@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
 	<div class="row mx-1">
 		<div class="mr-auto">
 			<h1>Kelola data kas</h1>
@@ -14,6 +14,7 @@
 		<h5 class="card-header bg-primary text-white"><i class="fas fa-fw fa-table"></i> Tabel data kas Masjid Jami Assalam</h5>
 		<div class="card-body bg-white">
 			<div class="table-responsive">
+				<div class="flash-data" data-flashdata="<?= $this->session->flashdata('pesan'); ?>"></div>
 				<table class="table table-striped table-bordered table-sm first" id="dataTable" style="width: 100%;">
 					<thead class="text-center">
 						<tr>
@@ -22,7 +23,7 @@
 							<th>Nominal</th>
 							<th>Keterangan</th>
 							<th>Tanggal</th>
-							<th>Bukti</th>
+							<!-- <th>Bukti</th> -->
 							<th>Aksi</th>
 						</tr>
 					</thead>
@@ -39,11 +40,11 @@
 									</span>
 								</td>
 								<td class="text-center"><?= $ifq['tanggal']; ?></td>
-								<td class="text-center"><?= $ifq['bukti']; ?></td>
+								<!-- <td class="text-center"><?= $ifq['bukti']; ?></td> -->
 								<td class="text-center">
-									<a href="#" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
-									<a href="<?= base_url('bendahara/edit_pemasukan/' . $ifq['id_infaq']) ?>" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
-									<a href="<?= base_url('bendahara/details_pemasukan/' . $ifq['id_infaq']) ?>" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></a>
+									<a href="<?= base_url('bendahara/hapus_pemasukan/' . $ifq['id_infaq']) ?>" class="btn btn-danger btn-sm btn-hapus-pemasukan" id="btn-hapus-pemasukan"><i class="fas fa-fw fa-trash"></i></a>
+									<a href="<?= base_url('bendahara/edit_pemasukan/' . $ifq['id_infaq']) ?>" class="btn btn-success btn-sm"><i class="fas fa-fw fa-edit"></i></a>
+									<a href="<?= base_url('bendahara/details_pemasukan/' . $ifq['id_infaq']) ?>" class="btn btn-primary btn-sm"><i class="fas fa-fw fa-eye"></i></a>
 								</td>
 							</tr>
 						<?php endforeach; ?>
@@ -52,12 +53,3 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="card text-white bg-info mt-3 mb-3" style="max-width: 450px;">
-		<div class="card-header bg-primary"><strong><i class="fas fa-fw fa-info"></i> Total Keuangan Masjid Jami Assalam</strong></div>
-		<div class="card-body">
-			<h1 class="card-title">Rp. <?= number_format($sisa); ?>,- </h1>
-			<p class="card-text">Total keuangan adalah jumlah dari seluruh pemasukan dikurangi pengeluaran, yang dijumlahkan secara realtime oleh sistem</p>
-		</div>
-	</div>
-</div>

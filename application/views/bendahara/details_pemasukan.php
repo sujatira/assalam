@@ -28,6 +28,12 @@
             </div>
           </div>
           <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Kategori</label>
+            <div class="col-sm-10">
+              <input type="text" name="nominal" class="form-control" value="<?= $ifk->kategori ?>" readonly>
+            </div>
+          </div>
+          <div class="form-group row">
             <label class="col-sm-2 col-form-label">Tanggal</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" name="tanggal" value="<?= $ifk->tanggal ?> " readonly>
@@ -40,7 +46,7 @@
             </div>
           </div> -->
           <?php if ($this->session->userdata('role_id') == 2) { ?>
-            <a class="btn btn-primary" href="<?= base_url('bendahara/edit_pemasukan') ?>"><i class="fas fa-edit"></i> Edit</a>
+            <a class="btn btn-primary" href="<?= base_url('bendahara/edit_pemasukan/' . $ifk->id_infaq) ?>"><i class="fas fa-edit"></i> Edit</a>
           <?php } ?>
         </div>
       </div>

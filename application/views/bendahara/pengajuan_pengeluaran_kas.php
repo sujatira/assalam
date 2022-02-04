@@ -4,6 +4,7 @@
       <div class="card bg-white">
         <h5 class="card-header bg-primary text-white">Form pengajuan pengeluaran kas Masjid Jami Assalam</h5>
         <div class="card-body">
+          <div class="flash-data" data-flashdata="<?= $this->session->flashdata('pesan'); ?>"></div>
           <form action="<?= base_url('bendahara/pengajuan_pengeluaran_kas') ?>" method="POST" class="user ">
             <div class="input-group input-group-sm mb-3 form-group">
               <div class="input-group">

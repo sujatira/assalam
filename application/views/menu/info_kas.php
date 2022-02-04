@@ -28,7 +28,11 @@
                 <td>Rp. <?= number_format($m['nominal'], 0);  ?></td>
                 <td><?= $m['tanggal']; ?></td>
                 <td><?= $m['kategori']; ?></td>
-                <td><?= $m['keterangan']; ?></td>
+                <td>
+                  <span class="d-inline-block text-truncate" style="max-width: 170px;">
+                    <?= $m['keterangan']; ?>
+                  </span>
+                </td>
                 <td class="text-center"><a href="<?= base_url('menu/details_pemasukan/' . $m['id_infaq']) ?>" class="btn btn-sm btn-info"><i class="fas fa-fw fa-eye"></i></a></td>
               </tr>
             <?php endforeach; ?>

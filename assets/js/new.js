@@ -55,6 +55,28 @@ $(".btn-hapus-pengeluaran").on("click", function(e) {
     });
   });
 
+  $(".btn-hapus-pemasukan").on("click", function(e) {
+    e.preventDefault();
+    const href = $(this).attr("href");
+  
+    Swal.fire({
+        title: "Anda yakin?",
+        text: "Data pemasukan akan dihapus!",
+        icon: "warning",
+        iconColor : "red",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Hapus",
+        cancelButtonText: "Batalkan",
+        toast: true,
+    }).then((result) => {
+        if (result.value == true) {
+            document.location.href = href;
+        }
+    });
+  });
+
 $(".btn-keluar").on("click", function(e) {
     e.preventDefault();
     const href = $(this).attr("href");

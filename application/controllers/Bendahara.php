@@ -18,6 +18,11 @@ class Bendahara extends CI_Controller
         $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
         $this->session->userdata('email')])->row_array();
         $data['judul'] = 'Dashboard Bendahara';
+        $data['masuk'] = $this->db->query('SELECT SUM(nominal) AS jumlah FROM tbl_infaq')->row(); //masuk
+        $data['keluar'] = $this->db->query('SELECT SUM(jumlah_pengajuan) AS maks FROM tbl_pengajuan WHERE status_pengajuan = 1')->row(); //pengeluaran
+        $data['sisa'] = $data['masuk']->jumlah - $data['keluar']->maks; //sisa
+        $data['chart2'] = $this->Infaq_model->chartKas();
+
         $this->load->view('templates/header_user', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
@@ -91,6 +96,7 @@ class Bendahara extends CI_Controller
             ];
 
             $this->db->insert('tbl_pengajuan', $data);
+            $this->session->set_flashdata('pesan',  'pengeluaran berhasil diajukan! tunggu respon dari admin.');
             return redirect('bendahara/pengeluaran_kas');
         }
     }
@@ -99,8 +105,15 @@ class Bendahara extends CI_Controller
     {
         $where = array('id_pengajuan' => $id);
         $this->Infaq_model->hapus_pengajuan($where, 'tbl_pengajuan');
-        $this->session->set_flashdata('hapus',  '<div class="alert alert-success fade show" role="alert"><i class="fas fa-check"></i> Data pengajuan berhasil dihapus</div>');
+        $this->session->set_flashdata('pesan',  'pengeluaran berhasil dihapus');
         redirect('bendahara/pengeluaran_kas');
+    }
+    public function hapus_pemasukan($id)
+    {
+        $where = array('id_infaq' => $id);
+        $this->Infaq_model->hapus_pemasukan($where, 'tbl_infaq');
+        $this->session->set_flashdata('pesan', 'pemasukan berhasil dihapus');
+        redirect('bendahara/kas');
     }
     public function pemasukan_kas()
     {
@@ -150,6 +163,7 @@ class Bendahara extends CI_Controller
             ];
 
             $this->db->insert('tbl_infaq', $data);
+            $this->session->set_flashdata('pesan',  'pemasukan kas berhasil ditambahkan!');
             return redirect('bendahara/kas');
         }
     }
@@ -178,6 +192,21 @@ class Bendahara extends CI_Controller
         $this->load->view('templates/topbar', $data);
         $this->load->view('bendahara/edit_pemasukan', $data);
         $this->load->view('templates/footer_user');
+    }
+
+    public function update_pemasukan()
+    {
+        $id_infaq = $this->input->post('id_infaq');
+        $nama = $this->input->post('nama');
+        $nominal = $this->input->post('nominal');
+        $keterangan = $this->input->post('keterangan');
+        $tanggal = date('Y-m-d');
+        $kategori = $this->input->post('kategori');
+
+        $this->db->query("UPDATE `tbl_infaq` SET `nama`, `nominal`, `keterangan`, `tanggal`, `kategori`='$nama','$nominal','$keterangan','$tanggal','$kategori' WHERE `id_infaq`='$id_infaq'");
+
+        $this->session->set_flashdata('pesan',  'pemasukan kas berhasil diupdate!');
+        redirect('bendahara/kas');
     }
     public function print_pengajuan($id)
     {
