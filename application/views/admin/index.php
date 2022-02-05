@@ -1,6 +1,6 @@
 	<div class="container">
 		<!-- <h1 class="h3 mb-4 text-gray-800"><?= $judul; ?></h1> -->
-		<div class="row justify-content-around">
+		<div class="row justify-content-between">
 			<div class="col-xl-3 col-md-6 mb-4">
 				<div class="card border-left-primary shadow h-100 py-2 bg-white">
 					<div class="card-body bg-white">
@@ -34,44 +34,57 @@
 				</div>
 			</div>
 			<div class="col-xl-3 col-md-6 mb-4">
-				<div class="card border-left-primary shadow h-100 py-2 bg-white">
+				<div class="card border-left-danger shadow h-100 py-2 bg-white">
 					<div class="card-body bg-white">
+
 						<div class="row no-gutters align-items-center">
 							<div class="col mr-2">
-								<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+								<div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
 									Pengajuan baru</div>
-								<div class="h5 mb-0 font-weight-bold text-gray-800"><?= $blmacc ?> Pengajuan</div>
+								<div class="h5 mb-0 font-weight-bold text-gray-800"><?= $blmacc2 ?> Artikel baru</div>
 							</div>
+							<?php
+							if ($blmacc2) { ?>
+								<div class="spinner-grow spinner-grow-sm text-danger" role="status">
+									<span class="sr-only">Loading...</span>
+								</div>
+							<?php } ?>
 							<div class="col-auto">
-								<i class="fas fa-fw fa-file-invoice-dollar fa-2x text-primary"></i>
+								<i class="fas fa-fw fa-newspaper fa-2x text-danger"></i>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- <div class="col-xl-3 col-md-6 mb-4">
-				<div class="card border-left-primary shadow h-100 py-2 bg-white">
+			<div class="col-xl-3 col-md-6 mb-4">
+				<div class="card border-left-danger shadow h-100 py-2 bg-white">
 					<div class="card-body bg-white">
 						<div class="row no-gutters align-items-center">
 							<div class="col mr-2">
-								<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-									Jumlah Saldo Masjid</div>
-								<div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+								<div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+									Pengajuan baru</div>
+								<div class="h5 mb-0 font-weight-bold text-gray-800"><?= $blmacc ?> Pengajuan</div>
 							</div>
+							<?php
+							if ($blmacc) { ?>
+								<div class="spinner-grow spinner-grow-sm text-danger" role="status">
+									<span class="sr-only">Loading...</span>
+								</div>
+							<?php } ?>
 							<div class="col-auto">
-								<i class="fas fa-fw fa-file-invoice-dollar fa-2x text-primary"></i>
+								<i class="fas fa-fw fa-file-invoice-dollar fa-2x text-danger"></i>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div> -->
+			</div>
 		</div>
 		<div class="row">
 			<div class="col-xl-8 col-lg-7">
 				<div class="card shadow mb-4">
 					<!-- Card Header - Dropdown -->
 					<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-primary">
-						<h6 class="m-0 font-weight-bold text-white">Info Pemasukan Kas Per Bulan</h6>
+						<h6 class="m-0 font-weight-bold text-white">Info grafik pemasukan kas per bulan</h6>
 					</div>
 					<!-- Card Body -->
 					<div class="card-body bg-white">
@@ -79,7 +92,7 @@
 							<?php
 							foreach ($chart2 as $ct => $value) {
 								$dod[]  = $value['month'];
-								$mm[]   = $value['nominal'];
+								$mm[]   = $value['jumlah'];
 							}
 							?>
 							<canvas id="myBarChart"></canvas>
@@ -97,6 +110,13 @@
 										}],
 									},
 									options: {
+										scales: {
+											yAxes: [{
+												ticks: {
+													beginAtZero: true,
+												}
+											}]
+										},
 										maintainAspectRatio: false,
 										tooltips: {
 											backgroundColor: "rgb(255,255,255)",
@@ -152,6 +172,7 @@
 										}],
 									},
 									options: {
+
 										maintainAspectRatio: false,
 										tooltips: {
 											backgroundColor: "rgb(255,255,255)",

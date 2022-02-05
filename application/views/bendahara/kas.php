@@ -23,7 +23,7 @@
 							<th>Nominal</th>
 							<th>Keterangan</th>
 							<th>Tanggal</th>
-							<!-- <th>Bukti</th> -->
+							<th>Dari</th>
 							<th>Aksi</th>
 						</tr>
 					</thead>
@@ -40,7 +40,7 @@
 									</span>
 								</td>
 								<td class="text-center"><?= $ifq['tanggal']; ?></td>
-								<!-- <td class="text-center"><?= $ifq['bukti']; ?></td> -->
+								<td class="text-center"><?= $ifq['kategori']; ?></td>
 								<td class="text-center">
 									<a href="<?= base_url('bendahara/hapus_pemasukan/' . $ifq['id_infaq']) ?>" class="btn btn-danger btn-sm btn-hapus-pemasukan" id="btn-hapus-pemasukan"><i class="fas fa-fw fa-trash"></i></a>
 									<a href="<?= base_url('bendahara/edit_pemasukan/' . $ifq['id_infaq']) ?>" class="btn btn-success btn-sm"><i class="fas fa-fw fa-edit"></i></a>

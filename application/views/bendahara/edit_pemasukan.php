@@ -19,7 +19,7 @@
             <div class="form-group row">
               <label class="col-sm-2 col-form-label">Nominal (Rp)</label>
               <div class="col-sm-10">
-                <input type="text" name="nominal" class="form-control" value="<?= number_format($ifk->nominal) ?>">
+                <input type="text" name="nominal" class="form-control" value="<?= $ifk->nominal ?>">
               </div>
             </div>
             <div class="form-group row">

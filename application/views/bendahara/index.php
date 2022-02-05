@@ -56,6 +56,8 @@
     		<!-- Card Header - Dropdown -->
     		<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-primary">
     			<h6 class="m-0 font-weight-bold text-white">Info Pemasukan Kas Per Bulan</h6>
+
+
     		</div>
     		<!-- Card Body -->
     		<div class="card-body bg-white">
@@ -63,10 +65,10 @@
     				<?php
 						foreach ($chart2 as $ct => $value) {
 							$dod[]  = $value['month'];
-							$mm[]   = $value['nominal'];
+							$mm[]   = $value['jumlah'];
 						}
 						?>
-    				<canvas id="myBarChart"></canvas>
+    				<canvas id="myBarChart" height="90px"></canvas>
     				<script>
     					var ctx = document.getElementById("myBarChart");
     					var myBarChart = new Chart(ctx, {
@@ -81,8 +83,17 @@
     							}],
     						},
     						options: {
+    							scales: {
+    								yAxes: [{
+    									ticks: {
+
+    										beginAtZero: true,
+    									}
+    								}]
+    							},
     							maintainAspectRatio: false,
     							tooltips: {
+
     								backgroundColor: "rgb(255,255,255)",
     								bodyFontColor: "#858796",
     								borderColor: '#dddfeb',
@@ -93,7 +104,7 @@
     								caretPadding: 10,
     							},
     							legend: {
-    								display: false
+    								display: false,
     							},
     							cutoutPercentage: 80,
     						},
@@ -112,4 +123,5 @@
     		</div>
     	</div>
     </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
     <!-- End of Main Content -->

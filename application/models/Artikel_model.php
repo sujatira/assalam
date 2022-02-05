@@ -100,4 +100,10 @@ class Artikel_model extends CI_Model
 
 		$this->db->get()->row();
 	}
+	public function getArtikelBlmAcc()
+	{
+		$query = "SELECT * FROM `tbl_artikel` WHERE `status` = 0";
+		$num = $this->db->query($query);
+		return $num->num_rows();
+	}
 }

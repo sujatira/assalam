@@ -15,7 +15,7 @@
             </div>
             <div class="input-group input-group-sm mb-3 form-group">
               <div class="input-group">
-                <label class="input-group">Jumlah (Rp)</label>
+                <label class="input-group">Harga (Rp)</label>
                 <small class="text-left text-danger"><?= form_error('jumlah') ?></small>
               </div>
               <input id="jumlah" name="jumlah" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">

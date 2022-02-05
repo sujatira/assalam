@@ -17,6 +17,7 @@ class Admin extends CI_Controller
         $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
         $this->session->userdata('email')])->row_array();
         $data['judul'] = 'Dashboard';
+        $data['adapengajuan'] = $this->Infaq_model->getAllPengajuan();
         $data['jumlahartikel'] = $this->Artikel_model->numartikel();
         $data['jumlahuser'] = $this->User_model->numuser();
         $data['masuk'] = $this->db->query('SELECT SUM(nominal) AS jumlah FROM tbl_infaq')->row(); //masuk
@@ -25,6 +26,7 @@ class Admin extends CI_Controller
         $data['chart'] = $this->User_model->chartUser();
         $data['chart2'] = $this->Infaq_model->chartKas();
         $data['blmacc'] = $this->Infaq_model->getPengajuanBlmAcc();
+        $data['blmacc2'] = $this->Artikel_model->getArtikelBlmAcc();
 
         $this->load->view('templates/header_user', $data);
         $this->load->view('templates/sidebar', $data);
