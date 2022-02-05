@@ -200,10 +200,9 @@ class Bendahara extends CI_Controller
         $nama = $this->input->post('nama');
         $nominal = $this->input->post('nominal');
         $keterangan = $this->input->post('keterangan');
-        $tanggal = date('Y-m-d');
         $kategori = $this->input->post('kategori');
 
-        $this->db->query("UPDATE `tbl_infaq` SET `nama`, `nominal`, `keterangan`, `tanggal`, `kategori`='$nama','$nominal','$keterangan','$tanggal','$kategori' WHERE `id_infaq`='$id_infaq'");
+        $this->db->query("UPDATE `tbl_infaq` SET `nama`='$nama', `nominal`='$nominal', `keterangan`='$keterangan', `kategori`='$kategori' WHERE `tbl_infaq`.`id_infaq`='$id_infaq'");
 
         $this->session->set_flashdata('pesan',  'pemasukan kas berhasil diupdate!');
         redirect('bendahara/kas');

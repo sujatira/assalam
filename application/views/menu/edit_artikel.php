@@ -1,4 +1,4 @@
-<form method="POST" action="<?= base_url('Menu/approve'); ?>" enctype="multipart/form-data">
+<form method="POST" action="<?= base_url('Menu/update_artikel'); ?>" enctype="multipart/form-data">
   <div class="row m-2">
     <div class="col-md-12">
       <div class="card bg-white">

@@ -136,6 +136,17 @@ class Menu extends CI_Controller
 		return redirect('menu/index');
 	}
 
+	public function update_artikel()
+	{
+		$id_artikel = $this->input->post('id_artikel');
+		$judul = $this->input->post('judul');
+		$isi = $this->input->post('isi');
+
+		$this->db->query("UPDATE `tbl_artikel` SET `judul`='$judul', `isi`='$isi'  WHERE `tbl_artikel`.`id_artikel`='$id_artikel'");
+		$this->session->set_flashdata('pesan', 'artikel berhasil diedit!');
+		return redirect('menu/index');
+	}
+
 	public function tolak_artikel()
 	{
 		$id_artikel = $this->input->post('id_artikel');
@@ -168,8 +179,6 @@ class Menu extends CI_Controller
 		$data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
 		$this->session->userdata('email')])->row_array();
 		$data['infak'] = $this->Infaq_model->getAllPengajuan();
-
-
 
 
 		$data['user'] = $this->User_model->getAllUser();

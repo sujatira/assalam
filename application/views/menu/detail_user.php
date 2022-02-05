@@ -16,7 +16,7 @@
 	</div>
 	<div class="col-sm-6">
 		<div class="text-center">
-			<img src="https://cdn-icons.flaticon.com/png/512/2194/premium/2194188.png?token=exp=1641485978~hmac=7bccad0e34259e76daaf507dc9e61575" width="400px" class="img-fluid" alt="">
+			<img src="https://cdn-icons-png.flaticon.com/512/6806/6806502.png" width="400px" class="img-fluid" alt="">
 		</div>
 	</div>
 </div>

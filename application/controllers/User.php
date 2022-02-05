@@ -56,6 +56,7 @@ class User extends CI_Controller
             }
 
 
+
             $this->db->set('nama', $nama);
             $this->db->where('email', $email);
             $this->db->update('tbl_user');
