@@ -37,7 +37,7 @@
 						</div>
 					</div>
 					<div class="form-group row m-3">
-						<label class="col-sm-2 col-form-label">Judul artikel</label>
+						<label class="col-sm-2 col-form-label">Tanggal</label>
 						<div class="col-sm-10">
 							<input type="text" name="judul" class="form-control" value="<?= date('d F Y', $aa->tanggal) ?>" readonly>
 						</div>
