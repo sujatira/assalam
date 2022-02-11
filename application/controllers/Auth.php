@@ -3,6 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Auth extends CI_Controller
 {
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -34,38 +35,106 @@ class Auth extends CI_Controller
 	}
 
 	private function _login()
+
 	{
+		$this->load->model('User_model');
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
-		// $id_user = $this->input->post('id_user');
 
 		$tbl_user = $this->db->get_where('tbl_user', ['email' => $email])->row_array();
 
 		if ($tbl_user) {
 			//cek password
+			// if (password_verify($password, $tbl_user['password'])) {
+			// 	$data = [
+			// 		'id_user' => $tbl_user['id_user'],
+			// 		'email' => $tbl_user['email'],
+			// 		'role_id' => $tbl_user['role_id'],
+			// 		'nama' => $tbl_user['nama']
+			// 	];
+			// 	//seleksi masuk admin, bendahara, atau member
+			// 	$this->session->set_userdata($data);
+
+			// 	// var_dump($data);
+			// 	// die;
+
+			// 	if ($tbl_user['role_id'] == 1) {
+			// 		redirect('admin');
+			// 	} elseif ($tbl_user['role_id'] == 2) {
+			// 		redirect('bendahara');
+			// 	} else {
+			// 		redirect('user');
+			// 	};
+			// } else {
+			// 	$this->session->set_flashdata('pesan', '<div class="alert alert-andi alert-danger fade show" role="alert"><i class="fas fa-times-circle"></i> Password salah!
+			//         </div>');
+			// 	redirect('auth');
+			// }
 			if (password_verify($password, $tbl_user['password'])) {
 				$data = [
 					'id_user' => $tbl_user['id_user'],
 					'email' => $tbl_user['email'],
 					'role_id' => $tbl_user['role_id'],
-					'nama' => $tbl_user['nama']
+					'nama' => $tbl_user['nama'],
+					'status_blok' => $tbl_user['status_blok']
 				];
-				//seleksi masuk admin, bendahara, atau member
 				$this->session->set_userdata($data);
 
-				// var_dump($data);
-				// die;
+				$status = $this->session->userdata('status_blok');
 
-				if ($tbl_user['role_id'] == 1) {
-					redirect('admin');
-				} elseif ($tbl_user['role_id'] == 2) {
-					redirect('bendahara');
+				if ($status != 0) {
+
+					session_unset();
+
+					//data yang dibawa hanya 'id' untuk keperluan reset password
+					$data = [
+						'id_user' => $tbl_user['id_user']
+					];
+					$this->session->set_userdata($data);
+
+					$this->session->set_flashdata('pesan', '<div class="alert alert-andi alert-danger fade show" role="alert"><i class="fas fa-times-circle"></i> Akun anda telah diblokir, silahkan reset password!
+					</div>');
+					redirect('auth/reset_password');
 				} else {
-					redirect('user');
-				};
+
+					if ($tbl_user['role_id'] == 1) {
+						redirect('admin');
+					} elseif ($tbl_user['role_id'] == 2) {
+						redirect('bendahara');
+					} else {
+						redirect('user');
+					}
+				}
+
+
+				//jika user gagal masuk selama 3 kali atau lebih
+			} elseif (isset($_SESSION['auth'])) {
+				if ($_SESSION['auth'] > 3 || $_SESSION['auth'] == 3) {
+					$_SESSION['auth'] = 4;
+					//menyimpan data akun yang akan diblokir, saya perlu id nya saja
+					$data = [
+						'id_user' => $tbl_user['id_user']
+					];
+					$this->session->set_userdata($data);
+					//sesudah data di set lalu di ubah status bloknya menjadi 1
+					$this->User_model->getBlok();
+					$this->session->set_flashdata('pesan', '<div class="alert alert-andi alert-danger fade show" role="alert"><i class="fas fa-times-circle"></i> Karena melebihi tiga kali salah, Akun anda diblokir!
+					</div>');
+					redirect('auth');
+				} else {
+					//session "auth" ditambah 1
+					$_SESSION['auth'] = $_SESSION['auth'] + 1;
+					//jalankan function login()
+					$this->session->set_flashdata('pesan', '<div class="alert alert-andi alert-danger fade show" role="alert"><i class="fas fa-times-circle"></i> Password salah!
+					</div>');
+					redirect('auth');
+				}
 			} else {
+				//daftarkan session "auth", dan beri nilai 1
+				$_SESSION['auth'] = 1;
+				//jalankan function login()
 				$this->session->set_flashdata('pesan', '<div class="alert alert-andi alert-danger fade show" role="alert"><i class="fas fa-times-circle"></i> Password salah!
-              </div>');
+				</div>');
 				redirect('auth');
 			}
 		} else {
@@ -112,7 +181,8 @@ class Auth extends CI_Controller
 				'image' => 'default.jpg',
 				'sebagai' => 'Member',
 				'role_id' => 3, //ini adalah role_id user member
-				'date_create' => time()
+				'date_create' => time(),
+				'status_blok' => 0
 			];
 
 			$this->db->insert('tbl_user', $data);
@@ -120,6 +190,15 @@ class Auth extends CI_Controller
           </div>');
 			return redirect('auth');
 		}
+	}
+
+	public function reset_password()
+	{
+
+		$data['judul'] = 'Halaman Login';
+		$this->load->view('templates/header_auth', $data);
+		$this->load->view('auth/reset_password');
+		$this->load->view('templates/footer_auth');
 	}
 
 	public function logout()

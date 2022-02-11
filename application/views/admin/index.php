@@ -284,4 +284,6 @@
 		</div>
 	</div>
 
+	<!-- Button trigger modal -->
+
 	<!-- End of Main Content -->
