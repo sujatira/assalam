@@ -59,6 +59,13 @@ class User_model extends CI_Model
         $id_user = $this->session->userdata('id_user');
         $blok = 1;
 
+        $this->db->query("UPDATE `tbl_user` SET `status_blok` = $blok WHERE `tbl_user`.`id_user` = $id_user");
+    }
+
+    public function getUnblok()
+    {
+        $id_user = $this->session->userdata('id_user');
+        $blok = 0;
 
         $this->db->query("UPDATE `tbl_user` SET `status_blok` = $blok WHERE `tbl_user`.`id_user` = $id_user");
     }

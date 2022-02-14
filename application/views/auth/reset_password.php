@@ -8,35 +8,39 @@
           <!-- Nested Row within Card Body -->
           <div class="row p-5 text-center text-white">
             <div class="mb-3">
-              <h3>Reset Password</h3>
+              <h3>Ganti Password</h3>
             </div>
-            <!-- pesan flash data -->
             <?= $this->session->flashdata('pesan'); ?>
+            <!-- pesan flash data -->
             <form class="user" method="POST" action="<?= base_url('auth/reset_password'); ?>">
-
               <div class="row form-group">
-                <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Masukan password yang dulu">
-                <small class="text-left text-danger"><?= form_error('password') ?></small>
+                <input type="text" class="form-control bg-gradient-dark form-control-user" placeholder="<?= $tbl_user['email'] ?>" readonly>
               </div>
               <div class="row form-group">
-                <input type="password" class="form-control form-control-user" id="password2" name="password2" placeholder="Masukan password baru">
-                <small class="text-left text-danger"><?= form_error('password') ?></small>
+                <input type="password" class="form-control form-control-user" id="current_password" name="current_password" placeholder="Masukan password yang dulu">
+                <small class="text-left text-danger"><?= form_error('current_password') ?></small>
               </div>
               <div class="row form-group">
-                <input type="password" class="form-control form-control-user" id="newpassword" name="newpassword" placeholder="Uangi password baru">
-                <small class="text-left text-danger"><?= form_error('password') ?></small>
+                <input type="password" class="form-control form-control-user" id="new_password1" name="new_password1" placeholder="Masukan password baru">
+                <small class="text-left text-danger"><?= form_error('new_password1') ?></small>
+              </div>
+              <div class="row form-group">
+                <input type="password" class="form-control form-control-user" id="new_password2" name="new_password2" placeholder="Uangi password baru">
+                <small class="text-left text-danger"><?= form_error('new_password2') ?></small>
               </div>
               <div class="row">
-                <button type="submit" class="btn btn-user btn-primary"> <i class="fas fa-fw fa-sign-in-alt"></i> Reset</button>
-                <a href="<?= base_url('home'); ?>" class="text-white btn btn-user btn-info mt-3"> <i class="fas fa-fw fa-home"></i> Home</a>
-                <div class="text-center mt-3">
-                  <a class="text-white" href="<?= base_url('auth/daftar'); ?>">Belum punya akun? Silahkan Daftar</a>
-                </div>
+                <button type="submit" class="btn btn-user btn-primary"> <i class="fas fa-fw fa-check"></i> Simpan</button>
+                <!-- <a href="<?= base_url('home'); ?>" class="text-white btn btn-user btn-info mt-3"> <i class="fas fa-fw fa-home"></i> Home</a> -->
               </div>
-            </form>
           </div>
+
+          </form>
         </div>
       </div>
     </div>
+    <div class="copyright text-center my-auto text-white">
+      <span>Copyright &copy; Jami-Assalam 2021 - <?= date('Y'); ?></span>
+    </div>
   </div>
+</div>
 </div>

@@ -36,11 +36,14 @@
               <a href="<?= base_url('home') ?>" class="btn btn-info btn-user btn-block mt-3"> <i class="fas fa-fw fa-home"></i>
                 Home
               </a>
-              <div class="text-center mt-3"><a class="text-white" href="<?= base_url('auth') ?>">Sudah punya akun? Silahkan Login</a></div>
+              <div class="text-center mt-3"><a class="text-white text-login text-shadows" href="<?= base_url('auth') ?>">Sudah punya akun? Silahkan Login</a></div>
             </form>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+<div class="copyright text-center my-auto text-white">
+  <span>Copyright &copy; Jami-Assalam 2021 - <?= date('Y'); ?></span>
 </div>

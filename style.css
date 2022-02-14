@@ -35,6 +35,27 @@
 	border-radius: 40px;
 }
 
+/* text-gerak */
+.text-login {
+	animation: glow 2s ease-in-out infinite;
+	color: #4db1bc;
+	grid-column: 1;
+	grid-row: 1;
+	align-self: end;
+	justify-self: center;
+	padding-bottom: 1rem;
+}
+
+@keyframes glow {
+	from {
+		text-shadow: 0 0 100px #2d9da9;
+	}
+
+	to {
+		text-shadow: 0 0 100px #34b3c1, 0 0 10px #4dbbc7;
+	}
+}
+
 
 /* Hanya di Desktop */
 @media (min-width: 992px) {

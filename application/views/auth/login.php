@@ -25,7 +25,7 @@
                 <button type="submit" class="btn btn-user btn-primary"> <i class="fas fa-fw fa-sign-in-alt"></i> Login</button>
                 <a href="<?= base_url('home'); ?>" class="text-white btn btn-user btn-info mt-3"> <i class="fas fa-fw fa-home"></i> Home</a>
                 <div class="text-center mt-3">
-                  <a class="text-white" href="<?= base_url('auth/daftar'); ?>">Belum punya akun? Silahkan Daftar</a>
+                  <a class="text-white  text-login text-shadows" href="<?= base_url('auth/daftar'); ?>">Belum punya akun? Silahkan Daftar</a>
                 </div>
               </div>
             </form>
@@ -34,4 +34,7 @@
       </div>
     </div>
   </div>
+</div>
+<div class="copyright text-center my-auto text-white">
+  <span>Copyright &copy; Jami-Assalam 2021 - <?= date('Y'); ?></span>
 </div>

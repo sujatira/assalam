@@ -15,8 +15,8 @@
     							<th scope="col">Email</th>
     							<th scope="col">Bergabung</th>
     							<th scope="col">Status</th>
-    							<th scope="col">Aksi</th>
     							<th scope="col">Gambar</th>
+    							<th scope="col">Aksi</th>
     						</tr>
     					</thead>
     					<tbody>
@@ -30,6 +30,7 @@
     								<th><?= $u['email']; ?></th>
     								<th><?= date('d F Y', $u['date_create']); ?></th>
     								<th><?= $u['sebagai']; ?></th>
+    								<th class="text-center "> <img src="<?= base_url('assets/images/profile/') . $u['image'] ?> " width="75px" height="75px"> </th>
     								<th class="text-center">
 
     									<?php if ($u['role_id'] != 1) { ?>
@@ -45,7 +46,6 @@
 
     									<?php } ?>
     								</th>
-    								<th class="text-center "> <img src="<?= base_url('assets/images/profile/') . $u['image'] ?> " width="75px" height="75px"> </th>
     							</tr>
     						<?php endforeach; ?>
     					</tbody>

@@ -65,39 +65,16 @@ class User extends CI_Controller
         }
     }
 
-    // public function update($id)
-    // {
+    public function reset_password()
+    {
+        $data['judul'] = 'Reset Password';
+        $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
+        $this->session->userdata('email')])->row_array();
 
-    //     $data['judul'] = 'Edit Profile';
-    //     $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
-    //     $this->session->userdata('email')])->row_array();
-    //     $this->form_validation->set_rules('name', 'Full Name', 'required|trim');
-    //     $data['user'] = $this->User_model->userUpdate();
-
-    //     if ($this->form_validation->run() == false) {
-
-    //         $this->load->view('templates/header_user', $data);
-    //         $this->load->view('templates/sidebar', $data);
-    //         $this->load->view('templates/topbar', $data);
-    //         $this->load->view('user/edit', $data);
-    //         $this->load->view('templates/footer_user');
-    //     } else {
-
-    //         $id = $this->input->post('id');
-    //         $nama = $this->input->post('nama');
-    //         $email = $this->input->post('email');
-
-    //         $data = array(
-    //             'nama' => $nama,
-    //             'email' => $email
-    //         );
-
-    //         $where = array(
-    //             'id' => $id
-    //         );
-    //     }
-
-    //     $this->session->set_flashdata('pesan', '<div class="alert alert-andi alert-success alert-dismissible fade show" role="alert"><i class="fas fa-check-circle"></i> Data berhasil di edit!</div>');
-    //     return redirect('user/index');
-    // }
+        $this->load->view('templates/header_user', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('user/reset_password', $data);
+        $this->load->view('templates/footer_user');
+    }
 }

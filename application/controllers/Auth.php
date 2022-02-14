@@ -7,6 +7,7 @@ class Auth extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('User_model');
 	}
 	public function index()
 
@@ -40,7 +41,6 @@ class Auth extends CI_Controller
 		$this->load->model('User_model');
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
-
 		$tbl_user = $this->db->get_where('tbl_user', ['email' => $email])->row_array();
 
 		if ($tbl_user) {
@@ -82,21 +82,7 @@ class Auth extends CI_Controller
 
 				$status = $this->session->userdata('status_blok');
 
-				if ($status != 0) {
-
-					session_unset();
-
-					//data yang dibawa hanya 'id' untuk keperluan reset password
-					$data = [
-						'id_user' => $tbl_user['id_user']
-					];
-					$this->session->set_userdata($data);
-
-					$this->session->set_flashdata('pesan', '<div class="alert alert-andi alert-danger fade show" role="alert"><i class="fas fa-times-circle"></i> Akun anda telah diblokir, silahkan reset password!
-					</div>');
-					redirect('auth/reset_password');
-				} else {
-
+				if ($status == 0) {
 					if ($tbl_user['role_id'] == 1) {
 						redirect('admin');
 					} elseif ($tbl_user['role_id'] == 2) {
@@ -104,9 +90,25 @@ class Auth extends CI_Controller
 					} else {
 						redirect('user');
 					}
+				} else {
+					session_unset();
+					$data = [
+						'id_user' => $tbl_user['id_user'],
+						'email' => $tbl_user['email'],
+						// 'role_id' => $tbl_user['role_id'],
+						// 'nama' => $tbl_user['nama'],
+						'status_blok' => $tbl_user['status_blok']
+					];
+					$this->session->set_userdata($data);
+
+					$this->load->view('templates/header_auth', $data);
+					$this->load->view('auth/reset_password', $data);
+					$this->load->view('templates/footer_auth');
+
+					$this->session->set_flashdata('pesan', '<div class="alert alert-andi alert-danger fade show" role="alert"><i class="fas fa-times-circle"></i> Akun anda telah diblokir, silahkan reset password!
+					</div>');
+					redirect('auth/reset_password');
 				}
-
-
 				//jika user gagal masuk selama 3 kali atau lebih
 			} elseif (isset($_SESSION['auth'])) {
 				if ($_SESSION['auth'] > 3 || $_SESSION['auth'] == 3) {
@@ -130,7 +132,7 @@ class Auth extends CI_Controller
 					redirect('auth');
 				}
 			} else {
-				//daftarkan session "auth", dan beri nilai 1
+				//tentukan dulu session "auth"nya jadi 1
 				$_SESSION['auth'] = 1;
 				//jalankan function login()
 				$this->session->set_flashdata('pesan', '<div class="alert alert-andi alert-danger fade show" role="alert"><i class="fas fa-times-circle"></i> Password salah!
@@ -194,11 +196,60 @@ class Auth extends CI_Controller
 
 	public function reset_password()
 	{
+		$data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
+		$this->session->userdata('email')])->row_array();
+		$data['judul'] = 'Reset Password';
 
-		$data['judul'] = 'Halaman Login';
-		$this->load->view('templates/header_auth', $data);
-		$this->load->view('auth/reset_password');
-		$this->load->view('templates/footer_auth');
+		// var_dump($data);
+		// die;
+
+		$this->form_validation->set_rules('current_password', 'Current Password', 'required|trim', [
+			'required' => 'Password tidak boleh kosong'
+		]);
+		$this->form_validation->set_rules('new_password1', 'New Password', 'required|trim|min_length[8]|matches[new_password2]', [
+			'matches' => 'Password tidak sama!',
+			'min_length' => 'Password terlalu pendek',
+			'required' => 'Password tidak boleh kosong'
+		]);
+		$this->form_validation->set_rules('new_password2', 'Confirm New Password', 'required|trim|min_length[8]|matches[new_password1]', [
+			'matches' => 'Password tidak sama!',
+			'min_length' => 'Password terlalu pendek',
+			'required' => 'Password tidak boleh kosong'
+		]);
+
+
+		if ($this->form_validation->run() == false) {
+
+			$this->load->view('templates/header_auth', $data);
+			$this->load->view('auth/reset_password', $data);
+			$this->load->view('templates/footer_auth');
+		} else {
+			$current_password = $this->input->post('current_password');
+			$new_password = $this->input->post('new_password1');
+
+
+			if (!password_verify($current_password, $data['tbl_user']['password'])) {
+				$this->session->set_flashdata('pesan', '<div class="alert alert-andi alert-danger fade show" role="alert"><i class="fas fa-times-circle"></i> Masukkan password yang dulu! </div>');
+				redirect('auth/reset_password');
+			} else {
+				if ($current_password ==  $new_password) {
+					$this->session->set_flashdata('pesan', '<div class="alert alert-andi alert-danger fade show" role="alert"><i class="fas fa-times-circle"></i> Password baru tidak boleh sama dengan password dulu!
+					</div>');
+					redirect('auth/reset_password');
+				} else {
+					$password_hash = password_hash($new_password, PASSWORD_DEFAULT);
+					$this->User_model->getUnblok();
+					$this->db->set('password', $password_hash);
+					$this->db->where('email', $this->session->userdata('email'));
+					$this->db->update('tbl_user');
+
+					session_unset();
+					$this->session->set_flashdata('pesan', '<div class="alert alert-andi alert-success fade show" role="alert"><i class="fas fa-fw fa-check"></i> Password sudah dirubah!
+					</div>');
+					redirect('auth');
+				}
+			}
+		}
 	}
 
 	public function logout()

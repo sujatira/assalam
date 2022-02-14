@@ -29,6 +29,8 @@ class Artikel extends CI_Controller
 
     public function artikel_detail($id)
     {
+        $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
+        $this->session->userdata('email')])->row_array();
         $data['judul'] = 'Detail Artikel';
         $data['userartikel'] = $this->Artikel_model->getDetailArtikel($id);
         $data['artikel'] = $this->Artikel_model->getAllArtikel();

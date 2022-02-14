@@ -50,7 +50,7 @@
 								</div>
 							<?php } ?>
 							<div class="col-auto">
-								<i class="fas fa-fw fa-newspaper fa-2x text-danger"></i>
+								<i class="fas fa-fw fa-bell fa-2x text-danger"></i>
 							</div>
 						</div>
 					</div>
@@ -70,10 +70,14 @@
 								<div class="spinner-grow spinner-grow-sm text-danger" role="status">
 									<span class="sr-only">Loading...</span>
 								</div>
+								<div class="col-auto">
+									<i class="fas fa-fw fa-bell fa-2x text-danger"></i>
+								</div>
+							<?php } else { ?>
+								<div class="col-auto">
+									<i class="fas fa-fw fa-bell-slash fa-2x text-danger"></i>
+								</div>
 							<?php } ?>
-							<div class="col-auto">
-								<i class="fas fa-fw fa-file-invoice-dollar fa-2x text-danger"></i>
-							</div>
 						</div>
 					</div>
 				</div>
