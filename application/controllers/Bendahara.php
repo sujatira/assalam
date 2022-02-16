@@ -158,7 +158,7 @@ class Bendahara extends CI_Controller
                 'nama' => htmlspecialchars($this->input->post('nama', true)),
                 'nominal' => htmlspecialchars($this->input->post('nominal', true)),
                 'keterangan' => htmlspecialchars($this->input->post('keterangan', true)),
-                'tanggal' => date('Y-m-d'),
+                'tanggal' => date("Y-m-d H:i:s"),
                 'kategori' => htmlspecialchars($this->input->post('kategori', true))
             ];
 

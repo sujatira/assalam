@@ -76,7 +76,7 @@ class Usermenu extends CI_Controller
         $status = 1;
         $oleh = $this->session->userdata('nama');
 
-        $this->db->query("UPDATE `tbl_artikel` SET `judul`,`isi`,`tanggal`,`status`,`oleh`='$judul','$isi','$tanggal','$status','$oleh' WHERE `id_artikel`='$id_artikel'");
+        $this->db->query("UPDATE `tbl_artikel` SET `judul` = '$judul',`isi` = '$isi',`tanggal` = '$tanggal',`status` = '$status',`oleh` = '$oleh'  WHERE `id_artikel` = '$id_artikel'");
 
         redirect('usermenu');
     }

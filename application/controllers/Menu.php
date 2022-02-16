@@ -60,7 +60,7 @@ class Menu extends CI_Controller
 			'judul' => ($this->input->post('judul')),
 			'status' => 0,
 			'isi' => $isi,
-			'tanggal' => time(),
+			'tanggal' => date('d-m-Y'),
 			'tmb' => $file_name2,
 			'oleh' => ($this->session->userdata('nama'))
 		];
@@ -118,7 +118,7 @@ class Menu extends CI_Controller
 		$id_artikel = $this->input->post('id_artikel');
 		$status = $this->input->post('status');
 		$alasan_penolakan =	$this->input->post('alasan_penolakan');
-		$acc = time();
+		$acc = date('d-m-Y');
 		$oleh = $this->session->userdata('nama');
 
 		$this->db->query("UPDATE `tbl_artikel` SET `status`='$status' WHERE `id_artikel`='$id_artikel'");

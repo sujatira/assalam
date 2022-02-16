@@ -33,10 +33,10 @@
 										<?php } else if ($a->status == 2) { ?>
 											<span class="badge badge-danger">Di Tolak</span>
 										<?php } else { ?>
-											<span class="badge badge-warning text-dark">Menunggu</span>
+											<span class="badge badge-warning text-dark"><i class="fas fa-fw fa-sync fa-spin"></i> Menunggu</span>
 										<?php } ?>
 									</td>
-									<td class="text-center"><?= date('d M Y', $a->tanggal) ?></td>
+									<td class="text-center"><?= $a->tanggal ?></td>
 									<td class="text-center"><?= $this->User_model->getUser($a->id_user)->nama ?></td>
 									<td class="text-center">
 										<a href="<?= base_url('usermenu/edit_artikel/' . $a->id_artikel) ?>" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>

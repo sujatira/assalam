@@ -4,7 +4,7 @@
 		<div class="card-body bg-light">
 			<div class="row">
 				<div class="col-md">
-					<form id="frmtambah" action="<?= base_url('menu/index'); ?>" method="POST" enctype="multipart/form-data">
+					<form id="frmtambah" method="POST" enctype="multipart/form-data">
 						<div class="form-group">
 							<label>Gambar Judul</label>
 							<input type="file" name="gambar_judul" class="form-control">

@@ -32,7 +32,7 @@
                   <?php } else if ($a['status_pengajuan'] == 2) { ?>
                     <span class="badge badge-danger">Di Tolak</span>
                   <?php } else { ?>
-                    <span class="badge badge-warning text-dark">Menunggu</span>
+                    <span class="badge badge-warning text-dark"><i class="fas fa-fw fa-sync fa-spin"></i> Menunggu</span>
                   <?php } ?>
                 </td>
                 <td>

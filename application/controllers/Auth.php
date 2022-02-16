@@ -198,7 +198,7 @@ class Auth extends CI_Controller
 	{
 		$data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
 		$this->session->userdata('email')])->row_array();
-		$data['judul'] = 'Reset Password';
+		$data['judul'] = 'Ganti Password';
 
 		// var_dump($data);
 		// die;

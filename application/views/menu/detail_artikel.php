@@ -20,14 +20,14 @@
 						<label class="col-sm-2 col-form-label">Status artikel</label>
 						<div class="col">
 							<?php if ($aa->status == 1) { ?>
-								<button class="btn btn-success" disabled>Artikel disetujui <i class="fas fa-check"></i></button>
-								<label class="ml-2"> Disetujui pada tanggal <?= date('d M Y',  $aa->tanggal_acc) ?> Oleh <label href="<?= base_url('user'); ?>" class="badge badge-info"><?= $aa->periksa_oleh ?></label> </label>
+								<button class="btn btn-success" disabled>Disetujui <i class="fas fa-check"></i></button>
+								<label class="ml-2"> pada tanggal <?= $aa->tanggal_acc; ?> Oleh <label href="<?= base_url('user'); ?>" class="badge badge-info"><?= $aa->periksa_oleh ?></label> </label>
 							<?php } else if ($aa->status == 2) { ?>
 								<button class="btn btn-danger" disabled>Tidak disetujui <i class="fas fa-exclamation-triangle"></i></button>
 								<a class="btn btn-info" type="button" data-toggle="popover" title="Alasan penolakan artikel" data-content="<?= $aa->alasan_penolakan ?>"><i class="fas fa-eye"></i> Lihat alasan</a>
 							<?php } else { ?>
 								<button class="btn btn-warning text-dark" type="button" disabled>
-									<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+									<i class="fas fa-fw fa-sync fa-spin"></i>
 									Artikel sedang dalam peninjauan . . .
 								</button>
 							<?php } ?>
@@ -39,7 +39,7 @@
 					<div class="form-group row m-3">
 						<label class="col-sm-2 col-form-label">Tanggal</label>
 						<div class="col-sm-10">
-							<input type="text" name="judul" class="form-control" value="<?= date('d F Y', $aa->tanggal) ?>" readonly>
+							<input type="text" name="judul" class="form-control" value="<?= $aa->tanggal; ?>" readonly>
 						</div>
 					</div>
 					<div class="form-group row m-3">

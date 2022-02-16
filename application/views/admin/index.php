@@ -1,283 +1,305 @@
-	<div class="container">
-		<!-- <h1 class="h3 mb-4 text-gray-800"><?= $judul; ?></h1> -->
-		<div class="row justify-content-between">
-			<div class="col-xl-3 col-md-6 mb-4">
-				<div class="card border-left-primary shadow h-100 py-2 bg-white">
-					<div class="card-body bg-white">
-						<div class="row no-gutters align-items-center">
-							<div class="col mr-2">
-								<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-									Jumlah User</div>
-								<div class="h5 mb-0 font-weight-bold text-gray-800"><?= $jumlahuser ?> User</div>
-							</div>
-							<div class="col-auto">
-								<i class="fas fa-fw fa-users fa-2x text-primary"></i>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xl-3 col-md-6 mb-4">
-				<div class="card border-left-primary shadow h-100 py-2 bg-white">
-					<div class="card-body bg-white">
-						<div class="row no-gutters align-items-center">
-							<div class="col mr-2">
-								<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-									Jumlah Artikel</div>
-								<div class="h5 mb-0 font-weight-bold text-gray-800"><?= $jumlahartikel ?> Artikel</div>
-							</div>
-							<div class="col-auto">
-								<i class="fas fa-fw fa-newspaper fa-2x text-primary"></i>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xl-3 col-md-6 mb-4">
-				<div class="card border-left-danger shadow h-100 py-2 bg-white">
-					<div class="card-body bg-white">
+<div class="loader-wrapper" id="loader-wrapper">
+	<div class="fa-5x">
+		<span class="loader text-primary"></> <i class="fas fa-cog fa-spin"></i></span>
+	</div>
+</div>
+<script>
+	var myVar;
 
-						<div class="row no-gutters align-items-center">
-							<div class="col mr-2">
-								<div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
-									Approval artikel</div>
-								<div class="h5 mb-0 font-weight-bold text-gray-800"><?= $blmacc2 ?> Artikel baru</div>
-							</div>
-							<?php
-							if ($blmacc2) { ?>
-								<div class="spinner-grow spinner-grow-sm text-danger" role="status">
-									<span class="sr-only">Loading...</span>
-								</div>
-							<?php } ?>
-							<div class="col-auto">
-								<i class="fas fa-fw fa-bell fa-2x text-danger"></i>
-							</div>
+	function myFunction() {
+		myVar = setTimeout(showPage, 100);
+	}
+
+	function showPage() {
+		document.getElementById("loader-wrapper").style.display = "none";
+		document.getElementById("myDiv").style.display = "block";
+
+
+	}
+</script>
+<div class="container animate-bottom" id="myDiv" style="display:none;">
+	<!-- <h1 class="h3 mb-4 text-gray-800"><?= $judul; ?></h1> -->
+	<div class="row justify-content-between">
+		<div class="col-xl-3 col-md-6 mb-4">
+			<div class="card border-left-primary shadow h-100 py-2 bg-white">
+				<div class="card-body bg-white">
+					<div class="row no-gutters align-items-center">
+						<div class="col mr-2">
+							<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+								Jumlah User</div>
+							<div class="h5 mb-0 font-weight-bold text-gray-800"><?= $jumlahuser ?> User</div>
 						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xl-3 col-md-6 mb-4">
-				<div class="card border-left-danger shadow h-100 py-2 bg-white">
-					<div class="card-body bg-white">
-						<div class="row no-gutters align-items-center">
-							<div class="col mr-2">
-								<div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
-									Approval pengajuan</div>
-								<div class="h5 mb-0 font-weight-bold text-gray-800"><?= $blmacc ?> Pengajuan</div>
-							</div>
-							<?php
-							if ($blmacc) { ?>
-								<div class="spinner-grow spinner-grow-sm text-danger" role="status">
-									<span class="sr-only">Loading...</span>
-								</div>
-								<div class="col-auto">
-									<i class="fas fa-fw fa-bell fa-2x text-danger"></i>
-								</div>
-							<?php } else { ?>
-								<div class="col-auto">
-									<i class="fas fa-fw fa-bell-slash fa-2x text-danger"></i>
-								</div>
-							<?php } ?>
+						<div class="col-auto">
+							<i class="fas fa-fw fa-users fa-2x text-primary"></i>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-xl-8 col-lg-7">
-				<div class="card shadow mb-4">
-					<!-- Card Header - Dropdown -->
-					<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-primary">
-						<h6 class="m-0 font-weight-bold text-white">Info grafik pemasukan kas per bulan</h6>
-					</div>
-					<!-- Card Body -->
-					<div class="card-body bg-white">
-						<div class="chart-area">
-							<?php
-							foreach ($chart2 as $ct => $value) {
-								$dod[]  = $value['month'];
-								$mm[]   = $value['jumlah'];
-							}
-							?>
-							<canvas id="myBarChart"></canvas>
-							<script>
-								var ctx = document.getElementById("myBarChart");
-								var myBarChart = new Chart(ctx, {
-									type: 'bar',
-									data: {
-										labels: <?= json_encode($dod) ?>,
-										datasets: [{
-											data: <?= json_encode($mm) ?>,
-											backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
-											hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
-											hoverBorderColor: "rgba(234, 236, 244, 1)",
-										}],
-									},
-									options: {
-										scales: {
-											yAxes: [{
-												ticks: {
-													beginAtZero: true,
-												}
-											}]
-										},
-										maintainAspectRatio: false,
-										tooltips: {
-											backgroundColor: "rgb(255,255,255)",
-											bodyFontColor: "#858796",
-											borderColor: '#dddfeb',
-											borderWidth: 1,
-											xPadding: 15,
-											yPadding: 15,
-											displayColors: false,
-											caretPadding: 10,
-										},
-										legend: {
-											display: false
-										},
-										cutoutPercentage: 80,
-									},
-								});
-							</script>
+		<div class="col-xl-3 col-md-6 mb-4">
+			<div class="card border-left-primary shadow h-100 py-2 bg-white">
+				<div class="card-body bg-white">
+					<div class="row no-gutters align-items-center">
+						<div class="col mr-2">
+							<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+								Jumlah Artikel</div>
+							<div class="h5 mb-0 font-weight-bold text-gray-800"><?= $jumlahartikel ?> Artikel</div>
+						</div>
+						<div class="col-auto">
+							<i class="fas fa-fw fa-newspaper fa-2x text-primary"></i>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- Pie Chart -->
-			<div class=" col-xl-4 col-lg-5">
-				<div class="card shadow mb-4">
-					<!-- Card Header - Dropdown -->
-					<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-primary">
-						<h6 class="m-0 font-weight-bold text-white">Diagram Jumlah Member</h6>
-					</div>
-					<!-- Card Body -->
-					<div class="card-body bg-white">
-						<div class="chart-pie pt-4 pb-2">
+		</div>
+		<div class="col-xl-3 col-md-6 mb-4">
+			<div class="card border-left-danger shadow h-100 py-2 bg-white">
+				<div class="card-body bg-white">
 
-							<?php
-							foreach ($chart as $ct => $value) {
-								$tot[]  = $value['jumlah'];
-								$mn[]   = $value['sebagai'];
-							}
-							?>
-
-							<canvas id="myPieChart"></canvas>
-							<script>
-								var ctx = document.getElementById("myPieChart");
-								var myPieChart = new Chart(ctx, {
-									type: 'doughnut',
-									data: {
-										labels: <?= json_encode($mn)  ?>,
-										datasets: [{
-											data: <?= json_encode($tot)  ?>,
-											backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
-											hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
-											hoverBorderColor: "rgba(234, 236, 244, 1)",
-										}],
-									},
-									options: {
-
-										maintainAspectRatio: false,
-										tooltips: {
-											backgroundColor: "rgb(255,255,255)",
-											bodyFontColor: "#858796",
-											borderColor: '#dddfeb',
-											borderWidth: 1,
-											xPadding: 15,
-											yPadding: 15,
-											displayColors: false,
-											caretPadding: 10,
-										},
-										legend: {
-											display: false
-										},
-										cutoutPercentage: 80,
-									},
-								});
-							</script>
+					<div class="row no-gutters align-items-center">
+						<div class="col mr-2">
+							<div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+								Approval artikel</div>
+							<div class="h5 mb-0 font-weight-bold text-gray-800"><?= $blmacc2 ?> Artikel baru</div>
 						</div>
-						<div class="mt-4 text-center small">
-							<span class="mr-2">
-								<i class="fas fa-circle text-primary"></i> Admin
-							</span>
-							<span class="mr-2">
-								<i class="fas fa-circle text-success"></i> Bendahara
-							</span>
-							<span class="mr-2">
-								<i class="fas fa-circle text-info"></i> Member
-							</span>
-						</div>
+						<?php
+						if ($blmacc2) { ?>
+							<div class="spinner-grow spinner-grow-sm text-danger" role="status">
+								<span class="sr-only">Loading...</span>
+							</div>
+							<div class="col-auto">
+								<i class="fas fa-fw fa-bell fa-2x text-danger"></i>
+							</div>
+						<?php } else { ?>
+							<div class="col-auto">
+								<i class="fas fa-fw fa-bell-slash fa-2x text-danger"></i>
+							</div>
+						<?php } ?>
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-12">
-				<div class="card shadow mb-4">
-					<!-- Card Header - Dropdown -->
-					<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-primary">
-						<h6 class="m-0 font-weight-bold text-white">Info Kas</h6>
+		</div>
+		<div class="col-xl-3 col-md-6 mb-4">
+			<div class="card border-left-danger shadow h-100 py-2 bg-white">
+				<div class="card-body bg-white">
+					<div class="row no-gutters align-items-center">
+						<div class="col mr-2">
+							<div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+								Approval kas</div>
+							<div class="h5 mb-0 font-weight-bold text-gray-800"><?= $blmacc ?> Pengajuan</div>
+						</div>
+						<?php
+						if ($blmacc) { ?>
+							<div class="spinner-grow spinner-grow-sm text-danger" role="status">
+								<span class="sr-only">Loading...</span>
+							</div>
+							<div class="col-auto">
+								<i class="fas fa-fw fa-bell fa-2x text-danger"></i>
+							</div>
+						<?php } else { ?>
+							<div class="col-auto">
+								<i class="fas fa-fw fa-bell-slash fa-2x text-danger"></i>
+							</div>
+						<?php } ?>
 					</div>
-					<!-- Card Body -->
-					<div class="card-body bg-white">
-						<div class="row">
-							<div class="col-xl-3 col-md-6 mb-4">
-								<div class="card border-left-primary shadow h-100 py-2 bg-light">
-									<div class="card-body">
-										<div class="row no-gutters align-items-center">
-											<div class="col mr-2">
-												<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-													Jumlah Kas Masuk</div>
-												<div class="h5 mb-0 font-weight-bold text-gray-800">Rp. <?= number_format($masuk->jumlah, 0) ?></div>
-											</div>
-											<div class="col-auto">
-												<i class="fas fa-fw fa-info-circle fa-2x text-primary"></i>
-											</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xl-8 col-lg-7">
+			<div class="card shadow mb-4">
+				<!-- Card Header - Dropdown -->
+				<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-primary">
+					<h6 class="m-0 font-weight-bold text-white">Info grafik pemasukan kas per bulan</h6>
+				</div>
+				<!-- Card Body -->
+				<div class="card-body bg-white">
+					<div class="chart-area">
+						<?php
+						foreach ($chart2 as $ct => $value) {
+							$dod[]  = $value['month'];
+							$mm[]   = $value['jumlah'];
+						}
+						?>
+						<canvas id="myBarChart"></canvas>
+						<script>
+							var ctx = document.getElementById("myBarChart");
+							var myBarChart = new Chart(ctx, {
+								type: 'bar',
+								data: {
+									labels: <?= json_encode($dod) ?>,
+									datasets: [{
+										data: <?= json_encode($mm) ?>,
+										backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+										hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+										hoverBorderColor: "rgba(234, 236, 244, 1)",
+									}],
+								},
+								options: {
+									scales: {
+										yAxes: [{
+											ticks: {
+												beginAtZero: true,
+											}
+										}]
+									},
+									maintainAspectRatio: false,
+									tooltips: {
+										backgroundColor: "rgb(255,255,255)",
+										bodyFontColor: "#858796",
+										borderColor: '#dddfeb',
+										borderWidth: 1,
+										xPadding: 15,
+										yPadding: 15,
+										displayColors: false,
+										caretPadding: 10,
+									},
+									legend: {
+										display: false
+									},
+									cutoutPercentage: 80,
+								},
+							});
+						</script>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Pie Chart -->
+		<div class=" col-xl-4 col-lg-5">
+			<div class="card shadow mb-4">
+				<!-- Card Header - Dropdown -->
+				<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-primary">
+					<h6 class="m-0 font-weight-bold text-white">Diagram Jumlah Member</h6>
+				</div>
+				<!-- Card Body -->
+				<div class="card-body bg-white">
+					<div class="chart-pie pt-4 pb-2">
+
+						<?php
+						foreach ($chart as $ct => $value) {
+							$tot[]  = $value['jumlah'];
+							$mn[]   = $value['sebagai'];
+						}
+						?>
+
+						<canvas id="myPieChart"></canvas>
+						<script>
+							var ctx = document.getElementById("myPieChart");
+							var myPieChart = new Chart(ctx, {
+								type: 'doughnut',
+								data: {
+									labels: <?= json_encode($mn)  ?>,
+									datasets: [{
+										data: <?= json_encode($tot)  ?>,
+										backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+										hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+										hoverBorderColor: "rgba(234, 236, 244, 1)",
+									}],
+								},
+								options: {
+
+									maintainAspectRatio: false,
+									tooltips: {
+										backgroundColor: "rgb(255,255,255)",
+										bodyFontColor: "#858796",
+										borderColor: '#dddfeb',
+										borderWidth: 1,
+										xPadding: 15,
+										yPadding: 15,
+										displayColors: false,
+										caretPadding: 10,
+									},
+									legend: {
+										display: false
+									},
+									cutoutPercentage: 80,
+								},
+							});
+						</script>
+					</div>
+					<div class="mt-4 text-center small">
+						<span class="mr-2">
+							<i class="fas fa-circle text-primary"></i> Admin
+						</span>
+						<span class="mr-2">
+							<i class="fas fa-circle text-success"></i> Bendahara
+						</span>
+						<span class="mr-2">
+							<i class="fas fa-circle text-info"></i> Member
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-12">
+			<div class="card shadow mb-4">
+				<!-- Card Header - Dropdown -->
+				<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-primary">
+					<h6 class="m-0 font-weight-bold text-white">Info Kas</h6>
+				</div>
+				<!-- Card Body -->
+				<div class="card-body bg-white">
+					<div class="row">
+						<div class="col-xl-3 col-md-6 mb-4">
+							<div class="card border-left-primary shadow h-100 py-2 bg-light">
+								<div class="card-body">
+									<div class="row no-gutters align-items-center">
+										<div class="col mr-2">
+											<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+												Jumlah Kas Masuk</div>
+											<div class="h5 mb-0 font-weight-bold text-gray-800">Rp. <?= number_format($masuk->jumlah, 0) ?></div>
+										</div>
+										<div class="col-auto">
+											<i class="fas fa-fw fa-info-circle fa-2x text-primary"></i>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-xl-3 col-md-6 mb-4">
-								<div class="card border-left-primary shadow h-100 py-2 bg-light">
-									<div class="card-body">
-										<div class="row no-gutters align-items-center">
-											<div class="col mr-2">
-												<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-													Jumlah Kas Keluar</div>
-												<div class="h5 mb-0 font-weight-bold text-gray-800">Rp. <?= number_format($keluar->maks, 0) ?></div>
-											</div>
-											<div class="col-auto">
-												<i class="fas fa-fw fa-info-circle fa-2x text-primary"></i>
-											</div>
+						</div>
+						<div class="col-xl-3 col-md-6 mb-4">
+							<div class="card border-left-primary shadow h-100 py-2 bg-light">
+								<div class="card-body">
+									<div class="row no-gutters align-items-center">
+										<div class="col mr-2">
+											<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+												Jumlah Kas Keluar</div>
+											<div class="h5 mb-0 font-weight-bold text-gray-800">Rp. <?= number_format($keluar->maks, 0) ?></div>
+										</div>
+										<div class="col-auto">
+											<i class="fas fa-fw fa-info-circle fa-2x text-primary"></i>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-xl-3 col-md-6 mb-4">
-								<div class="card border-left-primary shadow h-100 py-2 bg-light">
-									<div class="card-body">
-										<div class="row no-gutters align-items-center">
-											<div class="col mr-2">
-												<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-													Sisa Kas</div>
-												<div class="h5 mb-0 font-weight-bold text-gray-800">Rp. <?= number_format($sisa, 0) ?></div>
-											</div>
-											<div class="col-auto">
-												<i class="fas fa-fw fa-info-circle fa-2x text-primary"></i>
-											</div>
+						</div>
+						<div class="col-xl-3 col-md-6 mb-4">
+							<div class="card border-left-primary shadow h-100 py-2 bg-light">
+								<div class="card-body">
+									<div class="row no-gutters align-items-center">
+										<div class="col mr-2">
+											<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+												Sisa Kas</div>
+											<div class="h5 mb-0 font-weight-bold text-gray-800">Rp. <?= number_format($sisa, 0) ?></div>
+										</div>
+										<div class="col-auto">
+											<i class="fas fa-fw fa-info-circle fa-2x text-primary"></i>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-xl-3 col-md-6 mb-4">
-								<div class="card shadow h-100 py-2 bg-light">
-									<div class="card-body">
-										<div class="row no-gutters align-items-center">
-											<a href="<?= base_url('menu/info_kas') ?>">
-												<div class="col mr-2 text-center">
-													<div class="h5 mb-0 font-weight-bold text-gray-800">Lihat Detail</div>
-												</div>
-											</a>
-											<i class="fas fa-fw fa-angle-right fa-2x text-primary"></i>
-										</div>
+						</div>
+						<div class="col-xl-3 col-md-6 mb-4">
+							<div class="card shadow h-100 py-2 bg-light">
+								<div class="card-body">
+									<div class="row no-gutters align-items-center">
+										<a href="<?= base_url('menu/info_kas') ?>">
+											<div class="col mr-2 text-center">
+												<div class="h5 mb-0 font-weight-bold text-gray-800">Lihat Detail</div>
+											</div>
+										</a>
+										<i class="fas fa-fw fa-angle-right fa-2x text-primary"></i>
 									</div>
 								</div>
 							</div>
@@ -287,7 +309,8 @@
 			</div>
 		</div>
 	</div>
+</div>
 
-	<!-- Button trigger modal -->
+<!-- Button trigger modal -->
 
-	<!-- End of Main Content -->
+<!-- End of Main Content -->

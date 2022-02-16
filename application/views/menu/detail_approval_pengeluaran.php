@@ -20,7 +20,7 @@
                   <a class="btn btn-info btn-sm" type="button" disabled data-toggle="popover" title="Alasan penolakan pengajuan" data-content="<?= $details->alasan_penolakan ?>"><i class=" fas fa-fw fa-info-circle"></i> Lihat alasan</a>
                 <?php } else { ?>
                   <button class="btn btn-warning text-dark btn-sm" type="button" disabled>
-                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"> </span>
+                    <i class="fas fa-fw fa-sync fa-spin"></i>
                     Pengajuan masih dalam proses peninjauan...
                   </button>
                 <?php } ?>

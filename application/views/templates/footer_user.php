@@ -1,5 +1,7 @@
 <!-- Footer -->
 </div>
+
+
 <footer class="sticky-footer bg-white shadow">
 	<div class="container my-auto">
 		<div class="copyright text-center my-auto">
@@ -11,11 +13,11 @@
 <a class="scroll-to-top rounded" href="#page-top">
 	<i class="fas fa-angle-up"></i>
 </a>
-
 <script>
 	const BASE_URL = "<?= base_url() ?>"
 </script>
 <!-- Boostrap Core JavaScript -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 <script src="<?= base_url('assets/vendor/jquery/jquery.min.js'); ?>"></script>
 <script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
 
