@@ -73,7 +73,7 @@
                 <td class="text-center"><?= $a++ ?></td>
                 <td><?= $k['nama_pengajuan']; ?></td>
                 <td>Rp. <?= number_format($k['jumlah_pengajuan'], 0); ?></td>
-                <td><?= date('d F Y', $k['tanggal_pengajuan']); ?></td>
+                <td><?= $k['tanggal_pengajuan']; ?></td>
                 <td>
                   <span class="d-inline-block text-truncate" style="max-width: 170px;">
                     <?= $k['keterangan']; ?>

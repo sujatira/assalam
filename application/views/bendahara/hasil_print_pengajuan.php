@@ -76,7 +76,7 @@
   <!-- <p>Assalamu'alaikum Warohmatullahi Wabarokatuh.</p> -->
   <p>Atas nama pengurus DKM Masjid Jami Assalam, menerangkan bahwa pengajuan pengeluaran kas yang diajukan pada tanggal:</p>
   <br>
-  <span>Tanggal : <?= date('d F Y', $kukuk->tanggal_pengajuan) ?> </span><br><br>
+  <span>Tanggal : <?= $kukuk->tanggal_pengajuan ?> </span><br><br>
   <span>Keperluan : <?= $kukuk->nama_pengajuan ?></span><br><br>
   <span>Keterangan : <?= $kukuk->keterangan ?></span><br><br>
   <span> dengan nominal sebesar <strong>Rp. <?= number_format($kukuk->jumlah_pengajuan)  ?></strong>.</span><br>

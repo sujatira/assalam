@@ -87,12 +87,12 @@ class Bendahara extends CI_Controller
             $data = [
                 'nama_pengajuan' => htmlspecialchars($this->input->post('keperluan', true)),
                 'jumlah_pengajuan' => htmlspecialchars($this->input->post('jumlah', true)),
-                'tanggal_pengajuan' => time(),
+                'tanggal_pengajuan' => date('d-m-Y'),
                 'status_pengajuan' => 0,
                 'keterangan' => htmlspecialchars($this->input->post('keterangan', true)),
-                'alasan_penolakan' => 'X',
-                'periksa_oleh' => 'X',
-                'tgl_acc' => '0'
+                'alasan_penolakan' => ' ',
+                'periksa_oleh' => ' ',
+                'tgl_acc' => ' '
             ];
 
             $this->db->insert('tbl_pengajuan', $data);
@@ -202,7 +202,12 @@ class Bendahara extends CI_Controller
         $keterangan = $this->input->post('keterangan');
         $kategori = $this->input->post('kategori');
 
-        $this->db->query("UPDATE `tbl_infaq` SET `nama`='$nama', `nominal`='$nominal', `keterangan`='$keterangan', `kategori`='$kategori' WHERE `tbl_infaq`.`id_infaq`='$id_infaq'");
+        $this->db->set('kategori', $kategori);
+        $this->db->set('keterangan', $keterangan);
+        $this->db->set('nominal', $nominal);
+        $this->db->set('nama', $nama);
+        $this->db->where('id_infaq', $id_infaq);
+        $this->db->update('tbl_infaq');
 
         $this->session->set_flashdata('pesan',  'pemasukan kas berhasil diupdate!');
         redirect('bendahara/kas');
@@ -239,6 +244,8 @@ class Bendahara extends CI_Controller
         $mpdf->autoScriptToLang = true;
         $mpdf->autoLangToFont = true;
         $mpdf->setAutoTopMargin = 'stretch';
+        $mpdf->SetFooter('
+		<span>Sistem Informasi Masjid Jami Assalam</span>');
         $mpdf->WriteHTML($html);
         $mpdf->Output();
     }

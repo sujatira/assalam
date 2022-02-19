@@ -31,8 +31,8 @@
             <div class="form-group row">
               <label class="col-sm-2 col-form-lbel">Kategori</label>
               <div class="col-sm-10">
-                <select class="custom-select" name="kategori" id="kategori">
-                  <option value=""><?= $ifk->kategori ?></option>
+                <select class="custom-select form-control" name="kategori" id="kategori">
+                  <option value="<?= $ifk->kategori ?>"><?= $ifk->kategori ?></option>
                   <option value="Dari kotak amal">Dari kotak amal</option>
                   <option value="Dari kotak parkir">Dari kotak parkir</option>
                   <option value="Dari jemaah">Dari jemaah</option>

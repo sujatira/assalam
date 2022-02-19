@@ -14,7 +14,10 @@
               <label class="col-sm-2 col-form-label">Status</label>
               <div class="col-sm-10">
                 <?php if ($details->status_pengajuan == 1) { ?>
-                  <button class="btn btn-primary btn-sm" disabled><i class="fas fa-fw fa-check"></i> Pengajuan telah disetujui</button> <a href="<?= base_url('bendahara/print_pengajuan/' . $details->id_pengajuan) ?>" class="btn btn-info btn-sm"><i class="fas fa-arrow-circle-down"></i> Unduh berkas</a>
+                  <button class="btn btn-primary btn-sm" disabled><i class="fas fa-fw fa-check"></i> Pengajuan telah disetujui</button>
+                  <?php if ($this->session->userdata('role_id') == 2) { ?>
+                    <a href="<?= base_url('bendahara/print_pengajuan/' . $details->id_pengajuan) ?>" class="btn btn-info btn-sm"><i class="fas fa-arrow-circle-down"></i> Unduh berkas</a>
+                  <?php } ?>
                 <?php } else if ($details->status_pengajuan == 2) { ?>
                   <button class="btn btn-danger btn-sm" type="button" disabled> <i class="fas fa-fw fa-exclamation-triangle"></i> Pengajuan ditolak !</button>
                   <a class="btn btn-info btn-sm" type="button" disabled data-toggle="popover" title="Alasan penolakan pengajuan" data-content="<?= $details->alasan_penolakan ?>"><i class=" fas fa-fw fa-info-circle"></i> Lihat alasan</a>
@@ -24,6 +27,12 @@
                     Pengajuan masih dalam proses peninjauan...
                   </button>
                 <?php } ?>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Tanggal</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="tanggal_pengajuan" value="<?= $details->tanggal_pengajuan; ?>" readonly>
               </div>
             </div>
             <div class="form-group row">
@@ -41,7 +50,7 @@
             <div class="form-group row">
               <label class="col-sm-2 col-form-label">Keterangan</label>
               <div class="col-sm-10">
-                <textarea style="height: 300px;" type="text" name="keterangan" class="form-control" readonly><?= $details->keterangan ?></textarea>
+                <textarea style="height: 100px;" type="text" name="keterangan" class="form-control" readonly><?= $details->keterangan ?></textarea>
               </div>
             </div>
             <!-- <?php if ($details->status_pengajuan == 2) { ?>
@@ -52,12 +61,7 @@
                 </div>
               </div>
             <?php } ?> -->
-            <div class="form-group row">
-              <label class="col-sm-2 col-form-label">Tanggal</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" name="tanggal_pengajuan" value="<?= date('d F Y', $details->tanggal_pengajuan) ?>" readonly>
-              </div>
-            </div>
+
             <?php if ($this->session->userdata('role_id') == 1) { ?>
 
               <div class="form-group row">

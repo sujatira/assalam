@@ -25,7 +25,7 @@
                   <td class="text-center"><?= $i++ ?></td>
                   <td class=""><?= $a['nama_pengajuan']; ?>
                   <td class="">Rp. <?= number_format($a['jumlah_pengajuan']) ?></td>
-                  <td class="text-center"><?= date('d F Y', $a['tanggal_pengajuan']); ?></td>
+                  <td class="text-center"><?= $a['tanggal_pengajuan']; ?></td>
                   <td class="text-center"> <?php if ($a['status_pengajuan'] == 1) { ?>
                       <span class="badge badge-primary">Diizinkan</span>
                     <?php } else if ($a['status_pengajuan'] == 2) { ?>

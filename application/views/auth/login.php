@@ -35,6 +35,6 @@
     </div>
   </div>
 </div>
-<div class="copyright text-center my-auto text-white">
+<div class="copyright text-center my-auto text-dark">
   <span>Copyright &copy; Jami-Assalam 2021 - <?= date('Y'); ?></span>
 </div>

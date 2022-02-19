@@ -31,7 +31,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">Tanggal</span>
               </div>
-              <input id="tanggal" name="tanggal" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" readonly value="<?= date('d F Y') ?>">
+              <input id="tanggal" name="tanggal" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" readonly value="<?= date('d-m-Y') ?>">
             </div>
             <button href="<?= base_url('Bendahara') ?>" class="btn btn-primary btn-sm" type="submit"> <i class="fas fa-check-square"></i> Ajukan</button>
           </form>

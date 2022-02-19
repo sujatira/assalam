@@ -111,15 +111,17 @@ class Artikel extends CI_Controller
             $this->load->library('upload', $config);
             if ($this->upload->do_upload('tmb')) {
                 $new_image = $this->upload->data('file_name');
-                $this->db->set('image', $new_image);
+                $this->db->set('tmb', $new_image);
             } else {
                 echo $this->upload->display_errors();
             }
         }
-
-        $this->db->query("UPDATE `tbl_artikel` SET `judul`='$judul', `isi`='$isi',`edit`='$edit', `tmb`='$new_image'  WHERE `tbl_artikel`.`id_artikel`='$id_artikel'");
+        $this->db->set('edit', $edit);
+        $this->db->set('isi', $isi);
+        $this->db->set('judul', $judul);
+        $this->db->where('id_artikel', $id_artikel);
+        $this->db->update('tbl_artikel');
         $this->session->set_flashdata('pesan', 'artikel berhasil diedit!');
         return redirect('artikel/detail/' . $id_artikel);
-        // return header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 }

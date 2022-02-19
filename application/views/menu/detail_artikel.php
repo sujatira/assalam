@@ -15,7 +15,10 @@
 								</a>
 							</div>
 						<?php endforeach ?>
-						<input type="hidden" value="<?= $aa->id_artikel ?>" name="id_artikel">
+					</div>
+					<input type="hidden" value="<?= $aa->id_artikel ?>" name="id_artikel">
+					<div class="form-group m-2 text-center">
+						<img class="img-fluid img-responsive" src="<?= base_url('assets/images/thumbnails/' . $aa->tmb) ?>" alt="gambar thumbnail" width="300px" height="300px">
 					</div>
 					<div class="form-group row m-3">
 						<label class="col-sm-2 col-form-label">Status artikel</label>
