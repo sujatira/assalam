@@ -40,7 +40,7 @@
 									<td class="text-center"><?= $this->User_model->getUser($a->id_user)->nama ?></td>
 									<td class="text-center">
 										<a href="<?= base_url('usermenu/edit_artikel/' . $a->id_artikel) ?>" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
-										<a href="<?= base_url('menu/detail/' . $a->id_artikel); ?>" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+										<a href="<?= base_url('artikel/detail/' . $a->id_artikel); ?>" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
 										<a href="<?= base_url('usermenu/hapus_artikel/' . $a->id_artikel); ?>" id="btn-hapus" class="btn btn-danger btn-sm btn-hapus"><i class="fas fa-trash tombol-hapus"></i></a>
 									</td>
 								</tr>

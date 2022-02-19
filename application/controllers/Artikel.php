@@ -62,11 +62,64 @@ class Artikel extends CI_Controller
         $data['userid'] = $this->User_model->getUserId($id);
         $data['judul'] = 'Detail User';
 
-        // var_dump($data);
-        // die;
-
         $this->load->view('templates/header', $data);
         $this->load->view('artikel/oleh', $data);
         $this->load->view('templates/footer');
+    }
+    public function detail($id)
+    {
+        $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
+        $this->session->userdata('email')])->row_array();
+        $data['artikel'] = $this->Artikel_model->getAllArtikel();
+        $data['ar'] = $this->Artikel_model->get_artikel($id);
+
+        $data['judul'] = 'Detail Artikel';
+        $this->load->view('templates/header_user', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('menu/detail_artikel', $data);
+        $this->load->view('templates/footer_user');
+    }
+    public function edit_artikel($id)
+    {
+        $data['judul'] = 'Edit  Artikel';
+        $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
+        $this->session->userdata('email')])->row_array();
+        $data['artikel'] = $this->Artikel_model->getAllArtikel();
+        $data['ar'] = $this->Artikel_model->get_artikel($id);
+
+        $this->load->view('templates/header_user', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('menu/edit_artikel', $data);
+        $this->load->view('templates/footer_user');
+    }
+
+    public function update_artikel()
+    {
+
+        $id_artikel = $this->input->post('id_artikel');
+        $judul = $this->input->post('judul');
+        $isi = $this->input->post('isi');
+        $edit = 'Telah diedit';
+        $upload_image = $_FILES['tmb'];
+
+        if ($upload_image) {
+            $config['allowed_types'] = 'gif|jpg|jpeg|png';
+            $config['max_size'] = '2048';
+            $config['upload_path'] = './assets/images/thumbnails/';
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload('tmb')) {
+                $new_image = $this->upload->data('file_name');
+                $this->db->set('image', $new_image);
+            } else {
+                echo $this->upload->display_errors();
+            }
+        }
+
+        $this->db->query("UPDATE `tbl_artikel` SET `judul`='$judul', `isi`='$isi',`edit`='$edit', `tmb`='$new_image'  WHERE `tbl_artikel`.`id_artikel`='$id_artikel'");
+        $this->session->set_flashdata('pesan', 'artikel berhasil diedit!');
+        return redirect('artikel/detail/' . $id_artikel);
+        // return header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 }

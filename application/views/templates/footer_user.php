@@ -16,6 +16,16 @@
 <script>
 	const BASE_URL = "<?= base_url() ?>"
 </script>
+
+<script>
+	$("#btn-gas").on("click", function() {
+		var $this = $(this);
+		$this.button("loading");
+		setTimeout(function() {
+			$this.button("reset");
+		}, 8000);
+	});
+</script>
 <!-- Boostrap Core JavaScript -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 <script src="<?= base_url('assets/vendor/jquery/jquery.min.js'); ?>"></script>

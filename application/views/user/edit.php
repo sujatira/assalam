@@ -55,24 +55,11 @@
                       </div>
                     </div>
                   </div>
-                  <button type="submit" class="btn btn-primary mt-2"><i class="fas fa-fw fa-check"></i> Simpan</button>
-                  <button class="btn btn-primary mt-2" type="button" disabled>
-                    <i class="fas fa-fw fa-sync fa-spin"></i>
-                    Loading...
-                  </button>
+                  <button type="submit" class="btn btn-primary btn-gas mt-2" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processing Order"><i class="fas fa-fw fa-check"></i> Simpan</button>
                 </div>
               </div>
           </div>
           </form>
-          <div class="fa-3x">
-            <i class="fas fa-spinner fa-spin"></i>
-            <i class="fas fa-circle-notch fa-spin"></i>
-            <i class="fas fa-sync fa-spin"></i>
-            <i class="fas fa-cog fa-spin"></i>
-            <i class="fas fa-spinner fa-pulse"></i>
-            <i class="fas fa-stroopwafel fa-spin"></i>
-          </div>
-
         </div>
       </div>
     </div>

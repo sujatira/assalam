@@ -1,4 +1,4 @@
-<form method="POST" action="<?= base_url('Menu/update_artikel'); ?>" enctype="multipart/form-data">
+<form method="POST" action="<?= base_url('artikel/update_artikel'); ?>" enctype="multipart/form-data">
   <div class="row m-2">
     <div class="col-md-12">
       <div class="card bg-white">
@@ -8,8 +8,8 @@
             <?php
             foreach ($ar as $aa) : ?>
               <div class="col-lg text-center">
-                <a href="<?= base_url('assets/images/artikel/' . $aa->gambar) ?>" data-fancybox="galerry">
-                  <img src="<?= base_url('assets/images/artikel/' . $aa->gambar) ?>" title="Ini gambar artikel" alt="ini gambar artikel" class="img-thumbnail" style="width: 200px; height: 200px;">
+                <a href="<?= base_url('./assets/images/thumbnails/' . $aa->gambar) ?>" data-fancybox="galerry">
+                  <img src="<?= base_url('./assets/images/artikel/' . $aa->gambar) ?>" title="Ini gambar artikel" alt="ini gambar artikel" class="img-thumbnail" style="width: 200px; height: 200px;">
                   <br>
                 </a>
                 <label for="" class="text-danger mt-3 font-italic">Untuk gambar isi belum bisa di edit !</label>
@@ -23,8 +23,8 @@
             </div>
             <div class="col">
               <div class="input-group">
-                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                <input type="file" class="custom-file-input" id="tmb" name="tmb" aria-describedby="tmb" value="<?= $aa->tmb ?> ">
+                <label class="custom-file-label" for="tmb">Choose file</label>
                 <small class="text-danger font-italic">*jika nama gambar tidak muncul klik simpan saja</small>
               </div>
             </div>

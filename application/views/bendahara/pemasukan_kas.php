@@ -28,7 +28,10 @@
               <select class="custom-select" name="kategori" id="kategori">
                 <option value="">Pilih</option>
                 <option value="Dari kotak amal">Dari kotak amal</option>
-                <option value="Dari kotak parkit">Dari kotak parkir</option>
+                <option value="Dari kotak parkir">Dari kotak parkir</option>
+                <option value="Dari jemaah">Dari jemaah</option>
+                <option value="Dari jemaah">Dari jemaah</option>
+                <option value="Dari jemaah">Dari jemaah</option>
                 <option value="Dari jemaah">Dari jemaah</option>
               </select>
             </div>

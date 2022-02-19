@@ -54,7 +54,6 @@ class Menu extends CI_Controller
 
 		$isi = $_POST['konten'];
 
-
 		$data = [
 			'id_user' => ($this->session->userdata('id_user')),
 			'judul' => ($this->input->post('judul')),
@@ -102,10 +101,8 @@ class Menu extends CI_Controller
 		$data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
 		$this->session->userdata('email')])->row_array();
 		$data['userid'] = $this->User_model->getUserId($id);
-
-
-
 		$data['judul'] = 'Detail User';
+
 		$this->load->view('templates/header_user', $data);
 		$this->load->view('templates/sidebar', $data);
 		$this->load->view('templates/topbar', $data);
@@ -138,11 +135,25 @@ class Menu extends CI_Controller
 
 	public function update_artikel()
 	{
+
 		$id_artikel = $this->input->post('id_artikel');
 		$judul = $this->input->post('judul');
 		$isi = $this->input->post('isi');
+		$upload_image = $_FILES['tmb'];
 
-		$this->db->query("UPDATE `tbl_artikel` SET `judul`='$judul', `isi`='$isi'  WHERE `tbl_artikel`.`id_artikel`='$id_artikel'");
+		if ($upload_image) {
+			$config['allowed_types'] = 'gif|jpg|jpeg|png';
+			$config['max_size'] = '2048';
+			$config['upload_path'] = './assets/images/thumbnails/';
+			$this->load->library('upload', $config);
+			if ($this->upload->do_upload('tmb')) {
+				$new_image = $this->upload->data('file_name');
+			} else {
+				echo $this->upload->display_errors();
+			}
+		}
+
+		$this->db->query("UPDATE `tbl_artikel` SET `judul`='$judul', `isi`='$isi', `tmb`='$new_image'  WHERE `tbl_artikel`.`id_artikel`='$id_artikel'");
 		$this->session->set_flashdata('pesan', 'artikel berhasil diedit!');
 		return redirect('menu/index');
 	}

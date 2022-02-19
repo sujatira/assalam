@@ -1,3 +1,5 @@
+<div class="flash-data" data-flashdata="<?= $this->session->flashdata('pesan'); ?>"></div>
+
 <form method="POST" action="<?= base_url('Menu/approve'); ?>">
 	<div class="row m-2">
 		<div class="col-md-12">
@@ -16,7 +18,6 @@
 						<input type="hidden" value="<?= $aa->id_artikel ?>" name="id_artikel">
 					</div>
 					<div class="form-group row m-3">
-
 						<label class="col-sm-2 col-form-label">Status artikel</label>
 						<div class="col">
 							<?php if ($aa->status == 1) { ?>
@@ -31,7 +32,7 @@
 									Artikel sedang dalam peninjauan . . .
 								</button>
 							<?php } ?>
-							<a href="<?= base_url('menu/edit_artikel/' . $aa->id_artikel) ?>" class="btn btn-primary"><i class="fas fa-fw fa-edit"></i>
+							<a href="<?= base_url('artikel/edit_artikel/' . $aa->id_artikel) ?>" class="btn btn-primary"><i class="fas fa-fw fa-edit"></i>
 								Edit artikel
 							</a>
 						</div>
