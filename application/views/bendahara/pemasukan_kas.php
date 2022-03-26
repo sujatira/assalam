@@ -57,7 +57,7 @@
               </div>
               <input id="tanggal" name="tanggal" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" readonly value="<?= date('d F Y') ?>">
             </div>
-            <button href="<?= base_url('Bendahara') ?>" class="btn btn-primary btn-sm" type="submit"> <i class="fas fa-check"></i> Simpan</button>
+            <button href="<?= base_url('Bendahara') ?>" class="btn btn-primary" type="submit"> <i class="fas fa-check"></i> Simpan</button>
           </form>
         </div>
       </div>

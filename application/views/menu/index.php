@@ -5,7 +5,7 @@
       <div class="card-body bg-white">
         <div class="table-responsive">
           <div class="flash-data" data-flashdata="<?= $this->session->flashdata('pesan'); ?>"></div>
-          <a href="<?= base_url('menu/tambah') ?>" class="btn btn-primary mb-3 btn-sm"><i class="fas fa-fw fa-file-medical mr-1"></i>Tambah artikel baru</a>
+          <a href="<?= base_url('menu/tambah') ?>" class="btn btn-primary mb-3"><i class="fas fa-fw fa-file-medical mr-1"></i>Tambah artikel baru</a>
           <table class="table table-bordered table-striped table-sm" id="dataTable" width="100%">
             <thead class="text-center">
               <tr>

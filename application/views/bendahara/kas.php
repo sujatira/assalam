@@ -4,10 +4,10 @@
 			<h1>Kelola data kas</h1>
 		</div>
 		<div class="mt-3">
-			<a class="btn btn-primary btn-sm mb-3" href="<?= base_url('bendahara/pemasukan_kas') ?>"><i class="fas fa-fw fa-plus-square"></i> Pemasukan</a>
-			<a class="btn btn-primary btn-sm mb-3" href="<?= base_url('bendahara/pengeluaran_kas') ?>"><i class="fas fa-fw fa-minus-square"></i> Pengeluaran</a>
+			<a class="btn btn-primary  mb-3" href="<?= base_url('bendahara/pemasukan_kas') ?>"><i class="fas fa-fw fa-plus-square"></i> Pemasukan</a>
+			<a class="btn btn-primary mb-3" href="<?= base_url('bendahara/pengeluaran_kas') ?>"><i class="fas fa-fw fa-minus-square"></i> Pengeluaran</a>
 			<!-- <a class="btn btn-primary btn-sm mb-3"><i class="fas fa-hand-holding-usd"></i> Pengajuan</a> -->
-			<a href="<?= base_url('bendahara/print_semua_pemasukan') ?>" class="btn btn-info mb-3 btn-sm"><i class="fas fa-fw fa-print"></i> Cetak</a>
+			<a href="<?= base_url('bendahara/print_semua_pemasukan') ?>" class="btn btn-info mb-3"><i class="fas fa-fw fa-print"></i> Cetak</a>
 		</div>
 	</div>
 	<div class="card">
