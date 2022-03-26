@@ -20,4 +20,28 @@ class Home extends CI_Controller
         $this->load->view('templates/info_kas', $data);
         $this->load->view('templates/footer');
     }
+
+    public function about()
+    {
+        $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
+        $this->session->userdata('email')])->row_array();
+        $data['judul'] = 'Masjid Jami Assalam';
+        $this->load->view('templates/navbar', $data);
+        $this->load->view('templates/header', $data);
+        $this->load->view('home/about', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function developer()
+
+
+    {
+        $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' =>
+        $this->session->userdata('email')])->row_array();
+        $data['judul'] = 'Masjid Jami Assalam';
+        // $this->load->view('templates/navbar', $data);
+        $this->load->view('templates/header', $data);
+        $this->load->view('home/developer', $data);
+        // $this->load->view('templates/footer');
+    }
 }

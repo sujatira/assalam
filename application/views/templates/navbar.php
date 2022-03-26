@@ -13,8 +13,8 @@
             About
           </a>
           <ul class="dropdown-menu bg-drop drop-font" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#"><i class="fas fa-star-and-crescent"></i> Masjid Jami Assalam</a></li>
-            <li><a class="dropdown-item" href="https://github.com/sujatira"><i class="fas fa-code"></i> Developer</a></li>
+            <li><a class="dropdown-item" href="<?= base_url('home/about') ?>"><i class="fas fa-fw fa-star-and-crescent"></i> Masjid Jami Assalam</a></li>
+            <li><a class="dropdown-item" href="<?= base_url('home/developer') ?>"><i class="fas fa-fw fa-code"></i> Developer</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
