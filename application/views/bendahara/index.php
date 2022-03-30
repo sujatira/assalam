@@ -137,7 +137,7 @@
 		<div class="card-header bg-primary"><strong><i class="fas fa-fw fa-info"></i> Total Sisa Kas Masjid Jami Assalam</strong></div>
 		<div class="card-body">
 			<h1 class="card-title">Rp. <?= number_format($sisa); ?>,- </h1>
-			<p class="card-text">Total keuangan adalah jumlah dari seluruh pemasukan dikurangi pengeluaran, yang dijumlahkan secara realtime oleh sistem</p>
+			<p class="card-text">Total sisa kas adalah jumlah dari seluruh pemasukan dikurangi pengeluaran, yang dijumlahkan secara realtime oleh sistem</p>
 		</div>
 	</div>
 </div>
