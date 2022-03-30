@@ -7,7 +7,7 @@
 	var myVar;
 
 	function myFunction() {
-		myVar = setTimeout(showPage, 100);
+		myVar = setTimeout(showPage, 10);
 	}
 
 	function showPage() {
@@ -17,7 +17,7 @@
 
 	}
 </script>
-<div class="container animate-bottom" id="myDiv" style="display:none;">
+<div class="container animate-bottom" id="myDiv">
 	<!-- <h1 class="h3 mb-4 text-gray-800"><?= $judul; ?></h1> -->
 	<div class="row justify-content-between">
 		<div class="col-xl-3 col-md-6 mb-4">

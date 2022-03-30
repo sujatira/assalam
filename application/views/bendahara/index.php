@@ -7,7 +7,7 @@
 	var myVar;
 
 	function myFunction() {
-		myVar = setTimeout(showPage, 100);
+		myVar = setTimeout(showPage, 10);
 	}
 
 	function showPage() {
@@ -17,7 +17,7 @@
 	}
 </script>
 <!-- Begin Page Content -->
-<div class="container animate-bottom" id="myDiv" style="display:none;">
+<div class="container animate-bottom" id="myDiv">
 	<!-- Page Heading -->
 	<div class="row">
 		<div class="col-xl-3 col-md-6 mb-4">
